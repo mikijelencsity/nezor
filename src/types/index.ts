@@ -3,6 +3,7 @@ export interface Reference {
   name: string
   description: string
   url: string
+  imageUrl?: string
   category: 'weboldal' | 'webshop'
 }
 
@@ -32,12 +33,14 @@ export interface Service {
   features: string[]
 }
 
+export type BlogCategory = 'Weboldal' | 'Webshop' | 'Facebook hirdetések' | 'Tippek'
+
 export interface BlogPost {
   slug: string
   title: string
   description: string
   date: string
-  category: string
+  category: BlogCategory
   readingTime: string
   content?: string
 }
