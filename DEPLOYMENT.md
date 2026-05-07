@@ -48,5 +48,11 @@ git push -u origin main
 - Page ID: Facebook Page → About → Page Transparency → Page ID
 - Állítsd be a `NEXT_PUBLIC_FB_PAGE_ID` env változót Vercelben
 
-## 10. Footer közösségi linkek
+## 10. Rate limiting (fontos deployment előtt)
+A `/api/contact` endpoint jelenleg nincs rate-limitálva. Az éles indítás előtt:
+- Vercel Pro esetén: Vercel Firewall / Rate Limiting beállítása
+- Ingyenes megoldás: Upstash Redis + @upstash/ratelimit csomag
+- Minimum: az első időszakban figyeld a Resend email kvótát
+
+## 11. Footer közösségi linkek
 `src/components/layout/Footer.tsx` fájlban a `href="#"` értékeket cseréld ki a valódi Facebook/Instagram profilokra.

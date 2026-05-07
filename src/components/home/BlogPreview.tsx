@@ -31,7 +31,7 @@ export function BlogPreview({ posts }: BlogPreviewProps) {
               <p className="text-sm text-muted mb-4 line-clamp-2">{post.description}</p>
               <div className="flex items-center gap-2 text-xs text-muted">
                 <Calendar className="w-3 h-3" />
-                <time dateTime={post.date}>{post.date}</time>
+                <time dateTime={post.date}>{new Date(post.date).toLocaleDateString('hu-HU')}</time>
               </div>
             </article>
           ))}
