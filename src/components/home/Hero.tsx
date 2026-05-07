@@ -158,7 +158,14 @@ export function Hero() {
                   <span className="text-xs font-display font-semibold text-dark">Ügyfél oldala</span>
                 </motion.div>
 
-                <PhoneMockup size="lg" scrollClass="phone-scroll" />
+                <PhoneMockup size="lg" scrollClass="phone-scroll">
+                  {/* PLACEHOLDER: cseréld le a többi ügyfél képével is */}
+                  <img
+                    src="/screenshots/neked-sutom.jpg"
+                    alt="Neked Sütöm — ügyfél weboldal"
+                    className="w-full"
+                  />
+                </PhoneMockup>
               </motion.div>
 
               {/* Right phone — smaller, rotated, slightly behind */}
