@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 
@@ -6,9 +7,9 @@ interface ButtonProps {
   onClick?: () => void
   variant?: 'primary' | 'outline' | 'ghost'
   size?: 'sm' | 'md' | 'lg'
-  children: React.ReactNode
+  children: ReactNode
   className?: string
-  type?: 'button' | 'submit'
+  type?: 'button' | 'submit' | 'reset'
   disabled?: boolean
 }
 
@@ -39,6 +40,13 @@ export function Button({
   const classes = cn(base, variants[variant], sizes[size], disabled && 'opacity-50 cursor-not-allowed', className)
 
   if (href) {
+    if (disabled) {
+      return (
+        <span className={classes} aria-disabled="true" role="link">
+          {children}
+        </span>
+      )
+    }
     return <Link href={href} className={classes}>{children}</Link>
   }
 

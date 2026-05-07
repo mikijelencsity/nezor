@@ -18,7 +18,7 @@ export function SectionHeading({ label, title, description, centered = true, cla
       )}
       <h2 className="text-3xl md:text-4xl font-display font-bold text-dark mb-4">{title}</h2>
       {description && (
-        <p className="text-muted text-lg max-w-2xl mx-auto">{description}</p>
+        <p className={cn('text-muted text-lg max-w-2xl', centered && 'mx-auto')}>{description}</p>
       )}
     </div>
   )

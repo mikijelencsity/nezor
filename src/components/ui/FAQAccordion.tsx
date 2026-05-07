@@ -15,11 +15,13 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
   return (
     <div className="space-y-3">
       {items.map((item, index) => (
-        <div key={index} className="border border-gray-200 rounded-xl overflow-hidden">
+        <div key={item.question} className="border border-gray-200 rounded-xl overflow-hidden">
           <button
+            id={`faq-trigger-${index}`}
             className="w-full flex items-center justify-between px-6 py-4 text-left font-display font-semibold text-dark hover:bg-secondary transition-colors"
             onClick={() => setOpenIndex(openIndex === index ? null : index)}
             aria-expanded={openIndex === index}
+            aria-controls={`faq-panel-${index}`}
           >
             <span>{item.question}</span>
             <ChevronDown
@@ -27,7 +29,12 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
             />
           </button>
           {openIndex === index && (
-            <div className="px-6 py-4 text-muted bg-white border-t border-gray-100">
+            <div
+              id={`faq-panel-${index}`}
+              role="region"
+              aria-labelledby={`faq-trigger-${index}`}
+              className="px-6 py-4 text-muted bg-white border-t border-gray-100"
+            >
               {item.answer}
             </div>
           )}
