@@ -7,6 +7,11 @@ import { FAQItem } from '@/types'
 export const metadata: Metadata = {
   title: 'Weboldal készítés Bács-Kiskun megye — NEZOR',
   description: 'Professzionális weboldal készítés Bács-Kiskun megyében és egész Magyarországon. Egyszeri díjas és havidíjas csomagok. Ingyenes ajánlat!',
+  openGraph: {
+    title: 'Weboldal készítés Bács-Kiskun megye — NEZOR',
+    description: 'Professzionális weboldal készítés Bács-Kiskun megyében és egész Magyarországon. Egyszeri díjas és havidíjas csomagok.',
+    url: 'https://nezor.hu/weboldalak',
+  },
 }
 
 const faq: FAQItem[] = [
@@ -42,7 +47,7 @@ export default function WeboldalakPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white" aria-labelledby="process-heading">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading label="Folyamat" title="Hogyan dolgozunk?" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

@@ -7,6 +7,11 @@ import { FAQItem } from '@/types'
 export const metadata: Metadata = {
   title: 'Webshop fejlesztés Magyarország — NEZOR',
   description: 'Professzionális webshop fejlesztés fizetési rendszerrel, rendeléskezelővel. Egyszeri díjas és havidíjas megoldások. Ingyenes ajánlat!',
+  openGraph: {
+    title: 'Webshop fejlesztés Magyarország — NEZOR',
+    description: 'Professzionális webshop készítés fizetési rendszerrel, rendeléskezelővel. Ingyenes ajánlat!',
+    url: 'https://nezor.hu/webshopok',
+  },
 }
 
 const faq: FAQItem[] = [
@@ -33,7 +38,7 @@ export default function WebshopokPage() {
             <h1 className="text-4xl md:text-5xl font-display font-bold text-dark mb-6">
               Online bolt, ami <span className="text-gradient">valóban elad</span>
             </h1>
-            <p className="text-lg text-muted mb-8">Teljes e-kereskedelmi megoldás fizetési rendszerrel, rendeléskezelővel és automatikus számlázással.</p>
+            <p className="text-lg text-muted mb-8">Webshop készítés fizetési rendszerrel, rendeléskezelővel és automatikus számlázással — egész Magyarországon.</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button href="/kapcsolat" size="lg">Ingyenes ajánlat kérése</Button>
               <Button href="/csomagok" variant="outline" size="lg">Csomagok megtekintése</Button>

@@ -8,6 +8,11 @@ import { Target, BarChart2, RefreshCw, FileText } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'Facebook hirdetés kezelés Magyarország — NEZOR',
   description: 'Professzionális Facebook és Instagram hirdetés kezelés. Célzott Meta kampányok kis- és középvállalkozásoknak egész Magyarországon.',
+  openGraph: {
+    title: 'Facebook hirdetés kezelés Magyarország — NEZOR',
+    description: 'Professzionális Facebook és Instagram hirdetés kezelés. Célzott Meta kampányok kis- és középvállalkozásoknak.',
+    url: 'https://nezor.hu/facebook-hirdetesek',
+  },
 }
 
 const faq: FAQItem[] = [
@@ -34,7 +39,7 @@ export default function FacebookHirdetesekPage() {
             <h1 className="text-4xl md:text-5xl font-display font-bold text-dark mb-6">
               Célzott hirdetések, <span className="text-gradient">valódi ügyfelek</span>
             </h1>
-            <p className="text-lg text-muted mb-8">Meta kampányok amelyek elérik a potenciális vevőidet — Bács-Kiskun megyében és az egész országban.</p>
+            <p className="text-lg text-muted mb-8">Facebook hirdetés kezelés és Meta kampányok, amelyek elérik a potenciális vevőidet — Bács-Kiskun megyétől az egész országig.</p>
             <Button href="/kapcsolat" size="lg">Ingyenes konzultáció</Button>
           </div>
         </div>

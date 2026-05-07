@@ -7,6 +7,7 @@ import { PackagesTeaser } from '@/components/home/PackagesTeaser'
 import { FAQSection } from '@/components/home/FAQSection'
 import { BlogPreview } from '@/components/home/BlogPreview'
 import { getLatestPosts } from '@/lib/blog'
+import { BlogPost } from '@/types'
 
 export const metadata: Metadata = {
   title: 'NEZOR — Weboldal, Webshop és Facebook Hirdetések Magyarországon',
@@ -19,7 +20,12 @@ export const metadata: Metadata = {
 }
 
 export default async function HomePage() {
-  const latestPosts = await getLatestPosts(3)
+  let latestPosts: BlogPost[] = []
+  try {
+    latestPosts = await getLatestPosts(3)
+  } catch {
+    // blog posts unavailable, render without them
+  }
 
   return (
     <>
