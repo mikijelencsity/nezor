@@ -5,6 +5,7 @@ import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { MessengerWidget } from '@/components/layout/MessengerWidget'
 import { localBusinessSchema } from '@/lib/structured-data'
+import { ScrollProgressBar } from '@/components/ui/ScrollProgressBar'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -41,6 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="hu" className={`${spaceGrotesk.variable} ${inter.variable}`}>
       <body>
+        <ScrollProgressBar />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema()) }}

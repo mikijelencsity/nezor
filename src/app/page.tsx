@@ -8,6 +8,8 @@ import { ReferencesPreview } from '@/components/home/ReferencesPreview'
 import { PackagesTeaser } from '@/components/home/PackagesTeaser'
 import { FAQSection } from '@/components/home/FAQSection'
 import { BlogPreview } from '@/components/home/BlogPreview'
+import { StatsSection } from '@/components/home/StatsSection'
+import { Testimonials } from '@/components/home/Testimonials'
 import { getLatestPosts } from '@/lib/blog'
 import { BlogPost } from '@/types'
 
@@ -36,8 +38,10 @@ export default async function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(homeFAQ)) }}
       />
       <Hero />
+      <StatsSection />
       <ServicesSection />
       <WhyNezor />
+      <Testimonials />
       <ReferencesPreview />
       <PackagesTeaser />
       <FAQSection />
