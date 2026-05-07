@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/Button'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { FAQAccordion } from '@/components/ui/FAQAccordion'
 import { FAQItem } from '@/types'
+import { faqSchema } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: 'Weboldal készítés Bács-Kiskun megye — NEZOR',
@@ -30,7 +31,12 @@ const steps = [
 
 export default function WeboldalakPage() {
   return (
-    <div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faq)) }}
+      />
+      <div>
       <section className="gradient-hero py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
@@ -76,6 +82,7 @@ export default function WeboldalakPage() {
           <Button href="/kapcsolat" size="lg">Ajánlatot kérek</Button>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }

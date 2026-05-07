@@ -4,6 +4,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { FAQAccordion } from '@/components/ui/FAQAccordion'
 import { FAQItem } from '@/types'
 import { Target, BarChart2, RefreshCw, FileText } from 'lucide-react'
+import { faqSchema } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: 'Facebook hirdetés kezelés Magyarország — NEZOR',
@@ -31,7 +32,12 @@ const features = [
 
 export default function FacebookHirdetesekPage() {
   return (
-    <div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faq)) }}
+      />
+      <div>
       <section className="gradient-hero py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
@@ -79,6 +85,7 @@ export default function FacebookHirdetesekPage() {
           <Button href="/kapcsolat" size="lg">Ajánlatot kérek</Button>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }
