@@ -43,3 +43,37 @@
     background-clip: text;
   }
 }
+
+/* Animated dot grid */
+.dot-grid-bg {
+  background-image: radial-gradient(circle, rgba(0,207,255,0.13) 1.5px, transparent 1.5px);
+  background-size: 32px 32px;
+  animation: dotGridMove 25s linear infinite;
+}
+@keyframes dotGridMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 32px 32px; }
+}
+
+/* Glow pulse on primary CTA */
+.glow-pulse {
+  animation: glowPulse 2.5s ease-in-out infinite;
+}
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 18px rgba(0,207,255,0.35); }
+  50% { box-shadow: 0 0 36px rgba(0,207,255,0.65), 0 0 60px rgba(0,207,255,0.2); }
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(0,207,255,0.18);
+}
+
+/* Reduce motion overrides */
+@media (prefers-reduced-motion: reduce) {
+  .dot-grid-bg { animation: none; }
+  .glow-pulse { animation: none; box-shadow: 0 0 18px rgba(0,207,255,0.35); }
+}
