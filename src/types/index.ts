@@ -24,12 +24,14 @@ export interface FAQItem {
   answer: string
 }
 
+export type ServiceIcon = 'Monitor' | 'ShoppingCart' | 'TrendingUp'
+
 export interface Service {
   id: string
   title: string
   description: string
   href: string
-  icon: string
+  icon: ServiceIcon
   features: string[]
 }
 

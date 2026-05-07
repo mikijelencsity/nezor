@@ -36,7 +36,7 @@ export function WhyNezor() {
           {reasons.map((reason) => {
             const Icon = reason.icon
             return (
-              <div key={reason.title} className="bg-white rounded-2xl p-6 shadow-card">
+              <div key={reason.title} className="bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-shadow">
                 <div className="w-10 h-10 bg-cyan-light rounded-lg flex items-center justify-center mb-4">
                   <Icon className="w-5 h-5 text-cyan" />
                 </div>

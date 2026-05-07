@@ -16,7 +16,7 @@ export function ServicesSection() {
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map((service) => {
-            const Icon = icons[service.icon as keyof typeof icons]
+            const Icon = icons[service.icon]
             return (
               <div key={service.id} className="bg-white border border-gray-100 rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-shadow group">
                 <div className="w-12 h-12 bg-cyan-light rounded-xl flex items-center justify-center mb-6">
@@ -33,7 +33,9 @@ export function ServicesSection() {
                   ))}
                 </ul>
                 <Link href={service.href} className="flex items-center gap-1 text-cyan font-semibold text-sm group-hover:gap-2 transition-all">
-                  Részletek <ArrowRight className="w-4 h-4" />
+                  Részletek
+                  <span className="sr-only"> — {service.title}</span>
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             )
