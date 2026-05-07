@@ -16,10 +16,17 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const post = await getPostBySlug(slug)
-  if (!post) return {}
+  if (!post) return { title: 'Nem található' }
   return {
     title: post.title,
     description: post.description,
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: 'article',
+      publishedTime: post.date,
+      url: `https://nezor.hu/blog/${post.slug}`,
+    },
   }
 }
 
@@ -46,7 +53,9 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="flex items-center gap-4 text-sm text-muted mb-10 pb-6 border-b border-gray-100">
           <span className="flex items-center gap-1">
             <Calendar className="w-4 h-4" />
-            <time dateTime={post.date}>{post.date}</time>
+            <time dateTime={post.date}>
+              {new Date(post.date).toLocaleDateString('hu-HU')}
+            </time>
           </span>
           <span className="flex items-center gap-1">
             <Clock className="w-4 h-4" /> {post.readingTime}

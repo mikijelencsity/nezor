@@ -20,7 +20,7 @@ export function getAllPosts(): BlogPost[] {
         title: data.title ?? '',
         description: data.description ?? '',
         date: data.date ?? '',
-        category: (data.category as BlogCategory) ?? 'Általános',
+        category: (data.category as BlogCategory) ?? 'Tippek',
         readingTime: data.readingTime ?? '3 perc',
       } as BlogPost
     })
@@ -40,10 +40,10 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
 
   return {
     slug,
-    title: data.title,
-    description: data.description,
-    date: data.date,
-    category: data.category as BlogCategory,
+    title: data.title ?? '',
+    description: data.description ?? '',
+    date: data.date ?? '',
+    category: (data.category as BlogCategory) ?? 'Tippek',
     readingTime: data.readingTime ?? '3 perc',
     content,
   }
