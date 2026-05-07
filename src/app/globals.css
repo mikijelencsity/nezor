@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* Colors */
+  --color-cyan: #00CFFF;
+  --color-cyan-dark: #00A8D4;
+  --color-cyan-light: #E0F9FF;
+  --color-dark: #1A1A2E;
+  --color-muted: #6B7280;
+  --color-secondary: #F5F7FA;
+  --color-accent: #0D0D0D;
+
+  /* Fonts */
+  --font-display: var(--font-space-grotesk), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+
+  /* Shadows */
+  --shadow-card: 0 2px 16px 0 rgba(0,207,255,0.08);
+  --shadow-card-hover: 0 4px 24px 0 rgba(0,207,255,0.18);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-body text-dark bg-white;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: linear-gradient(135deg, var(--color-cyan-light) 0%, #ffffff 60%);
+  }
+  .text-gradient {
+    background: linear-gradient(90deg, #00CFFF, #0090FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
