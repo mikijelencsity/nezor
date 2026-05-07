@@ -12,8 +12,8 @@
   --color-accent: #0D0D0D;
 
   /* Fonts */
-  --font-display: var(--font-display), sans-serif;
-  --font-body: var(--font-body), sans-serif;
+  --font-display: var(--font-space-grotesk), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
 
   /* Shadows */
   --shadow-card: 0 2px 16px 0 rgba(0,207,255,0.08);
@@ -27,14 +27,14 @@
   body {
     @apply font-body text-dark bg-white;
   }
-  h1, h2, h3, h4 {
+  h1, h2, h3, h4, h5, h6 {
     @apply font-display;
   }
 }
 
 @layer utilities {
   .gradient-hero {
-    background: linear-gradient(135deg, #e0f9ff 0%, #ffffff 60%);
+    background: linear-gradient(135deg, var(--color-cyan-light) 0%, #ffffff 60%);
   }
   .text-gradient {
     background: linear-gradient(90deg, #00CFFF, #0090FF);
