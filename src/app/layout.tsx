@@ -1,35 +1,50 @@
-import type { Metadata } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next'
+import { Space_Grotesk, Inter } from 'next/font/google'
+import './globals.css'
+import { Navbar } from '@/components/layout/Navbar'
+import { Footer } from '@/components/layout/Footer'
+import { MessengerWidget } from '@/components/layout/MessengerWidget'
 
 const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-space-grotesk',
+})
 
 const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-inter',
+})
 
 export const metadata: Metadata = {
-  title: "NEZOR",
-  description: "NEZOR – professional services",
-};
+  title: {
+    default: 'NEZOR — Weboldal, Webshop és Facebook Hirdetések',
+    template: '%s | NEZOR',
+  },
+  description: 'Professzionális weboldal és webshop készítés, Facebook hirdetés kezelés Bács-Kiskun megyében és egész Magyarországon. Gyors, modern, SEO-optimalizált megoldások.',
+  keywords: ['weboldal készítés', 'webshop fejlesztés', 'Facebook hirdetés', 'Bács-Kiskun', 'digitális ügynökség'],
+  openGraph: {
+    type: 'website',
+    locale: 'hu_HU',
+    url: 'https://nezor.hu',
+    siteName: 'NEZOR',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+}
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="hu"
-      className={`${spaceGrotesk.variable} ${inter.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="hu" className={`${spaceGrotesk.variable} ${inter.variable}`}>
+      <body>
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
+        <MessengerWidget />
+      </body>
     </html>
-  );
+  )
 }
