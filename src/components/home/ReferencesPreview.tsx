@@ -17,7 +17,7 @@ export function ReferencesPreview() {
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
           {preview.map((ref) => (
-            <div key={ref.id} className="border border-gray-100 rounded-xl p-5 hover:border-cyan hover:shadow-card transition-all group">
+            <article key={ref.id} className="border border-gray-100 rounded-xl p-5 hover:border-cyan hover:shadow-card transition-all group">
               <div className="flex items-start justify-between">
                 <div>
                   <h3 className="font-display font-semibold text-dark">{ref.name}</h3>
@@ -32,7 +32,7 @@ export function ReferencesPreview() {
                   </a>
                 )}
               </div>
-            </div>
+            </article>
           ))}
         </div>
         <div className="text-center">

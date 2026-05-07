@@ -9,7 +9,7 @@ export function FAQSection() {
         <SectionHeading
           label="GYIK"
           title="Gyakori kérdések"
-          description="Nem találod a választ? Írj nekünk!"
+          description="Nem találod a választ? Vedd fel velünk a kapcsolatot!"
         />
         <FAQAccordion items={homeFAQ} />
       </div>

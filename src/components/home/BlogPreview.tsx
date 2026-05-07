@@ -21,15 +21,19 @@ export function BlogPreview({ posts }: BlogPreviewProps) {
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
           {posts.map((post) => (
-            <Link key={post.slug} href={`/blog/${post.slug}`} className="bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-shadow group">
+            <article key={post.slug} className="relative bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-shadow group">
               <span className="text-xs bg-cyan-light text-cyan px-2 py-0.5 rounded-full">{post.category}</span>
-              <h3 className="font-display font-bold text-dark mt-3 mb-2 group-hover:text-cyan transition-colors">{post.title}</h3>
+              <h3 className="font-display font-bold text-dark mt-3 mb-2 group-hover:text-cyan transition-colors">
+                <Link href={`/blog/${post.slug}`} className="after:absolute after:inset-0">
+                  {post.title}
+                </Link>
+              </h3>
               <p className="text-sm text-muted mb-4 line-clamp-2">{post.description}</p>
               <div className="flex items-center gap-2 text-xs text-muted">
                 <Calendar className="w-3 h-3" />
-                {post.date}
+                <time dateTime={post.date}>{post.date}</time>
               </div>
-            </Link>
+            </article>
           ))}
         </div>
         <div className="text-center">
