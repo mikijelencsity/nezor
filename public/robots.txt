@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://nezor.hu
+
+# Sitemaps
+Sitemap: https://nezor.hu/sitemap.xml

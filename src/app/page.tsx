@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import { faqSchema } from '@/lib/structured-data'
+import { homeFAQ } from '@/data/faq'
 import { Hero } from '@/components/home/Hero'
 import { ServicesSection } from '@/components/home/ServicesSection'
 import { WhyNezor } from '@/components/home/WhyNezor'
@@ -29,6 +31,10 @@ export default async function HomePage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(homeFAQ)) }}
+      />
       <Hero />
       <ServicesSection />
       <WhyNezor />

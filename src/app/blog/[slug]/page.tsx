@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import { blogPostSchema } from '@/lib/structured-data'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { Calendar, Clock, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
@@ -36,7 +37,12 @@ export default async function BlogPostPage({ params }: Props) {
   if (!post) notFound()
 
   return (
-    <article className="py-20">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostSchema(post)) }}
+      />
+      <article className="py-20">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link
           href="/blog"
@@ -66,5 +72,6 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
       </div>
     </article>
+    </>
   )
 }
