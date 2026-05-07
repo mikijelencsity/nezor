@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { Mail, ExternalLink } from 'lucide-react'
+import { Mail } from 'lucide-react'
+import { FaFacebook, FaInstagram } from 'react-icons/fa'
 
 export function Footer() {
   return (
@@ -35,10 +36,10 @@ export function Footer() {
             </ul>
             <div className="flex gap-3 mt-4">
               <a href="#" className="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-cyan transition-colors" aria-label="Facebook">
-                <span className="text-xs font-bold leading-none">f</span>
+                <FaFacebook className="w-4 h-4" />
               </a>
               <a href="#" className="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-cyan transition-colors" aria-label="Instagram">
-                <ExternalLink className="w-4 h-4" />
+                <FaInstagram className="w-4 h-4" />
               </a>
             </div>
           </div>
