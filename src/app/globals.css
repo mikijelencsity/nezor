@@ -77,3 +77,24 @@
   .dot-grid-bg { animation: none; }
   .glow-pulse { animation: none; box-shadow: 0 0 18px rgba(0,207,255,0.35); }
 }
+
+/* Phone screen scroll animation */
+@keyframes phoneScroll {
+  0%   { transform: translateY(0); }
+  45%  { transform: translateY(-45%); }
+  55%  { transform: translateY(-45%); }
+  100% { transform: translateY(0); }
+}
+.phone-scroll {
+  animation: phoneScroll 9s ease-in-out infinite;
+}
+.phone-scroll-slow {
+  animation: phoneScroll 12s ease-in-out infinite;
+}
+.phone-scroll-fast {
+  animation: phoneScroll 7s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phone-scroll, .phone-scroll-slow, .phone-scroll-fast { animation: none; }
+}

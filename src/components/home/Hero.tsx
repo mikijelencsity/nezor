@@ -2,15 +2,10 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
-import { ArrowRight, CheckCircle, Globe, ShoppingBag, TrendingUp } from 'lucide-react'
+import { PhoneMockup } from '@/components/ui/PhoneMockup'
+import { ArrowRight, CheckCircle } from 'lucide-react'
 
 const highlights = ['Ingyenes konzultáció', '24 órán belüli válasz', 'Bács-Kiskun megye']
-
-const mockupItems = [
-  { icon: Globe, label: 'Weboldal', color: 'text-cyan' },
-  { icon: ShoppingBag, label: 'Webshop', color: 'text-blue-400' },
-  { icon: TrendingUp, label: 'Hirdetés', color: 'text-cyan' },
-]
 
 export function Hero() {
   const [isMobile, setIsMobile] = useState(false)
@@ -120,96 +115,75 @@ export function Hero() {
             </motion.ul>
           </div>
 
-          {/* ── Right: browser mockup — hidden on mobile ── */}
+          {/* ── Right: phone mockups — hidden on mobile ── */}
           <motion.div
             initial={{ opacity: 0, x: 48 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3, duration: 0.7, ease: 'easeOut' }}
-            className="hidden lg:block"
+            className="hidden lg:flex items-center justify-center relative"
           >
-            <div className="relative">
-              {/* Glow blob */}
-              <div className="absolute -inset-6 bg-cyan/10 rounded-3xl blur-3xl" aria-hidden="true" />
+            {/* Glow blob */}
+            <div className="absolute inset-0 bg-cyan/10 rounded-full blur-3xl scale-75" aria-hidden="true" />
 
-              {/* Browser chrome */}
-              <div className="relative bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden">
-                <div className="bg-gray-50 px-4 py-3 flex items-center gap-2 border-b border-gray-100">
-                  <div className="flex gap-1.5" aria-hidden="true">
-                    <span className="w-3 h-3 rounded-full bg-red-400" />
-                    <span className="w-3 h-3 rounded-full bg-yellow-400" />
-                    <span className="w-3 h-3 rounded-full bg-green-400" />
-                  </div>
-                  <div className="flex-1 mx-3 bg-white rounded-md px-3 py-1 text-xs text-muted border border-gray-200">
-                    ugyfel-weboldala.hu
-                  </div>
-                </div>
+            {/* Phone arrangement: left (angled), center (main), right (angled) */}
+            <div className="relative flex items-end justify-center gap-4">
 
-                <div className="p-5 space-y-4">
-                  {/* Fake nav */}
-                  <div className="flex items-center justify-between">
-                    <div className="w-16 h-2.5 bg-gradient-to-r from-cyan to-blue-400 rounded-full" />
-                    <div className="flex gap-3">
-                      {[36, 28, 32, 44].map((w, i) => (
-                        <div key={i} className="h-1.5 bg-gray-200 rounded-full" style={{ width: w }} />
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Hero area */}
-                  <div className="bg-gradient-to-br from-cyan-light to-white rounded-xl p-5">
-                    <div className="w-3/4 h-3.5 bg-dark/70 rounded-full mb-2.5" />
-                    <div className="w-1/2 h-2.5 bg-dark/35 rounded-full mb-4" />
-                    <div className="flex gap-2">
-                      <div className="h-7 w-20 bg-cyan rounded-lg" />
-                      <div className="h-7 w-18 border-2 border-cyan rounded-lg" />
-                    </div>
-                  </div>
-
-                  {/* Service cards */}
-                  <div className="grid grid-cols-3 gap-2">
-                    {mockupItems.map(({ icon: Icon, label, color }) => (
-                      <div key={label} className="bg-secondary rounded-xl p-3 text-center">
-                        <Icon className={`w-4 h-4 ${color} mx-auto mb-1`} aria-hidden="true" />
-                        <div className="text-xs text-muted font-display font-medium">{label}</div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Stats */}
-                  <div className="grid grid-cols-3 gap-2">
-                    {[{ val: '9+', w: '75%' }, { val: '15+', w: '88%' }, { val: '100%', w: '100%' }].map(({ val, w }) => (
-                      <div key={val} className="text-center">
-                        <div className="text-sm font-display font-bold text-gradient">{val}</div>
-                        <div className="w-full h-1.5 bg-gray-100 rounded-full mt-1">
-                          <div className="h-full bg-gradient-to-r from-cyan to-blue-400 rounded-full" style={{ width: w }} />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating badges */}
+              {/* Left phone — smaller, rotated, slightly behind */}
               <motion.div
-                animate={{ y: [-5, 5, -5] }}
-                transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute -top-5 -right-5 bg-white rounded-2xl shadow-lg border border-gray-100 px-3 py-2 flex items-center gap-2"
-                aria-hidden="true"
+                initial={{ opacity: 0, x: -20, rotate: -14 }}
+                animate={{ opacity: 1, x: 0, rotate: -14 }}
+                transition={{ delay: 0.6, duration: 0.6 }}
+                className="mb-8 opacity-80"
+                style={{ filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.25))' }}
               >
-                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                <span className="text-xs font-display font-semibold text-dark">Élő projekt</span>
+                <PhoneMockup size="sm" scrollClass="phone-scroll-slow" />
               </motion.div>
 
+              {/* Center phone — main, straight, in front */}
               <motion.div
-                animate={{ y: [5, -5, 5] }}
-                transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute -bottom-5 -left-5 bg-white rounded-2xl shadow-lg border border-gray-100 px-3 py-2 flex items-center gap-2"
-                aria-hidden="true"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.7 }}
+                className="relative z-10"
+                style={{ filter: 'drop-shadow(0 32px 60px rgba(0,0,0,0.3))' }}
               >
-                <CheckCircle className="w-3.5 h-3.5 text-cyan" />
-                <span className="text-xs font-display font-semibold text-dark">SEO optimalizált</span>
+                {/* "Élő projekt" badge */}
+                <motion.div
+                  animate={{ y: [-4, 4, -4] }}
+                  transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
+                  className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white rounded-full shadow-lg border border-gray-100 px-3 py-1.5 flex items-center gap-1.5 whitespace-nowrap z-20"
+                  aria-hidden="true"
+                >
+                  <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                  <span className="text-xs font-display font-semibold text-dark">Ügyfél oldala</span>
+                </motion.div>
+
+                <PhoneMockup size="lg" scrollClass="phone-scroll" />
               </motion.div>
+
+              {/* Right phone — smaller, rotated, slightly behind */}
+              <motion.div
+                initial={{ opacity: 0, x: 20, rotate: 14 }}
+                animate={{ opacity: 1, x: 0, rotate: 14 }}
+                transition={{ delay: 0.6, duration: 0.6 }}
+                className="mb-8 opacity-80"
+                style={{ filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.25))' }}
+              >
+                <PhoneMockup size="sm" scrollClass="phone-scroll-fast" />
+              </motion.div>
+
             </div>
+
+            {/* Bottom badge */}
+            <motion.div
+              animate={{ y: [4, -4, 4] }}
+              transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-white rounded-full shadow-lg border border-gray-100 px-3 py-1.5 flex items-center gap-1.5 whitespace-nowrap"
+              aria-hidden="true"
+            >
+              <CheckCircle className="w-3.5 h-3.5 text-cyan" />
+              <span className="text-xs font-display font-semibold text-dark">SEO optimalizált</span>
+            </motion.div>
           </motion.div>
 
         </div>
