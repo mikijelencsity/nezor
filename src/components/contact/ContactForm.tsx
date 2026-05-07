@@ -63,12 +63,12 @@ export function ContactForm() {
     <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
       <div>
         <label htmlFor="name" className="sr-only">Neved</label>
-        <input id="name" {...register('name')} placeholder="Neved *" className={inputClass} />
+        <input id="name" {...register('name')} aria-invalid={errors.name ? 'true' : undefined} placeholder="Neved *" className={inputClass} />
         {errors.name && <p className={errorClass} role="alert">{errors.name.message}</p>}
       </div>
       <div>
         <label htmlFor="email" className="sr-only">Email cím</label>
-        <input id="email" {...register('email')} type="email" placeholder="Email cím *" className={inputClass} />
+        <input id="email" {...register('email')} type="email" aria-invalid={errors.email ? 'true' : undefined} placeholder="Email cím *" className={inputClass} />
         {errors.email && <p className={errorClass} role="alert">{errors.email.message}</p>}
       </div>
       <div>
@@ -77,7 +77,7 @@ export function ContactForm() {
       </div>
       <div>
         <label htmlFor="service" className="sr-only">Szolgáltatás</label>
-        <select id="service" {...register('service')} className={inputClass} defaultValue="">
+        <select id="service" {...register('service')} aria-invalid={errors.service ? 'true' : undefined} className={inputClass} defaultValue="">
           <option value="" disabled>Milyen szolgáltatás érdekel? *</option>
           <option value="weboldalak">Weboldal készítés</option>
           <option value="webshopok">Webshop fejlesztés</option>
@@ -88,7 +88,7 @@ export function ContactForm() {
       </div>
       <div>
         <label htmlFor="message" className="sr-only">Üzenet</label>
-        <textarea id="message" {...register('message')} placeholder="Üzenet — írj pár sort a vállalkozásodról *" rows={5} className={inputClass} />
+        <textarea id="message" {...register('message')} aria-invalid={errors.message ? 'true' : undefined} placeholder="Üzenet — írj pár sort a vállalkozásodról *" rows={5} className={inputClass} />
         {errors.message && <p className={errorClass} role="alert">{errors.message.message}</p>}
       </div>
       {error && <p className="text-red-500 text-sm bg-red-50 p-3 rounded-xl" role="alert">{error}</p>}

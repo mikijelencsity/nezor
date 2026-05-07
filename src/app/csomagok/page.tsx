@@ -47,7 +47,7 @@ function PackageCard({ pkg }: { pkg: Package }) {
       </ul>
 
       <Button href="/kapcsolat" variant={pkg.highlighted ? 'primary' : 'outline'} className="w-full">
-        Ajánlatot kérek
+        Ajánlatot kérek<span className="sr-only"> — {pkg.name}</span>
       </Button>
     </div>
   )
