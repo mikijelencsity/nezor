@@ -11,7 +11,7 @@ export function LaptopMockup({ children }: { children?: React.ReactNode }) {
             <span className="w-2.5 h-2.5 rounded-full bg-green-400" />
           </div>
           <div className="flex-1 mx-2 bg-gray-700 rounded px-2 py-0.5 text-[10px] text-gray-400 truncate">
-            ugyfel-weboldala.hu
+            estur.hu
           </div>
         </div>
         {/* Screen content */}
