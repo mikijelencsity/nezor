@@ -44,8 +44,8 @@ export default function FacebookHirdetesekPage() {
     <div>
       {/* ── HERO ── */}
       <section className="relative overflow-hidden bg-white pt-20 pb-32">
-        <div className="bg-grid-pattern absolute inset-0 opacity-60" />
-        <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-blue-50/50" />
+        <div className="bg-grid-pattern absolute inset-0" />
+        <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-transparent to-blue-100/60" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
@@ -80,7 +80,7 @@ export default function FacebookHirdetesekPage() {
       </section>
 
       {/* ── FEATURES ── */}
-      <section className="clip-diagonal-reverse bg-secondary py-24 -mt-12">
+      <section className="clip-diagonal-reverse py-24 -mt-16" style={{ background: 'linear-gradient(135deg, #eff6ff 0%, #f0f7ff 60%, #e8f0ff 100%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
           <SectionHeading label="Amit kínálunk" title="Teljes körű kampánykezelés" description="Nem csak beállítjuk a hirdetéseket — folyamatosan kezeljük, optimalizáljuk és mérjük az eredményeket." />
           <FacebookFeatures />
