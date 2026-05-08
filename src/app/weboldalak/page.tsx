@@ -8,6 +8,7 @@ import { FAQItem } from '@/types'
 import {
   Zap, Shield, Code2, ArrowRight, CheckCircle, Star
 } from 'lucide-react'
+import { WeboldalakVisual } from '@/components/services/WeboldalakVisual'
 
 export const metadata: Metadata = {
   title: 'Weboldal készítés Bács-Kiskun megye — NEZOR',
@@ -54,37 +55,38 @@ export default function WeboldalakPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-transparent to-cyan-light/40" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <div className="animate-fade-up inline-flex items-center gap-2 bg-cyan-light text-cyan text-sm font-display font-semibold px-4 py-1.5 rounded-full mb-6">
-              <Code2 className="w-3.5 h-3.5" />
-              Weboldal készítés
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left: text */}
+            <div>
+              <div className="animate-fade-up inline-flex items-center gap-2 bg-cyan-light text-cyan text-sm font-display font-semibold px-4 py-1.5 rounded-full mb-6">
+                <Code2 className="w-3.5 h-3.5" />
+                Weboldal készítés
+              </div>
+              <h1 className="animate-fade-up-delay-1 text-4xl md:text-5xl lg:text-6xl font-display font-bold text-dark leading-tight mb-6">
+                Modern weboldalak,<br />
+                amelyek <span className="text-gradient">ügyfeleket hoznak</span>
+              </h1>
+              <p className="animate-fade-up-delay-2 text-lg md:text-xl text-muted mb-8 leading-relaxed max-w-2xl">
+                Gyors, mobilra optimalizált, SEO-barát weboldalak — Bács-Kiskun megyétől az egész országig.
+              </p>
+              <div className="animate-fade-up-delay-3 flex flex-col sm:flex-row gap-4 mb-10">
+                <Button href="/kapcsolat" size="lg" className="glow-pulse">
+                  Ingyenes ajánlat kérése <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+                <Button href="/csomagok" variant="outline" size="lg">Csomagok megtekintése</Button>
+              </div>
+              <div className="animate-fade-up-delay-4 flex flex-wrap gap-6">
+                {highlights.map((h) => (
+                  <div key={h.label} className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-cyan" />
+                    <span className="font-display font-bold text-dark">{h.value}</span>
+                    <span className="text-sm text-muted">{h.label}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-
-            <h1 className="animate-fade-up-delay-1 text-4xl md:text-5xl lg:text-6xl font-display font-bold text-dark leading-tight mb-6">
-              Modern weboldalak,<br />
-              amelyek <span className="text-gradient">ügyfeleket hoznak</span>
-            </h1>
-
-            <p className="animate-fade-up-delay-2 text-lg md:text-xl text-muted mb-8 leading-relaxed max-w-2xl">
-              Gyors, mobilra optimalizált, SEO-barát weboldalak — Bács-Kiskun megyétől az egész országig. Egyszeri díjas vagy havidíjas konstrukcióban.
-            </p>
-
-            <div className="animate-fade-up-delay-3 flex flex-col sm:flex-row gap-4 mb-12">
-              <Button href="/kapcsolat" size="lg" className="glow-pulse">
-                Ingyenes ajánlat kérése <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button href="/csomagok" variant="outline" size="lg">Csomagok megtekintése</Button>
-            </div>
-
-            <div className="animate-fade-up-delay-4 flex flex-wrap gap-6">
-              {highlights.map((h) => (
-                <div key={h.label} className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-cyan" />
-                  <span className="font-display font-bold text-dark">{h.value}</span>
-                  <span className="text-sm text-muted">{h.label}</span>
-                </div>
-              ))}
-            </div>
+            {/* Right: visual */}
+            <WeboldalakVisual />
           </div>
         </div>
       </section>

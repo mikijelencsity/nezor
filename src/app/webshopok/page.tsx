@@ -8,6 +8,7 @@ import { FAQItem } from '@/types'
 import {
   ShoppingCart, ArrowRight, CheckCircle, Zap, Star, Shield
 } from 'lucide-react'
+import { WebshopokVisual } from '@/components/services/WebshopokVisual'
 
 export const metadata: Metadata = {
   title: 'Webshop fejlesztés Magyarország — NEZOR',
@@ -48,37 +49,38 @@ export default function WebshopokPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-transparent to-orange-100/60" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <div className="animate-fade-up inline-flex items-center gap-2 bg-orange-50 text-orange-500 text-sm font-display font-semibold px-4 py-1.5 rounded-full mb-6">
-              <ShoppingCart className="w-3.5 h-3.5" />
-              Webshop fejlesztés
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left: text */}
+            <div>
+              <div className="animate-fade-up inline-flex items-center gap-2 bg-orange-50 text-orange-500 text-sm font-display font-semibold px-4 py-1.5 rounded-full mb-6">
+                <ShoppingCart className="w-3.5 h-3.5" />
+                Webshop fejlesztés
+              </div>
+              <h1 className="animate-fade-up-delay-1 text-4xl md:text-5xl lg:text-6xl font-display font-bold text-dark leading-tight mb-6">
+                Online bolt, ami<br />
+                <span className="text-gradient">valóban elad</span>
+              </h1>
+              <p className="animate-fade-up-delay-2 text-lg md:text-xl text-muted mb-8 leading-relaxed max-w-2xl">
+                Webshop készítés fizetési rendszerrel, rendeléskezelővel és automatikus számlázással — egész Magyarországon.
+              </p>
+              <div className="animate-fade-up-delay-3 flex flex-col sm:flex-row gap-4 mb-10">
+                <Button href="/kapcsolat" size="lg" className="glow-pulse">
+                  Ingyenes ajánlat kérése <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+                <Button href="/csomagok" variant="outline" size="lg">Csomagok megtekintése</Button>
+              </div>
+              <div className="animate-fade-up-delay-4 flex flex-wrap gap-6">
+                {[{ v: 'SimplePay', l: 'Fizetés' }, { v: 'GLS & DPD', l: 'Szállítás' }, { v: 'GDPR', l: 'Kompatibilis' }].map(h => (
+                  <div key={h.l} className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-cyan" />
+                    <span className="font-display font-bold text-dark">{h.v}</span>
+                    <span className="text-sm text-muted">{h.l}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-
-            <h1 className="animate-fade-up-delay-1 text-4xl md:text-5xl lg:text-6xl font-display font-bold text-dark leading-tight mb-6">
-              Online bolt, ami<br />
-              <span className="text-gradient">valóban elad</span>
-            </h1>
-
-            <p className="animate-fade-up-delay-2 text-lg md:text-xl text-muted mb-8 leading-relaxed max-w-2xl">
-              Webshop készítés fizetési rendszerrel, rendeléskezelővel és automatikus számlázással — egész Magyarországon.
-            </p>
-
-            <div className="animate-fade-up-delay-3 flex flex-col sm:flex-row gap-4 mb-12">
-              <Button href="/kapcsolat" size="lg" className="glow-pulse">
-                Ingyenes ajánlat kérése <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button href="/csomagok" variant="outline" size="lg">Csomagok megtekintése</Button>
-            </div>
-
-            <div className="animate-fade-up-delay-4 flex flex-wrap gap-6">
-              {[{ v: 'SimplePay', l: 'Fizetés' }, { v: 'GLS & DPD', l: 'Szállítás' }, { v: 'GDPR', l: 'Kompatibilis' }].map(h => (
-                <div key={h.l} className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-cyan" />
-                  <span className="font-display font-bold text-dark">{h.v}</span>
-                  <span className="text-sm text-muted">{h.l}</span>
-                </div>
-              ))}
-            </div>
+            {/* Right: visual */}
+            <WebshopokVisual />
           </div>
         </div>
       </section>

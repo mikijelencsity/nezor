@@ -8,6 +8,7 @@ import { FAQItem } from '@/types'
 import {
   Target, ArrowRight, CheckCircle, Zap, Star, Shield
 } from 'lucide-react'
+import { FacebookVisual } from '@/components/services/FacebookVisual'
 
 export const metadata: Metadata = {
   title: 'Facebook hirdetés kezelés Magyarország — NEZOR',
@@ -48,33 +49,34 @@ export default function FacebookHirdetesekPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-transparent to-blue-100/60" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <div className="animate-fade-up inline-flex items-center gap-2 bg-blue-50 text-blue-500 text-sm font-display font-semibold px-4 py-1.5 rounded-full mb-6">
-              <Target className="w-3.5 h-3.5" />
-              Facebook & Instagram hirdetések
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left: text */}
+            <div>
+              <div className="animate-fade-up inline-flex items-center gap-2 bg-blue-50 text-blue-500 text-sm font-display font-semibold px-4 py-1.5 rounded-full mb-6">
+                <Target className="w-3.5 h-3.5" />
+                Facebook & Instagram hirdetések
+              </div>
+              <h1 className="animate-fade-up-delay-1 text-4xl md:text-5xl lg:text-6xl font-display font-bold text-dark leading-tight mb-6">
+                Célzott hirdetések,<br /><span className="text-gradient">valódi ügyfelek</span>
+              </h1>
+              <p className="animate-fade-up-delay-2 text-lg md:text-xl text-muted mb-8 leading-relaxed max-w-2xl">
+                Facebook hirdetés kezelés és Meta kampányok, amelyek elérik a potenciális vevőidet — Bács-Kiskun megyétől az egész országig.
+              </p>
+              <div className="animate-fade-up-delay-3 flex flex-col sm:flex-row gap-4 mb-10">
+                <Button href="/kapcsolat" size="lg" className="glow-pulse">Ingyenes konzultáció <ArrowRight className="ml-2 w-5 h-5" /></Button>
+              </div>
+              <div className="animate-fade-up-delay-4 flex flex-wrap gap-6">
+                {[{ v: 'Napi', l: 'Optimalizálás' }, { v: 'Havi', l: 'Riport' }, { v: 'Meta Partner', l: 'Integráció' }].map(h => (
+                  <div key={h.l} className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-cyan" />
+                    <span className="font-display font-bold text-dark">{h.v}</span>
+                    <span className="text-sm text-muted">{h.l}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-
-            <h1 className="animate-fade-up-delay-1 text-4xl md:text-5xl lg:text-6xl font-display font-bold text-dark leading-tight mb-6">
-              Célzott hirdetések,<br /><span className="text-gradient">valódi ügyfelek</span>
-            </h1>
-
-            <p className="animate-fade-up-delay-2 text-lg md:text-xl text-muted mb-8 leading-relaxed max-w-2xl">
-              Facebook hirdetés kezelés és Meta kampányok, amelyek elérik a potenciális vevőidet — Bács-Kiskun megyétől az egész országig.
-            </p>
-
-            <div className="animate-fade-up-delay-3 flex flex-col sm:flex-row gap-4 mb-12">
-              <Button href="/kapcsolat" size="lg" className="glow-pulse">Ingyenes konzultáció <ArrowRight className="ml-2 w-5 h-5" /></Button>
-            </div>
-
-            <div className="animate-fade-up-delay-4 flex flex-wrap gap-6">
-              {[{ v: 'Napi', l: 'Optimalizálás' }, { v: 'Havi', l: 'Riport' }, { v: 'Meta Partner', l: 'Integráció' }].map(h => (
-                <div key={h.l} className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-cyan" />
-                  <span className="font-display font-bold text-dark">{h.v}</span>
-                  <span className="text-sm text-muted">{h.l}</span>
-                </div>
-              ))}
-            </div>
+            {/* Right: visual */}
+            <FacebookVisual />
           </div>
         </div>
       </section>

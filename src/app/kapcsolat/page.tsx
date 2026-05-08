@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Mail, Clock, MapPin, MessageCircle, CheckCircle } from 'lucide-react'
 import { ContactForm } from '@/components/contact/ContactForm'
+import { ResponseTimeCard } from '@/components/contact/ResponseTimeCard'
 
 export const metadata: Metadata = {
   title: 'Kapcsolat — Ingyenes konzultáció',
@@ -78,6 +79,7 @@ export default function KapcsolatPage() {
                 </div>
               ))}
             </div>
+            <ResponseTimeCard />
           </div>
         </div>
 
