@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
-import { Check } from 'lucide-react'
+import { Zap, ArrowRight } from 'lucide-react'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Button } from '@/components/ui/Button'
+import { PackageCard } from '@/components/ui/PackageCard'
 import { websitePackages, webshopPackages } from '@/data/packages'
 import { Package } from '@/types'
-import { cn } from '@/lib/utils'
 
 export const metadata: Metadata = {
   title: 'Csomagok és árak — Weboldal, Webshop',
@@ -16,71 +16,54 @@ export const metadata: Metadata = {
   },
 }
 
-function PackageCard({ pkg }: { pkg: Package }) {
+function PricingSection({ title, packages }: { title: string; packages: Package[] }) {
   return (
-    <div className={cn('bg-white rounded-2xl p-8 shadow-card flex flex-col', pkg.highlighted && 'border-2 border-cyan shadow-card-hover')}>
-      {pkg.highlighted && (
-        <span className="self-start text-xs bg-cyan text-white px-3 py-1 rounded-full mb-4 font-semibold">Népszerű</span>
-      )}
-      <h3 className="text-2xl font-display font-bold text-dark mb-2">{pkg.name}</h3>
-      <p className="text-muted text-sm mb-6">{pkg.description}</p>
-
-      <div className="grid grid-cols-2 gap-4 mb-6 p-4 bg-secondary rounded-xl">
-        <div className="text-center">
-          <div className="text-xs text-muted mb-1">Egyszeri díj</div>
-          <div className="font-display font-bold text-dark">{pkg.oneTimePrice}</div>
-        </div>
-        <div className="text-center">
-          <div className="text-xs text-muted mb-1">Havidíj</div>
-          <div className="font-display font-bold text-dark">{pkg.monthlyPrice}</div>
-          {pkg.monthlyUpdates && <div className="text-xs text-cyan mt-1">{pkg.monthlyUpdates} frissítés/hó</div>}
-        </div>
+    <section className="mb-24">
+      <h2 className="text-2xl font-display font-bold text-dark mb-10 text-center flex items-center justify-center gap-3">
+        <span className="h-px flex-1 bg-gradient-to-r from-transparent to-gray-200" />
+        {title}
+        <span className="h-px flex-1 bg-gradient-to-l from-transparent to-gray-200" />
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+        {packages.map((pkg, i) => <PackageCard key={pkg.id} pkg={pkg} index={i} />)}
       </div>
-
-      <ul className="space-y-3 mb-8 flex-grow">
-        {pkg.features.map((f) => (
-          <li key={f} className="flex items-start gap-2 text-sm text-muted">
-            <Check className="w-4 h-4 text-cyan flex-shrink-0 mt-0.5" />
-            {f}
-          </li>
-        ))}
-      </ul>
-
-      <Button href="/kapcsolat" variant={pkg.highlighted ? 'primary' : 'outline'} className="w-full">
-        Ajánlatot kérek<span className="sr-only"> — {pkg.name}</span>
-      </Button>
-    </div>
+    </section>
   )
 }
 
 export default function CsomagokPage() {
   return (
-    <div className="py-20">
+    <div>
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-dark py-20 mb-16">
+        <div className="absolute inset-0 bg-grid-pattern opacity-20" />
+        <div className="absolute top-0 left-1/3 w-96 h-96 bg-cyan/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-blue-400/10 rounded-full blur-3xl" />
+        <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="animate-fade-up inline-flex items-center gap-2 bg-white/10 text-white text-sm font-display font-semibold px-4 py-1.5 rounded-full mb-6">
+            <Zap className="w-3.5 h-3.5 text-cyan" />
+            Átlátható árazás
+          </div>
+          <h1 className="animate-fade-up-delay-1 text-4xl md:text-5xl font-display font-bold text-white mb-4">
+            Rugalmas <span className="text-shimmer">csomagok</span>
+          </h1>
+          <p className="animate-fade-up-delay-2 text-gray-400 text-lg max-w-xl mx-auto">
+            Minden csomagnál választhatsz egyszeri díjas vagy havidíjas konstrukció között — te döntöd el mi a legjobb.
+          </p>
+        </div>
+      </section>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          label="Csomagok"
-          title="Átlátható árak, rugalmas feltételek"
-          description="Minden csomagnál választhatsz egyszeri díjas vagy havidíjas konstrukció között."
-        />
+        <PricingSection title="Weboldal csomagok" packages={websitePackages} />
+        <PricingSection title="Webshop csomagok" packages={webshopPackages} />
 
-        <section className="mb-20">
-          <h2 className="text-2xl font-display font-bold text-dark mb-8 text-center">Weboldal csomagok</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {websitePackages.map((pkg) => <PackageCard key={pkg.id} pkg={pkg} />)}
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-display font-bold text-dark mb-8 text-center">Webshop csomagok</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {webshopPackages.map((pkg) => <PackageCard key={pkg.id} pkg={pkg} />)}
-          </div>
-        </section>
-
-        <div className="mt-16 text-center bg-secondary rounded-2xl p-10">
-          <h3 className="text-2xl font-display font-bold text-dark mb-3">Nem találod amit keresel?</h3>
-          <p className="text-muted mb-6">Egyedi igényekre egyedi megoldást adunk. Vedd fel velünk a kapcsolatot!</p>
-          <Button href="/kapcsolat" size="lg">Egyedi ajánlat kérése</Button>
+        {/* Custom package */}
+        <div className="mb-20 rounded-3xl bg-gradient-to-r from-cyan/10 to-blue-400/10 border border-cyan/20 p-10 md:p-14 text-center">
+          <h3 className="text-2xl font-display font-bold text-dark mb-3">Egyedi igény?</h3>
+          <p className="text-muted mb-6 max-w-lg mx-auto">Nem találtad meg amit keresel? Minden projekthez egyedi ajánlatot készítünk — ingyenesen.</p>
+          <Button href="/kapcsolat" size="lg">
+            Egyedi ajánlat kérése <ArrowRight className="ml-2 w-5 h-5" />
+          </Button>
         </div>
       </div>
     </div>
