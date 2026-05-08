@@ -4,6 +4,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { FAQAccordion } from '@/components/ui/FAQAccordion'
 import { FAQItem } from '@/types'
 import { faqSchema } from '@/lib/structured-data'
+import { AnimatedTimeline, TimelineStep } from '@/components/ui/AnimatedTimeline'
 
 export const metadata: Metadata = {
   title: 'Webshop fejlesztés Magyarország — NEZOR',
@@ -22,7 +23,7 @@ const faq: FAQItem[] = [
   { question: 'Mennyi terméket kezel a webshop?', answer: 'Csomagtól függően 100 terméktől korlátlan mennyiségig skálázható.' },
 ]
 
-const steps = [
+const steps: TimelineStep[] = [
   { number: '01', title: 'Konzultáció', description: 'Felmérjük az igényeket: termékek, fizetési mód, szállítás.' },
   { number: '02', title: 'Tervezés', description: 'Design és funkcionális terv elkészítése.' },
   { number: '03', title: 'Fejlesztés', description: 'Webshop felépítése, fizetési rendszer integráció.' },
@@ -56,15 +57,7 @@ export default function WebshopokPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading label="Folyamat" title="Hogyan dolgozunk?" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {steps.map((step) => (
-              <div key={step.number}>
-                <div className="text-5xl font-display font-bold text-cyan-light mb-4">{step.number}</div>
-                <h3 className="font-display font-bold text-dark mb-2">{step.title}</h3>
-                <p className="text-sm text-muted">{step.description}</p>
-              </div>
-            ))}
-          </div>
+          <AnimatedTimeline steps={steps} />
         </div>
       </section>
 

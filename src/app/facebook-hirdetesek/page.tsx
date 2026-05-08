@@ -5,6 +5,7 @@ import { FAQAccordion } from '@/components/ui/FAQAccordion'
 import { FAQItem } from '@/types'
 import { Target, BarChart2, RefreshCw, FileText } from 'lucide-react'
 import { faqSchema } from '@/lib/structured-data'
+import { AnimatedTimeline, TimelineStep } from '@/components/ui/AnimatedTimeline'
 
 export const metadata: Metadata = {
   title: 'Facebook hirdetés kezelés Magyarország — NEZOR',
@@ -21,6 +22,13 @@ const faq: FAQItem[] = [
   { question: 'Mennyi idő alatt látszanak az eredmények?', answer: 'Az első eredmények 1-2 héten belül láthatók. Az optimalizálás folyamatos, általában 30 nap után érik el a kampányok a legjobb hatékonyságot.' },
   { question: 'Instagram hirdetéseket is csináltok?', answer: 'Igen, a Meta hirdetési rendszere Facebook-ot és Instagramot is lefed, mindkettőre optimalizálunk.' },
   { question: 'Kapok-e riportot a hirdetések eredményéről?', answer: 'Igen, minden hónapban részletes riportot küldünk az elért eredményekről, elköltött büdzséről és az optimalizálási lépésekről.' },
+]
+
+const steps: TimelineStep[] = [
+  { number: '01', title: 'Célcsoport meghatározás', description: 'Közösen meghatározzuk ki a legjobb célközönséged — életkor, helyszín, érdeklődés szerint.' },
+  { number: '02', title: 'Kampány tervezés', description: 'Elkészítjük a hirdetési stratégiát, szövegeket és vizuálokat.' },
+  { number: '03', title: 'Elindítás és optimalizálás', description: 'Futtatjuk a kampányt, naponta monitorozzuk és finomítjuk az eredmények alapján.' },
+  { number: '04', title: 'Havi riport', description: 'Részletes összefoglalót küldünk az elért eredményekről és a következő lépésekről.' },
 ]
 
 const features = [
@@ -68,6 +76,13 @@ export default function FacebookHirdetesekPage() {
               )
             })}
           </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading label="Folyamat" title="Hogyan dolgozunk?" />
+          <AnimatedTimeline steps={steps} />
         </div>
       </section>
 
