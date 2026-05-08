@@ -44,3 +44,6 @@ next-env.d.ts
 # Generated sitemap
 public/sitemap*.xml
 public/robots.txt
+.claude/settings.local.json
+docs/superpowers/specs/2026-05-06-nezor-website-design.md
+docs/superpowers/specs/2026-05-06-nezor-website-design.md

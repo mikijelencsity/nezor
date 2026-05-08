@@ -114,7 +114,7 @@ Külön szekció webshop csomagokkal, hasonló struktúrában.
 6. Estur Kft.
 7. Korona Gomba
 8. DoverSolution
-9. Kisállatkereskedés Baja
+(+ Kisállatkereskedés Baja — összesen 9 referencia)
 
 Minden kártyán: cégnév, rövid leírás (milyen típusú oldal), link az oldalra.
 

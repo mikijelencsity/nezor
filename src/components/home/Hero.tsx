@@ -1,11 +1,17 @@
 'use client'
-import { useEffect, useRef, useState } from 'react'
+
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
 import { PhoneMockup } from '@/components/ui/PhoneMockup'
 import { ArrowRight, CheckCircle } from 'lucide-react'
 
-const highlights = ['Ingyenes konzultáció', '24 órán belüli válasz', 'Bács-Kiskun megye']
+const highlights = [
+  'Ingyenes konzultáció',
+  '24 órán belüli válasz',
+  'Bács-Kiskun megye',
+]
 
 export function Hero() {
   const [isMobile, setIsMobile] = useState(false)
@@ -14,14 +20,19 @@ export function Hero() {
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 1024)
     check()
+
     window.addEventListener('resize', check, { passive: true })
+
     return () => window.removeEventListener('resize', check)
   }, [])
 
   useEffect(() => {
     if (isMobile) return
+
     const onScroll = () => setScrollY(window.scrollY)
+
     window.addEventListener('scroll', onScroll, { passive: true })
+
     return () => window.removeEventListener('scroll', onScroll)
   }, [isMobile])
 
@@ -36,7 +47,7 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-white py-20 md:py-28 min-h-[88vh] flex items-center">
-      {/* Parallax dot grid — desktop only */}
+      {/* Desktop parallax background */}
       {!isMobile && (
         <div
           className="dot-grid-bg absolute inset-0 pointer-events-none"
@@ -46,12 +57,15 @@ export function Hero() {
       )}
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-white/95 to-cyan-light/40 pointer-events-none" aria-hidden="true" />
+      <div
+        className="absolute inset-0 bg-gradient-to-br from-white via-white/95 to-cyan-light/40 pointer-events-none"
+        aria-hidden="true"
+      />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
-          {/* ── Left: text ── */}
+          {/* LEFT SIDE */}
           <div>
             <motion.span
               initial={{ opacity: 0, scale: 0.9 }}
@@ -59,7 +73,10 @@ export function Hero() {
               transition={{ duration: 0.4 }}
               className="inline-flex items-center gap-2 bg-cyan-light text-cyan font-display font-semibold text-sm px-4 py-1.5 rounded-full mb-6"
             >
-              <span className="w-2 h-2 rounded-full bg-cyan animate-pulse" aria-hidden="true" />
+              <span
+                className="w-2 h-2 rounded-full bg-cyan animate-pulse"
+                aria-hidden="true"
+              />
               Digitális ügynökség — Bács-Kiskun megye
             </motion.span>
 
@@ -69,8 +86,14 @@ export function Hero() {
                   key={i}
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 + i * 0.08, duration: 0.5, ease: 'easeOut' }}
-                  className={`inline-block mr-3 ${w.gradient ? 'text-gradient' : ''}`}
+                  transition={{
+                    delay: 0.1 + i * 0.08,
+                    duration: 0.5,
+                    ease: 'easeOut',
+                  }}
+                  className={`inline-block mr-3 ${
+                    w.gradient ? 'text-gradient' : ''
+                  }`}
                 >
                   {w.text}
                 </motion.span>
@@ -83,7 +106,9 @@ export function Hero() {
               transition={{ delay: 0.65, duration: 0.5 }}
               className="text-lg md:text-xl text-muted mb-8 leading-relaxed"
             >
-              Weboldalakat, webshopokat és Facebook hirdetéseket készítünk, amelyek valódi eredményeket hoznak — Bács-Kiskun megyétől az egész országig.
+              Weboldalakat, webshopokat és Facebook hirdetéseket készítünk,
+              amelyek valódi eredményeket hoznak — Bács-Kiskun megyétől az
+              egész országig.
             </motion.p>
 
             <motion.div
@@ -92,10 +117,20 @@ export function Hero() {
               transition={{ delay: 0.8, duration: 0.5 }}
               className="flex flex-col sm:flex-row gap-4 mb-10"
             >
-              <Button href="/csomagok" size="lg" className="glow-pulse">
-                Csomagok megtekintése <ArrowRight className="ml-2 w-5 h-5" />
+              <Button
+                href="/csomagok"
+                size="lg"
+                className="glow-pulse"
+              >
+                Csomagok megtekintése
+                <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button href="/kapcsolat" variant="outline" size="lg">
+
+              <Button
+                href="/kapcsolat"
+                variant="outline"
+                size="lg"
+              >
                 Ingyenes konzultáció
               </Button>
             </motion.div>
@@ -107,7 +142,10 @@ export function Hero() {
               className="flex flex-col sm:flex-row gap-4 sm:gap-8"
             >
               {highlights.map((text) => (
-                <li key={text} className="flex items-center gap-2 text-sm text-muted">
+                <li
+                  key={text}
+                  className="flex items-center gap-2 text-sm text-muted"
+                >
                   <CheckCircle className="w-4 h-4 text-cyan flex-shrink-0" />
                   {text}
                 </li>
@@ -115,92 +153,146 @@ export function Hero() {
             </motion.ul>
           </div>
 
-          {/* ── Right: phone mockups ── */}
+          {/* RIGHT SIDE */}
           <motion.div
-            initial={{ opacity: 0, x: isMobile ? 0 : 48, y: isMobile ? 24 : 0 }}
+            initial={{
+              opacity: 0,
+              x: isMobile ? 0 : 48,
+              y: isMobile ? 24 : 0,
+            }}
             animate={{ opacity: 1, x: 0, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.7, ease: 'easeOut' }}
+            transition={{
+              delay: 0.3,
+              duration: 0.7,
+              ease: 'easeOut',
+            }}
             className="flex items-center justify-center relative py-8 lg:py-0"
           >
-            {/* Glow blob */}
-            <div className="absolute inset-0 bg-cyan/10 rounded-full blur-3xl scale-75" aria-hidden="true" />
+            {/* Glow */}
+            <div
+              className="absolute inset-0 bg-cyan/10 rounded-full blur-3xl scale-75"
+              aria-hidden="true"
+            />
 
-            {/* Phone arrangement */}
+            {/* Phones */}
             <div className="relative flex items-end justify-center gap-3 lg:gap-4">
 
-              {/* Left phone — desktop only */}
+              {/* LEFT PHONE */}
               <motion.div
                 initial={{ opacity: 0, x: -20, rotate: -14 }}
                 animate={{ opacity: 1, x: 0, rotate: -14 }}
                 transition={{ delay: 0.6, duration: 0.6 }}
                 className="hidden lg:block mb-8 opacity-80"
-                style={{ filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.25))' }}
+                style={{
+                  filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.25))',
+                }}
               >
-                <PhoneMockup size="sm" scrollClass="phone-scroll-slow" />
+                <PhoneMockup size="sm" scrollClass="phone-scroll-slow">
+                  <Image
+                    src="/screenshots/ugyfel1.jpg"
+                    alt="Ügyfél weboldal 1"
+                    width={320}
+                    height={700}
+                    className="w-full h-auto"
+                  />
+                </PhoneMockup>
               </motion.div>
 
-              {/* Center phone — visible on ALL screen sizes */}
+              {/* CENTER PHONE */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.7 }}
                 className="relative z-10"
-                style={{ filter: 'drop-shadow(0 32px 60px rgba(0,0,0,0.3))' }}
+                style={{
+                  filter: 'drop-shadow(0 32px 60px rgba(0,0,0,0.3))',
+                }}
               >
-                {/* "Ügyfél oldala" badge */}
+                {/* Badge */}
                 <motion.div
                   animate={{ y: [-4, 4, -4] }}
-                  transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
+                  transition={{
+                    duration: 3.2,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
                   className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white rounded-full shadow-lg border border-gray-100 px-3 py-1.5 flex items-center gap-1.5 whitespace-nowrap z-20"
                   aria-hidden="true"
                 >
                   <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                  <span className="text-xs font-display font-semibold text-dark">Ügyfél oldala</span>
+
+                  <span className="text-xs font-display font-semibold text-dark">
+                    Ügyfél oldala
+                  </span>
                 </motion.div>
 
-                {/* Mobile: md size, Desktop: lg size */}
+                {/* MOBILE */}
                 <div className="lg:hidden">
                   <PhoneMockup size="md" scrollClass="phone-scroll">
-                    <img
+                    <Image
                       src="/screenshots/neked-sutom.jpg"
-                      alt="Neked Sütöm — ügyfél weboldal"
-                      className="w-full"
+                      alt="Neked Sütöm weboldal"
+                      width={420}
+                      height={900}
+                      className="w-full h-auto"
+                      priority
                     />
                   </PhoneMockup>
                 </div>
+
+                {/* DESKTOP */}
                 <div className="hidden lg:block">
                   <PhoneMockup size="lg" scrollClass="phone-scroll">
-                    <img
+                    <Image
                       src="/screenshots/neked-sutom.jpg"
-                      alt="Neked Sütöm — ügyfél weboldal"
-                      className="w-full"
+                      alt="Neked Sütöm weboldal"
+                      width={500}
+                      height={1000}
+                      className="w-full h-auto"
+                      priority
                     />
                   </PhoneMockup>
                 </div>
               </motion.div>
 
-              {/* Right phone — desktop only */}
+              {/* RIGHT PHONE */}
               <motion.div
                 initial={{ opacity: 0, x: 20, rotate: 14 }}
                 animate={{ opacity: 1, x: 0, rotate: 14 }}
                 transition={{ delay: 0.6, duration: 0.6 }}
                 className="hidden lg:block mb-8 opacity-80"
-                style={{ filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.25))' }}
+                style={{
+                  filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.25))',
+                }}
               >
-                <PhoneMockup size="sm" scrollClass="phone-scroll-fast" />
+                <PhoneMockup size="sm" scrollClass="phone-scroll-fast">
+                  <Image
+                    src="/screenshots/ugyfel2.jpg"
+                    alt="Ügyfél weboldal 2"
+                    width={320}
+                    height={700}
+                    className="w-full h-auto"
+                  />
+                </PhoneMockup>
               </motion.div>
-
             </div>
 
             {/* Bottom badge */}
             <motion.div
               animate={{ y: [4, -4, 4] }}
-              transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut' }}
+              transition={{
+                duration: 3.8,
+                repeat: Infinity,
+                ease: 'easeInOut',
+              }}
               className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-white rounded-full shadow-lg border border-gray-100 px-3 py-1.5 flex items-center gap-1.5 whitespace-nowrap"
               aria-hidden="true"
             >
               <CheckCircle className="w-3.5 h-3.5 text-cyan" />
-              <span className="text-xs font-display font-semibold text-dark">SEO optimalizált</span>
+
+              <span className="text-xs font-display font-semibold text-dark">
+                SEO optimalizált
+              </span>
             </motion.div>
           </motion.div>
 
