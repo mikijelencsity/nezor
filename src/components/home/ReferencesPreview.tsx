@@ -1,5 +1,7 @@
+'use client'
 import Link from 'next/link'
 import { ExternalLink, ArrowRight } from 'lucide-react'
+import { motion } from 'framer-motion'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Button } from '@/components/ui/Button'
 import { references } from '@/data/references'
@@ -16,8 +18,16 @@ export function ReferencesPreview() {
           description="Részletes áttekintés az általunk készített weboldalakról és webshopokról."
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
-          {preview.map((ref) => (
-            <article key={ref.id} className="border border-gray-100 rounded-xl p-5 hover:border-cyan hover:shadow-card transition-all group">
+          {preview.map((ref, index) => (
+            <motion.article
+              key={ref.id}
+              initial={{ opacity: 0, y: 24, scale: 0.97 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ type: 'spring', stiffness: 300, damping: 28, delay: index * 0.07 }}
+              whileHover={{ y: -3, transition: { type: 'spring', stiffness: 400, damping: 25 } }}
+              className="border border-gray-100 rounded-xl p-5 hover:border-cyan hover:shadow-card transition-all group"
+            >
               <div className="flex items-start justify-between">
                 <div>
                   <h3 className="font-display font-semibold text-dark">{ref.name}</h3>
@@ -32,7 +42,7 @@ export function ReferencesPreview() {
                   </a>
                 )}
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
         <div className="text-center">

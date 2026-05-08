@@ -2,8 +2,8 @@
 
 import { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { FAQItem } from '@/types'
-import { cn } from '@/lib/utils'
 
 interface FAQAccordionProps {
   items: FAQItem[]
@@ -24,20 +24,32 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
             aria-controls={`faq-panel-${index}`}
           >
             <span>{item.question}</span>
-            <ChevronDown
-              className={cn('w-5 h-5 text-cyan flex-shrink-0 transition-transform', openIndex === index && 'rotate-180')}
-            />
-          </button>
-          {openIndex === index && (
-            <div
-              id={`faq-panel-${index}`}
-              role="region"
-              aria-labelledby={`faq-trigger-${index}`}
-              className="px-6 py-4 text-muted bg-white border-t border-gray-100"
+            <motion.div
+              animate={{ rotate: openIndex === index ? 180 : 0 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 28 }}
             >
-              {item.answer}
-            </div>
-          )}
+              <ChevronDown className="w-5 h-5 text-cyan flex-shrink-0" />
+            </motion.div>
+          </button>
+          <AnimatePresence initial={false}>
+            {openIndex === index && (
+              <motion.div
+                key="content"
+                id={`faq-panel-${index}`}
+                role="region"
+                aria-labelledby={`faq-trigger-${index}`}
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: 'auto', opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 32, mass: 0.8 }}
+                className="overflow-hidden"
+              >
+                <div className="px-6 py-4 text-muted bg-white border-t border-gray-100">
+                  {item.answer}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       ))}
     </div>

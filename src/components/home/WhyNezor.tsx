@@ -18,7 +18,7 @@ export function WhyNezor() {
           initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ type: 'spring', stiffness: 300, damping: 28 }}
         >
           <SectionHeading label="Miért a NEZOR?" title="Amivel mások nem tudnak versenyezni" />
         </motion.div>
@@ -32,8 +32,8 @@ export function WhyNezor() {
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                transition={{ type: 'spring', stiffness: 300, damping: 28, delay: i * 0.1 }}
+                whileHover={{ y: -4, scale: 1.02, transition: { type: 'spring', stiffness: 400, damping: 25 } }}
                 className="bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-shadow border border-gray-50"
               >
                 <div className="w-12 h-12 bg-gradient-to-br from-cyan/20 to-blue-400/20 rounded-xl flex items-center justify-center mb-4">

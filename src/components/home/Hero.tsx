@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import { iosSpring, iosSpringFast, iosSpringGentle } from '@/lib/animations'
 import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
 import { PhoneMockup } from '@/components/ui/PhoneMockup'
@@ -70,7 +71,7 @@ export function Hero() {
             <motion.span
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4 }}
+              transition={{ ...iosSpringFast }}
               className="inline-flex items-center gap-2 bg-cyan-light text-cyan font-display font-semibold text-sm px-4 py-1.5 rounded-full mb-6"
             >
               <span
@@ -86,11 +87,7 @@ export function Hero() {
                   key={i}
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    delay: 0.1 + i * 0.08,
-                    duration: 0.5,
-                    ease: 'easeOut',
-                  }}
+                  transition={{ ...iosSpring, delay: 0.08 + i * 0.07 }}
                   className={`inline-block mr-3 ${
                     w.gradient ? 'text-gradient' : ''
                   }`}

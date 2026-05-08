@@ -48,7 +48,7 @@ function TimelineItem({
       ref={ref}
       initial={{ opacity: 0, x: -28 }}
       animate={inView ? { opacity: 1, x: 0 } : {}}
-      transition={{ duration: 0.55, delay: index * 0.15, ease: 'easeOut' }}
+      transition={{ type: 'spring', stiffness: 300, damping: 28, delay: index * 0.15 }}
       className="flex gap-6 md:gap-8"
     >
       {/* Step node + connector */}
@@ -56,7 +56,7 @@ function TimelineItem({
         <motion.div
           initial={{ scale: 0, rotate: -90 }}
           animate={inView ? { scale: 1, rotate: 0 } : {}}
-          transition={{ duration: 0.4, delay: index * 0.15 + 0.15, type: 'spring', stiffness: 220 }}
+          transition={{ type: 'spring', stiffness: 380, damping: 22, delay: index * 0.15 + 0.1 }}
           className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan to-blue-400 flex items-center justify-center shadow-lg z-10 relative"
         >
           <span className="text-white font-display font-bold text-sm">{step.number}</span>
@@ -67,7 +67,7 @@ function TimelineItem({
           <motion.div
             initial={{ scaleY: 0 }}
             animate={inView ? { scaleY: 1 } : {}}
-            transition={{ duration: 0.5, delay: index * 0.15 + 0.45, ease: 'easeOut' }}
+            transition={{ type: 'spring', stiffness: 200, damping: 25, delay: index * 0.15 + 0.4 }}
             style={{ originY: 0 }}
             className="hidden md:block w-0.5 flex-1 min-h-[40px] bg-gradient-to-b from-cyan/60 to-transparent mt-1"
             aria-hidden="true"

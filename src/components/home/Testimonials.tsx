@@ -43,8 +43,9 @@ export function Testimonials() {
               initial={{ opacity: 0, y: 48 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.55, delay: i * 0.12, ease: 'easeOut' }}
-              className="bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all hover:-translate-y-1 border border-gray-50"
+              transition={{ type: 'spring', stiffness: 280, damping: 26, delay: i * 0.12 }}
+              whileHover={{ y: -4, scale: 1.01, transition: { type: 'spring', stiffness: 400, damping: 25 } }}
+              className="bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-shadow border border-gray-50"
             >
               <div className="flex gap-1 mb-4" aria-label="5 csillagos értékelés">
                 {[...Array(5)].map((_, j) => (

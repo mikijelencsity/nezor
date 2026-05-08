@@ -8,11 +8,10 @@ import { services } from '@/data/services'
 const icons = { Monitor, ShoppingCart, TrendingUp }
 
 const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 48 },
+  hidden: { opacity: 0, y: 40, scale: 0.95 },
   visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.55, delay: i * 0.12, ease: 'easeOut' as const },
+    opacity: 1, y: 0, scale: 1,
+    transition: { type: 'spring', stiffness: 300, damping: 28, delay: i * 0.1 },
   }),
 }
 
