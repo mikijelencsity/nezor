@@ -62,7 +62,7 @@ function MiniBarChart() {
 
 export function WebshopokVisual() {
   return (
-    <div className="relative hidden lg:flex items-center justify-center">
+    <div className="relative flex items-center justify-center mt-8 lg:mt-0">
       <div className="absolute -inset-8 bg-orange-300/10 rounded-3xl blur-3xl" />
 
       <motion.div

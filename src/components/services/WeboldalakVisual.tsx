@@ -11,7 +11,7 @@ const badges = [
 
 export function WeboldalakVisual() {
   return (
-    <div className="relative hidden lg:block">
+    <div className="relative mt-8 lg:mt-0">
       {/* Glow */}
       <div className="absolute -inset-8 bg-cyan/8 rounded-3xl blur-3xl" />
 
