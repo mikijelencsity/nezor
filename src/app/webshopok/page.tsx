@@ -84,7 +84,7 @@ export default function WebshopokPage() {
       </section>
 
       {/* ── FEATURES ── */}
-      <section className="clip-diagonal-reverse py-24 -mt-16" style={{ background: 'linear-gradient(135deg, #fff7ed 0%, #fff8f0 60%, #fef3e2 100%)' }}>
+      <section className="clip-diagonal-reverse py-24 -mt-16" style={{ background: 'linear-gradient(135deg, #ffe8cc 0%, #fff0dd 50%, #fde8c8 100%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
           <SectionHeading label="Mit kapsz" title="Teljes webshop megoldás" description="Mindent egyben — nem kell külön fizetési rendszert, szállítást vagy számlázót keresned." />
           <WebshopokFeatures />

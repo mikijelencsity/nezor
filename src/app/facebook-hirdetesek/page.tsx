@@ -80,7 +80,7 @@ export default function FacebookHirdetesekPage() {
       </section>
 
       {/* ── FEATURES ── */}
-      <section className="clip-diagonal-reverse py-24 -mt-16" style={{ background: 'linear-gradient(135deg, #eff6ff 0%, #f0f7ff 60%, #e8f0ff 100%)' }}>
+      <section className="clip-diagonal-reverse py-24 -mt-16" style={{ background: 'linear-gradient(135deg, #d0e8ff 0%, #ddeeff 50%, #ccdeff 100%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
           <SectionHeading label="Amit kínálunk" title="Teljes körű kampánykezelés" description="Nem csak beállítjuk a hirdetéseket — folyamatosan kezeljük, optimalizáljuk és mérjük az eredményeket." />
           <FacebookFeatures />

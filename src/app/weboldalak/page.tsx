@@ -90,7 +90,7 @@ export default function WeboldalakPage() {
       </section>
 
       {/* ── FEATURES ── */}
-      <section className="clip-diagonal-reverse py-24 -mt-16" style={{ background: 'linear-gradient(135deg, #e0f9ff 0%, #f0f9ff 60%, #e8f4ff 100%)' }}>
+      <section className="clip-diagonal-reverse py-24 -mt-16" style={{ background: 'linear-gradient(135deg, #c8f4ff 0%, #ddf4ff 50%, #cce8ff 100%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
           <SectionHeading
             label="Mit kapsz"
