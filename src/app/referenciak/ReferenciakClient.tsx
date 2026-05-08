@@ -24,24 +24,25 @@ function ReferenceCard({ ref, index }: { ref: Reference; index: number }) {
       transition={{ duration: 0.45, delay: index * 0.06 }}
       className="group bg-white rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1.5 border border-gray-100"
     >
-      {/* Logo terület egyedi gradiens háttérrel */}
+      {/* Gradiens sáv + fehér logókártya */}
       <div className={cn(
-        'relative h-44 flex items-center justify-center p-8 bg-gradient-to-br',
+        'relative h-48 flex items-center justify-center bg-gradient-to-br',
         ref.gradient ?? 'from-secondary to-white'
       )}>
-        {ref.imageUrl ? (
-          <img
-            src={ref.imageUrl}
-            alt={`${ref.name} logó`}
-            className="max-h-24 max-w-[70%] object-contain drop-shadow-md"
-          />
-        ) : (
-          <div className="w-20 h-20 rounded-2xl bg-white/70 flex items-center justify-center shadow-sm">
+        {/* Fehér keret a logó körül — mindig látható bármilyen háttéren */}
+        <div className="bg-white rounded-2xl shadow-md px-8 py-4 flex items-center justify-center" style={{ minWidth: 140, minHeight: 80 }}>
+          {ref.imageUrl ? (
+            <img
+              src={ref.imageUrl}
+              alt={`${ref.name} logó`}
+              className="max-h-16 max-w-[160px] w-auto object-contain"
+            />
+          ) : (
             <span className="text-2xl font-display font-bold text-dark/60">
-              {ref.name.split(' ').map(w => w[0]).join('').slice(0, 2)}
+              {ref.name.split(' ').map((w: string) => w[0]).join('').slice(0, 2)}
             </span>
-          </div>
-        )}
+          )}
+        </div>
 
         {/* Kategória badge */}
         <span className={cn(
@@ -55,7 +56,7 @@ function ReferenceCard({ ref, index }: { ref: Reference; index: number }) {
       </div>
 
       {/* Tartalom */}
-      <div className="p-5">
+      <div className="p-5 border-t border-gray-50">
         <div className="flex items-start justify-between gap-2 mb-2">
           <h3 className="font-display font-bold text-dark text-lg leading-tight">{ref.name}</h3>
           {ref.url !== '#' && (
