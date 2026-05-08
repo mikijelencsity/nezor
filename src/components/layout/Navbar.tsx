@@ -37,15 +37,8 @@ export function Navbar() {
       )}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center">
-          <Image
-            src="/logos/logo.png"
-            alt="NEZOR"
-            width={120}
-            height={40}
-            className="h-9 w-auto object-contain"
-            priority
-          />
+        <Link href="/" className="flex items-center font-display font-bold text-xl">
+          <span className="text-gradient">NEZOR</span>
         </Link>
 
         <div className="hidden lg:flex items-center gap-6">

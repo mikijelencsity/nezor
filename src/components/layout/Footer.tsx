@@ -9,13 +9,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <Image
-              src="/logos/logo.png"
-              alt="NEZOR"
-              width={120}
-              height={40}
-              className="h-10 w-auto object-contain brightness-0 invert"
-            />
+            <span className="text-gradient font-display font-bold text-2xl">NEZOR</span>
             <p className="mt-3 text-gray-400 text-sm leading-relaxed">
               Professzionális weboldal és webshop készítés, Facebook hirdetések — Bács-Kiskun megyében és egész Magyarországon.
             </p>

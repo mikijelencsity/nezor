@@ -6,7 +6,7 @@ const partners = [
   { name: 'Cruiser Shop',            logo: '/logos/cruisershop.png'           },
   { name: 'InShape-Diet',            logo: '/logos/inshapediet.png'           },
   { name: 'ZT Épületgépészet',       logo: '/logos/ztepuletgepeszet.png'      },
-  { name: 'Estur Kft.',              logo: null                               },
+  { name: 'Estur Kft.',              logo: '/logos/logo.png'                  },
   { name: 'Korona Gomba',            logo: '/logos/koronagomba.png'           },
   { name: 'DoverSolution',           logo: '/logos/doversolution.png'         },
   { name: 'Kisállatkereskedés Baja', logo: '/logos/kisallatkereskedesbaja.jpg'},
