@@ -6,6 +6,8 @@ import { Footer } from '@/components/layout/Footer'
 import { MessengerWidget } from '@/components/layout/MessengerWidget'
 import { localBusinessSchema } from '@/lib/structured-data'
 import { ScrollProgressBar } from '@/components/ui/ScrollProgressBar'
+import { PageTransition } from '@/components/ui/PageTransition'
+import { FloatingCTA } from '@/components/ui/FloatingCTA'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -48,8 +50,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema()) }}
         />
         <Navbar />
-        <main>{children}</main>
+        <PageTransition>
+          <main>{children}</main>
+        </PageTransition>
         <Footer />
+        <FloatingCTA />
         <MessengerWidget />
       </body>
     </html>

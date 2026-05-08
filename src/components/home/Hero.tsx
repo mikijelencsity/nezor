@@ -2,10 +2,12 @@
 
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { iosSpring, iosSpringFast, iosSpringGentle } from '@/lib/animations'
+import { iosSpringFast } from '@/lib/animations'
 import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
 import { PhoneMockup } from '@/components/ui/PhoneMockup'
+import { MagneticWrapper } from '@/components/ui/MagneticWrapper'
+import { RevealText } from '@/components/ui/RevealText'
 import { ArrowRight, CheckCircle } from 'lucide-react'
 
 const highlights = [
@@ -36,15 +38,6 @@ export function Hero() {
 
     return () => window.removeEventListener('scroll', onScroll)
   }, [isMobile])
-
-  const headline = [
-    { text: 'Professzionális', gradient: false },
-    { text: 'weboldal.', gradient: false },
-    { text: 'Több', gradient: true },
-    { text: 'ügyfél.', gradient: true },
-    { text: 'Gyorsabb', gradient: true },
-    { text: 'növekedés.', gradient: true },
-  ]
 
   return (
     <section className="relative overflow-hidden bg-white py-20 md:py-28 min-h-[88vh] flex items-center">
@@ -82,19 +75,12 @@ export function Hero() {
             </motion.span>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-dark leading-tight mb-6">
-              {headline.map((w, i) => (
-                <motion.span
-                  key={i}
-                  initial={{ opacity: 0, y: 24 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ ...iosSpring, delay: 0.08 + i * 0.07 }}
-                  className={`inline-block mr-3 ${
-                    w.gradient ? 'text-gradient' : ''
-                  }`}
-                >
-                  {w.text}
-                </motion.span>
-              ))}
+              <RevealText text="Professzionális weboldal." delay={0.1} className="block" />
+              <span className="block">
+                <RevealText text="Több ügyfél." delay={0.4} className="text-gradient" />
+                {' '}
+                <RevealText text="Gyorsabb növekedés." delay={0.62} />
+              </span>
             </h1>
 
             <motion.p
@@ -114,22 +100,26 @@ export function Hero() {
               transition={{ delay: 0.8, duration: 0.5 }}
               className="flex flex-col sm:flex-row gap-4 mb-10"
             >
-              <Button
-                href="/csomagok"
-                size="lg"
-                className="glow-pulse"
-              >
-                Csomagok megtekintése
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
+              <MagneticWrapper>
+                <Button
+                  href="/csomagok"
+                  size="lg"
+                  className="glow-pulse"
+                >
+                  Csomagok megtekintése
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </MagneticWrapper>
 
-              <Button
-                href="/kapcsolat"
-                variant="outline"
-                size="lg"
-              >
-                Ingyenes konzultáció
-              </Button>
+              <MagneticWrapper strength={0.25}>
+                <Button
+                  href="/kapcsolat"
+                  variant="outline"
+                  size="lg"
+                >
+                  Ingyenes konzultáció
+                </Button>
+              </MagneticWrapper>
             </motion.div>
 
             <motion.ul
