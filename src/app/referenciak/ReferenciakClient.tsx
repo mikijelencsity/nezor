@@ -24,21 +24,22 @@ function ReferenceCard({ ref, index }: { ref: Reference; index: number }) {
       transition={{ duration: 0.45, delay: index * 0.06 }}
       className="group bg-white rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1.5 border border-gray-100"
     >
-      {/* Gradiens sáv + fehér logókártya */}
+      {/* Gradiens sáv */}
       <div className={cn(
         'relative h-48 flex items-center justify-center bg-gradient-to-br',
-        ref.gradient ?? 'from-secondary to-white'
+        ref.gradient ?? 'from-gray-100 to-gray-50'
       )}>
-        {/* Fehér keret a logó körül — mindig látható bármilyen háttéren */}
-        <div className="bg-white rounded-2xl shadow-md px-8 py-4 flex items-center justify-center" style={{ minWidth: 140, minHeight: 80 }}>
+        {/* Logó konténer: sötétebb szürke alap hogy a fehér logók is látszódjanak */}
+        <div className="bg-white border-2 border-gray-100 rounded-2xl shadow-sm px-6 py-4 flex items-center justify-center" style={{ minWidth: 160, minHeight: 90 }}>
           {ref.imageUrl ? (
             <img
               src={ref.imageUrl}
               alt={`${ref.name} logó`}
-              className="max-h-16 max-w-[160px] w-auto object-contain"
+              className="max-h-14 max-w-[150px] w-auto h-auto object-contain"
+              style={{ display: 'block' }}
             />
           ) : (
-            <span className="text-2xl font-display font-bold text-dark/60">
+            <span className="text-2xl font-display font-bold" style={{ color: '#1A1A2E' }}>
               {ref.name.split(' ').map((w: string) => w[0]).join('').slice(0, 2)}
             </span>
           )}
@@ -56,9 +57,9 @@ function ReferenceCard({ ref, index }: { ref: Reference; index: number }) {
       </div>
 
       {/* Tartalom */}
-      <div className="p-5 border-t border-gray-50">
+      <div className="p-5 border-t border-gray-100">
         <div className="flex items-start justify-between gap-2 mb-2">
-          <h3 className="font-display font-bold text-dark text-lg leading-tight">{ref.name}</h3>
+          <h3 className="font-display font-bold text-lg leading-tight" style={{ color: '#1A1A2E' }}>{ref.name}</h3>
           {ref.url !== '#' && (
             <a
               href={ref.url}
@@ -71,7 +72,7 @@ function ReferenceCard({ ref, index }: { ref: Reference; index: number }) {
             </a>
           )}
         </div>
-        <p className="text-sm text-muted">{ref.description}</p>
+        <p className="text-sm" style={{ color: '#6B7280' }}>{ref.description}</p>
       </div>
     </motion.article>
   )
