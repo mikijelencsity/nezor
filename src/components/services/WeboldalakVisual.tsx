@@ -21,7 +21,13 @@ export function WeboldalakVisual() {
         transition={{ duration: 0.7, delay: 0.3 }}
         className="relative"
       >
-        <LaptopMockup />
+        <LaptopMockup>
+          <img
+            src="/screenshots/weboldalak.png"
+            alt="Weboldal példa"
+            className="w-full h-full object-cover object-top"
+          />
+        </LaptopMockup>
 
         {/* Floating badges */}
         {badges.map(({ icon: Icon, label, color, delay, position }) => (
