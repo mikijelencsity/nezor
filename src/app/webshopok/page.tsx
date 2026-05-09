@@ -5,7 +5,8 @@ import { FAQAccordion } from '@/components/ui/FAQAccordion'
 import { AnimatedTimeline } from '@/components/ui/AnimatedTimeline'
 import { WebshopokFeatures } from '@/components/services/WebshopokFeatures'
 import { OrderFlow } from '@/components/services/webshopok/OrderFlow'
-import { IntegrationLogos } from '@/components/services/webshopok/IntegrationLogos'
+import { RevenueDashboard } from '@/components/services/webshopok/RevenueDashboard'
+import { MobileShoppingFlow } from '@/components/services/webshopok/MobileShoppingFlow'
 import { FAQItem } from '@/types'
 import {
   ShoppingCart, ArrowRight, CheckCircle, Zap, Star, Shield
@@ -87,19 +88,30 @@ export default function WebshopokPage() {
         </div>
       </section>
 
-      {/* ── D: ORDER FLOW ── */}
+      {/* ── MOBILE SHOPPING FLOW ── */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading label="Vásárlói élmény" title="A teljes rendelési folyamat egy webshopban" description="Minden lépés automatizálva — a vásárlótól az ajtódig." />
-          <OrderFlow />
+          <MobileShoppingFlow />
         </div>
       </section>
 
-      {/* ── E: INTEGRATIONS ── */}
-      <section className="py-20 bg-secondary clip-diagonal">
+      {/* ── REVENUE DASHBOARD ── */}
+      <section className="py-20 bg-secondary">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            label="Admin felület"
+            title="Minden a kezedben van"
+            description="Könnyen kezelhető admin panel — termékek, rendelések, bevételek egy helyen."
+          />
+          <RevenueDashboard />
+        </div>
+      </section>
+
+      {/* ── ORDER FLOW ── */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading label="Integrációk" title="Mindezekkel működik együtt" description="Fizetési rendszerek, szállítók, számlázók — minden egy helyen bekötve." />
-          <IntegrationLogos />
+          <SectionHeading label="Vásárlói élmény" title="A teljes rendelési folyamat" description="Minden lépés automatizálva — a vásárlótól az ajtódig." />
+          <OrderFlow />
         </div>
       </section>
 
