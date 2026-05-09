@@ -27,6 +27,7 @@ function ReferenceCard({ ref, index }: { ref: Reference; index: number }) {
             src={ref.imageUrl}
             alt={`${ref.name} logó`}
             className="max-h-20 max-w-[60%] w-auto h-auto object-contain relative z-10 transition-transform duration-500 group-hover:scale-95"
+            style={{ filter: 'drop-shadow(0 2px 12px rgba(0,0,0,0.18))' }}
           />
         ) : (
           <span className="text-3xl font-display font-bold text-dark/40 relative z-10">
@@ -35,22 +36,16 @@ function ReferenceCard({ ref, index }: { ref: Reference; index: number }) {
         )}
 
         {/* Hover overlay */}
-        <div className="absolute inset-0 bg-dark/85 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 z-20">
-          {ref.url !== '#' ? (
-            <a
-              href={ref.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${ref.name} weboldal megnyitása`}
-              className="flex items-center gap-2 bg-white text-dark font-display font-bold text-sm px-5 py-2.5 rounded-full hover:bg-cyan hover:text-white transition-colors"
-            >
-              Weboldal megtekintése <ExternalLink className="w-3.5 h-3.5" />
-            </a>
-          ) : (
-            <span className="flex items-center gap-2 bg-white/20 text-white font-display font-semibold text-sm px-5 py-2.5 rounded-full border border-white/30">
-              Hamarosan elérhető
-            </span>
-          )}
+        <div className="absolute inset-0 bg-dark/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 z-20">
+          <a
+            href={ref.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${ref.name} weboldal megnyitása`}
+            className="flex items-center gap-2 bg-white text-dark font-display font-bold text-sm px-5 py-2.5 rounded-full hover:bg-cyan hover:text-white transition-colors"
+          >
+            Megtekintés <ExternalLink className="w-3.5 h-3.5" />
+          </a>
         </div>
       </div>
 
