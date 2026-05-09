@@ -40,7 +40,7 @@ export function Hero() {
   }, [isMobile])
 
   return (
-    <section className="relative overflow-hidden bg-white py-20 md:py-28 min-h-[88vh] flex items-center">
+    <section className="relative overflow-hidden bg-white py-16 md:py-24 lg:py-28 flex items-center">
       {/* Desktop parallax background */}
       {!isMobile && (
         <div
@@ -100,22 +100,23 @@ export function Hero() {
               transition={{ delay: 0.8, duration: 0.5 }}
               className="flex flex-col sm:flex-row gap-4 mb-10"
             >
-              <MagneticWrapper>
+              <MagneticWrapper className="w-full sm:w-auto">
                 <Button
                   href="/csomagok"
                   size="lg"
-                  className="glow-pulse"
+                  className="glow-pulse w-full sm:w-auto"
                 >
                   Csomagok megtekintése
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </MagneticWrapper>
 
-              <MagneticWrapper strength={0.25}>
+              <MagneticWrapper strength={0.25} className="w-full sm:w-auto">
                 <Button
                   href="/kapcsolat"
                   variant="outline"
                   size="lg"
+                  className="w-full sm:w-auto"
                 >
                   Ingyenes konzultáció
                 </Button>
@@ -231,7 +232,7 @@ export function Hero() {
                 <div className="hidden lg:block">
                   <PhoneMockup size="lg" scrollClass="phone-scroll">
                     <Image
-                      src="/screenshots/neked-sutom.jpg"
+                      src="/screenshots/ugyfel1.jpg"
                       alt="Neked Sütöm weboldal"
                       width={500}
                       height={1000}
@@ -254,7 +255,7 @@ export function Hero() {
               >
                 <PhoneMockup size="sm" scrollClass="phone-scroll-fast">
                   <Image
-                    src="/screenshots/ugyfel2.jpg"
+                    src="/screenshots/ugyfel1.jpg"
                     alt="Ügyfél weboldal 2"
                     width={320}
                     height={700}
