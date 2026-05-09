@@ -4,6 +4,8 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { FAQAccordion } from '@/components/ui/FAQAccordion'
 import { AnimatedTimeline } from '@/components/ui/AnimatedTimeline'
 import { FacebookFeatures } from '@/components/services/FacebookFeatures'
+import { TargetingMap } from '@/components/services/facebook/TargetingMap'
+import { ResultsTimeline } from '@/components/services/facebook/ResultsTimeline'
 import { FAQItem } from '@/types'
 import {
   Target, ArrowRight, CheckCircle, Zap, Star, Shield
@@ -81,16 +83,48 @@ export default function FacebookHirdetesekPage() {
         </div>
       </section>
 
+      {/* ── G: TARGETING MAP ── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <SectionHeading label="Precíz célzás" title="Pontosan a te ügyfeleidet érjük el" description="Bács-Kiskun megyétől az egész országig — minden korosztályban, minden érdeklődési körben." centered={false} />
+              <div className="space-y-4 mt-6">
+                {[
+                  { label: '5+ millió', desc: 'Magyar Facebook felhasználó' },
+                  { label: 'Bács-Kiskun', desc: 'Elsődleges célterület' },
+                  { label: '25–55 év', desc: 'Optimális célcsoport korosztály' },
+                ].map(item => (
+                  <div key={item.label} className="flex items-center gap-4 p-4 bg-secondary rounded-xl">
+                    <div className="font-display font-bold text-cyan text-lg w-24 flex-shrink-0">{item.label}</div>
+                    <div className="text-sm text-muted">{item.desc}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <TargetingMap />
+          </div>
+        </div>
+      </section>
+
+      {/* ── F: RESULTS TIMELINE ── */}
+      <section className="py-20 bg-secondary">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading label="Valós eredmények" title="Így növekednek a számok hétről hétre" description="Egy átlagos kampány eredményei az első hónap során." />
+          <ResultsTimeline />
+        </div>
+      </section>
+
       {/* ── FEATURES ── */}
-      <section className="clip-diagonal-reverse py-24 -mt-16" style={{ background: 'linear-gradient(135deg, #d0e8ff 0%, #ddeeff 50%, #ccdeff 100%)' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading label="Amit kínálunk" title="Teljes körű kampánykezelés" description="Nem csak beállítjuk a hirdetéseket — folyamatosan kezeljük, optimalizáljuk és mérjük az eredményeket." />
           <FacebookFeatures />
         </div>
       </section>
 
       {/* ── PROCESS ── */}
-      <section className="py-24 bg-white">
+      <section className="py-20 bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
@@ -101,14 +135,9 @@ export default function FacebookHirdetesekPage() {
               {guarantees.map((item) => {
                 const Icon = item.icon
                 return (
-                  <div key={item.title} className="flex gap-4 p-5 bg-secondary rounded-2xl">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan to-blue-400 flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <div className="font-display font-bold text-dark mb-1">{item.title}</div>
-                      <div className="text-sm text-muted">{item.text}</div>
-                    </div>
+                  <div key={item.title} className="flex gap-4 p-5 bg-white rounded-2xl">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan to-blue-400 flex items-center justify-center flex-shrink-0"><Icon className="w-5 h-5 text-white" /></div>
+                    <div><div className="font-display font-bold text-dark mb-1">{item.title}</div><div className="text-sm text-muted">{item.text}</div></div>
                   </div>
                 )
               })}
@@ -118,7 +147,7 @@ export default function FacebookHirdetesekPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="py-20 bg-secondary">
+      <section className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading label="GYIK" title="Kérdések a Facebook hirdetésről" />
           <FAQAccordion items={faq} />

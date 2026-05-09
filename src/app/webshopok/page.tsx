@@ -4,6 +4,8 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { FAQAccordion } from '@/components/ui/FAQAccordion'
 import { AnimatedTimeline } from '@/components/ui/AnimatedTimeline'
 import { WebshopokFeatures } from '@/components/services/WebshopokFeatures'
+import { OrderFlow } from '@/components/services/webshopok/OrderFlow'
+import { IntegrationLogos } from '@/components/services/webshopok/IntegrationLogos'
 import { FAQItem } from '@/types'
 import {
   ShoppingCart, ArrowRight, CheckCircle, Zap, Star, Shield
@@ -85,16 +87,32 @@ export default function WebshopokPage() {
         </div>
       </section>
 
+      {/* ── D: ORDER FLOW ── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading label="Vásárlói élmény" title="A teljes rendelési folyamat egy webshopban" description="Minden lépés automatizálva — a vásárlótól az ajtódig." />
+          <OrderFlow />
+        </div>
+      </section>
+
+      {/* ── E: INTEGRATIONS ── */}
+      <section className="py-20 bg-secondary clip-diagonal">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading label="Integrációk" title="Mindezekkel működik együtt" description="Fizetési rendszerek, szállítók, számlázók — minden egy helyen bekötve." />
+          <IntegrationLogos />
+        </div>
+      </section>
+
       {/* ── FEATURES ── */}
-      <section className="clip-diagonal-reverse py-24 -mt-16" style={{ background: 'linear-gradient(135deg, #ffe8cc 0%, #fff0dd 50%, #fde8c8 100%)' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading label="Mit kapsz" title="Teljes webshop megoldás" description="Mindent egyben — nem kell külön fizetési rendszert, szállítást vagy számlázót keresned." />
           <WebshopokFeatures />
         </div>
       </section>
 
       {/* ── PROCESS ── */}
-      <section className="py-24 bg-white">
+      <section className="py-20 bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
@@ -105,14 +123,9 @@ export default function WebshopokPage() {
               {guarantees.map((item) => {
                 const Icon = item.icon
                 return (
-                  <div key={item.title} className="flex gap-4 p-5 bg-secondary rounded-2xl">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan to-blue-400 flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <div className="font-display font-bold text-dark mb-1">{item.title}</div>
-                      <div className="text-sm text-muted">{item.text}</div>
-                    </div>
+                  <div key={item.title} className="flex gap-4 p-5 bg-white rounded-2xl">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan to-blue-400 flex items-center justify-center flex-shrink-0"><Icon className="w-5 h-5 text-white" /></div>
+                    <div><div className="font-display font-bold text-dark mb-1">{item.title}</div><div className="text-sm text-muted">{item.text}</div></div>
                   </div>
                 )
               })}
@@ -122,7 +135,7 @@ export default function WebshopokPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="py-20 bg-secondary">
+      <section className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading label="GYIK" title="Kérdések a webshopról" />
           <FAQAccordion items={faq} />

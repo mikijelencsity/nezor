@@ -4,6 +4,9 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { FAQAccordion } from '@/components/ui/FAQAccordion'
 import { AnimatedTimeline } from '@/components/ui/AnimatedTimeline'
 import { WeboldalakFeatures } from '@/components/services/WeboldalakFeatures'
+import { SpeedMetrics } from '@/components/services/weboldalak/SpeedMetrics'
+import { DeviceSwitcher } from '@/components/services/weboldalak/DeviceSwitcher'
+import { BeforeAfterSlider } from '@/components/services/weboldalak/BeforeAfterSlider'
 import { FAQItem } from '@/types'
 import {
   Zap, Shield, Code2, ArrowRight, CheckCircle, Star
@@ -91,20 +94,32 @@ export default function WeboldalakPage() {
         </div>
       </section>
 
-      {/* ── FEATURES ── */}
-      <section className="clip-diagonal-reverse py-24 -mt-16" style={{ background: 'linear-gradient(135deg, #c8f4ff 0%, #ddf4ff 50%, #cce8ff 100%)' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-          <SectionHeading
-            label="Mit kapsz"
-            title="Minden benne van amire szükséged van"
-            description="Nem csak egy szép weboldalt kapsz — hanem egy üzleti eszközt ami eredményeket hoz."
-          />
-          <WeboldalakFeatures />
+      {/* ── B: SPEED METRICS ── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading label="Teljesítmény" title="Tökéletes minőség minden oldalon" description="Minden általunk készített weboldal tesztelve van Google PageSpeed-del — magas pontszámok garantálva." />
+          <SpeedMetrics />
+        </div>
+      </section>
+
+      {/* ── A: DEVICE SWITCHER ── */}
+      <section className="py-20 bg-secondary clip-diagonal">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading label="Reszponzív design" title="Minden eszközön tökéletes" description="Mobil, tablet, desktop — az oldalad mindenhol gyönyörűen jelenik meg." />
+          <DeviceSwitcher />
+        </div>
+      </section>
+
+      {/* ── C: BEFORE/AFTER ── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading label="Előtte / utána" title="Látványos különbség" description="Nézd meg milyen különbség van egy régi és egy NEZOR által készített weboldal között." />
+          <BeforeAfterSlider />
         </div>
       </section>
 
       {/* ── PROCESS ── */}
-      <section className="py-24 bg-white">
+      <section className="py-20 bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
@@ -115,7 +130,7 @@ export default function WeboldalakPage() {
               {guarantees.map((item) => {
                 const Icon = item.icon
                 return (
-                  <div key={item.title} className="flex gap-4 p-5 bg-secondary rounded-2xl">
+                  <div key={item.title} className="flex gap-4 p-5 bg-white rounded-2xl">
                     <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan to-blue-400 flex items-center justify-center flex-shrink-0">
                       <Icon className="w-5 h-5 text-white" />
                     </div>
@@ -132,7 +147,7 @@ export default function WeboldalakPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="py-20 bg-secondary">
+      <section className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading label="GYIK" title="Kérdések a weboldal készítésről" />
           <FAQAccordion items={faq} />
@@ -143,7 +158,6 @@ export default function WeboldalakPage() {
       <section className="py-20 bg-dark relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-20" />
         <div className="absolute top-0 left-1/4 w-64 h-64 bg-cyan/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-48 h-48 bg-blue-400/10 rounded-full blur-3xl" />
         <div className="relative max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
             Készen állsz egy <span className="text-shimmer">profi weboldalra?</span>
