@@ -13,24 +13,54 @@ const steps = [
 
 function ProductList() {
   const products = [
-    { name: 'Kerékpár sisak',  price: '12.900 Ft', color: 'bg-blue-100',   emoji: '🪖' },
-    { name: 'Kerékpár lámpa',  price: '4.900 Ft',  color: 'bg-yellow-100', emoji: '💡' },
-    { name: 'Gyerek kerékpár', price: '54.900 Ft', color: 'bg-green-100',  emoji: '🚲' },
-    { name: 'Kerékpár lakat',  price: '3.900 Ft',  color: 'bg-red-100',    emoji: '🔒' },
+    { name: 'Prémium sisak',   price: '12.900 Ft', badge: 'Bestseller', gradient: 'from-blue-400 to-indigo-500',   sale: false },
+    { name: 'LED lámpa szett', price: '4.900 Ft',  badge: 'Akció',      gradient: 'from-amber-400 to-orange-400',  sale: true  },
+    { name: 'Sport kerékpár',  price: '54.900 Ft', badge: 'Új',         gradient: 'from-emerald-400 to-teal-500',  sale: false },
+    { name: 'Biztonsági lakat',price: '3.900 Ft',  badge: null,         gradient: 'from-gray-400 to-gray-600',     sale: false },
   ]
   return (
-    <div className="w-full h-full bg-white overflow-hidden">
-      <div className="bg-white px-3 py-2 border-b border-gray-100 flex items-center justify-between">
-        <span className="text-[10px] font-display font-bold text-dark">Kerékpár shop</span>
-        <div className="relative"><ShoppingCart className="w-4 h-4 text-dark"/><span className="absolute -top-1 -right-1 w-3 h-3 bg-cyan rounded-full text-[7px] text-white flex items-center justify-center">2</span></div>
+    <div className="w-full h-full bg-gray-50 overflow-hidden flex flex-col">
+      {/* Nav */}
+      <div className="bg-white px-3 pt-2 pb-2">
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-[11px] font-display font-bold text-dark">CruiserShop</span>
+          <div className="relative">
+            <ShoppingCart className="w-4 h-4 text-dark"/>
+            <span className="absolute -top-1 -right-1 w-3 h-3 bg-cyan rounded-full text-[7px] text-white flex items-center justify-center font-bold">2</span>
+          </div>
+        </div>
+        {/* Search bar */}
+        <div className="bg-gray-100 rounded-xl px-2.5 py-1.5 flex items-center gap-1.5">
+          <div className="w-2.5 h-2.5 rounded-full border border-gray-400 flex-shrink-0"/>
+          <span className="text-[9px] text-gray-400">Keresés a termékek között...</span>
+        </div>
       </div>
-      <div className="grid grid-cols-2 gap-2 p-2">
+      {/* Category chips */}
+      <div className="flex gap-1.5 px-3 py-2 overflow-hidden">
+        {['Sisakok','Lámpák','Kerékpár','Kiegészítők'].map((c,i)=>(
+          <span key={c} className={`text-[8px] font-semibold px-2.5 py-1 rounded-full flex-shrink-0 ${i===0 ? 'bg-dark text-white' : 'bg-white text-muted border border-gray-200'}`}>{c}</span>
+        ))}
+      </div>
+      {/* Grid */}
+      <div className="grid grid-cols-2 gap-2 px-3 pb-3 flex-1">
         {products.map((p, i) => (
-          <div key={i} className="bg-white rounded-xl border border-gray-100 overflow-hidden shadow-sm">
-            <div className={`${p.color} h-14 flex items-center justify-center text-2xl`}>{p.emoji}</div>
+          <div key={i} className="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <div className={`bg-gradient-to-br ${p.gradient} h-16 relative`}>
+              {p.badge && (
+                <span className={`absolute top-1.5 left-1.5 text-[7px] font-bold px-1.5 py-0.5 rounded-full ${p.badge === 'Akció' ? 'bg-red-500 text-white' : p.badge === 'Új' ? 'bg-green-500 text-white' : 'bg-white/90 text-dark'}`}>
+                  {p.badge}
+                </span>
+              )}
+              <Heart className="absolute top-1.5 right-1.5 w-3 h-3 text-white/70"/>
+            </div>
             <div className="p-2">
-              <div className="text-[9px] font-semibold text-dark leading-tight mb-0.5">{p.name}</div>
-              <div className="text-[9px] font-bold text-cyan">{p.price}</div>
+              <div className="text-[9px] font-semibold text-dark leading-tight mb-1">{p.name}</div>
+              <div className="flex items-center justify-between">
+                <span className="text-[9px] font-bold text-dark">{p.price}</span>
+                <div className="w-5 h-5 bg-dark rounded-full flex items-center justify-center">
+                  <span className="text-white text-[10px] leading-none">+</span>
+                </div>
+              </div>
             </div>
           </div>
         ))}
@@ -41,31 +71,60 @@ function ProductList() {
 
 function ProductDetail() {
   return (
-    <div className="w-full h-full bg-white overflow-hidden">
-      <div className="bg-white px-3 py-2 border-b border-gray-100 flex items-center gap-2">
-        <ChevronLeft className="w-3.5 h-3.5 text-muted"/>
-        <span className="text-[10px] font-display font-bold text-dark">Termék részletek</span>
+    <div className="w-full h-full bg-white overflow-hidden flex flex-col">
+      {/* Header */}
+      <div className="px-3 py-2 flex items-center justify-between">
+        <div className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center">
+          <ChevronLeft className="w-3.5 h-3.5 text-dark"/>
+        </div>
+        <span className="text-[10px] font-display font-bold text-dark">Termék</span>
+        <div className="relative">
+          <ShoppingCart className="w-4 h-4 text-dark"/>
+          <span className="absolute -top-1 -right-1 w-3 h-3 bg-cyan rounded-full text-[7px] text-white flex items-center justify-center font-bold">2</span>
+        </div>
       </div>
-      <div className="bg-blue-50 h-24 flex items-center justify-center text-5xl">🪖</div>
-      <div className="px-3 py-2">
+      {/* Product image */}
+      <div className="bg-gradient-to-br from-blue-400 to-indigo-600 mx-3 rounded-2xl h-28 relative mb-3">
+        <span className="absolute top-2 left-2 text-[7px] font-bold bg-white/90 text-blue-700 px-1.5 py-0.5 rounded-full">Bestseller</span>
+        <div className="absolute bottom-2 right-2 flex gap-1">
+          {['bg-blue-300','bg-indigo-300','bg-cyan-300'].map((c,i)=>(
+            <div key={i} className={`w-3 h-3 rounded-full ${c} border-2 ${i===0 ? 'border-white' : 'border-transparent'}`}/>
+          ))}
+        </div>
+      </div>
+      {/* Info */}
+      <div className="px-3 flex-1">
         <div className="flex items-start justify-between mb-1">
-          <div className="text-xs font-bold text-dark">Kerékpár sisak Pro</div>
-          <Heart className="w-3.5 h-3.5 text-muted"/>
+          <div>
+            <div className="text-xs font-display font-bold text-dark">Prémium kerékpár sisak</div>
+            <div className="text-[8px] text-muted">CruiserShop · Kerékpár sisakok</div>
+          </div>
+          <div className="w-6 h-6 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center">
+            <Heart className="w-3 h-3 text-muted"/>
+          </div>
         </div>
         <div className="flex items-center gap-1 mb-2">
           {[...Array(5)].map((_,i)=><Star key={i} className="w-2.5 h-2.5 fill-yellow-400 text-yellow-400"/>)}
-          <span className="text-[8px] text-muted">(47)</span>
+          <span className="text-[8px] text-muted font-medium">4.9 (47 értékelés)</span>
         </div>
-        <div className="text-base font-display font-bold text-cyan mb-2">12.900 Ft</div>
-        <div className="space-y-1 mb-3">
-          {['Állítható méret: S-XL', 'CE tanúsított', 'Szabad szállítás 30.000 Ft felett'].map((f,i)=>(
-            <div key={i} className="flex items-center gap-1 text-[8px] text-muted">
-              <Check className="w-2.5 h-2.5 text-green-500"/>{f}
-            </div>
-          ))}
+        {/* Size selector */}
+        <div className="mb-2">
+          <div className="text-[8px] text-muted mb-1">Méret</div>
+          <div className="flex gap-1">
+            {['S','M','L','XL'].map((s,i)=>(
+              <div key={s} className={`w-6 h-6 rounded-lg text-[8px] font-bold flex items-center justify-center border ${i===1 ? 'bg-dark text-white border-dark' : 'border-gray-200 text-muted'}`}>{s}</div>
+            ))}
+          </div>
         </div>
-        <div className="bg-cyan rounded-xl py-2 text-center text-white text-[10px] font-display font-bold">
-          Kosárba
+        {/* Price + add */}
+        <div className="flex items-center justify-between">
+          <div>
+            <div className="text-[8px] text-muted">Ár</div>
+            <div className="text-sm font-display font-bold text-dark">12.900 Ft</div>
+          </div>
+          <div className="bg-gradient-to-r from-cyan to-blue-400 rounded-xl px-4 py-2 text-white text-[9px] font-display font-bold flex items-center gap-1.5">
+            <ShoppingCart className="w-3 h-3"/> Kosárba
+          </div>
         </div>
       </div>
     </div>
@@ -74,30 +133,54 @@ function ProductDetail() {
 
 function CartView() {
   return (
-    <div className="w-full h-full bg-white overflow-hidden">
-      <div className="bg-white px-3 py-2 border-b border-gray-100 flex items-center gap-2">
-        <ShoppingCart className="w-3.5 h-3.5 text-cyan"/>
-        <span className="text-[10px] font-display font-bold text-dark">Kosaram (2)</span>
+    <div className="w-full h-full bg-gray-50 overflow-hidden flex flex-col">
+      <div className="bg-white px-3 py-2.5 border-b border-gray-100 flex items-center justify-between">
+        <span className="text-[11px] font-display font-bold text-dark">Kosaram</span>
+        <span className="text-[8px] bg-cyan-light text-cyan font-bold px-2 py-0.5 rounded-full">2 termék</span>
       </div>
-      <div className="p-3 space-y-2">
+      {/* Free shipping progress */}
+      <div className="bg-white mx-3 mt-3 rounded-2xl p-3 mb-2">
+        <div className="flex items-center justify-between mb-1.5">
+          <span className="text-[8px] text-muted">Szabad szállításig még:</span>
+          <span className="text-[8px] font-bold text-green-600">12.200 Ft</span>
+        </div>
+        <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
+          <div className="h-full bg-gradient-to-r from-cyan to-green-400 rounded-full" style={{width:'59%'}}/>
+        </div>
+      </div>
+      {/* Items */}
+      <div className="px-3 space-y-2 flex-1">
         {[
-          { emoji: '🪖', name: 'Kerékpár sisak Pro', price: '12.900 Ft' },
-          { emoji: '💡', name: 'Kerékpár lámpa LED', price: '4.900 Ft'  },
+          { gradient: 'from-blue-400 to-indigo-500', name: 'Prémium kerékpár sisak', variant: 'M méret', price: '12.900 Ft' },
+          { gradient: 'from-amber-400 to-orange-400', name: 'LED lámpa szett', variant: '800 lumen', price: '4.900 Ft' },
         ].map((item, i) => (
-          <div key={i} className="flex items-center gap-2 p-2 bg-gray-50 rounded-xl">
-            <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-lg">{item.emoji}</div>
-            <div className="flex-1">
-              <div className="text-[9px] font-semibold text-dark">{item.name}</div>
-              <div className="text-[9px] font-bold text-cyan">{item.price}</div>
+          <div key={i} className="bg-white rounded-2xl p-2.5 flex items-center gap-2.5 shadow-sm">
+            <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.gradient} flex-shrink-0`}/>
+            <div className="flex-1 min-w-0">
+              <div className="text-[9px] font-semibold text-dark truncate">{item.name}</div>
+              <div className="text-[8px] text-muted">{item.variant}</div>
+              <div className="text-[9px] font-bold text-dark mt-0.5">{item.price}</div>
+            </div>
+            <div className="flex items-center gap-1 bg-gray-50 rounded-lg p-1">
+              <span className="text-[9px] w-4 text-center text-muted font-bold">−</span>
+              <span className="text-[9px] w-3 text-center font-bold text-dark">1</span>
+              <span className="text-[9px] w-4 text-center text-muted font-bold">+</span>
             </div>
           </div>
         ))}
-        <div className="border-t border-gray-100 pt-2 flex items-center justify-between">
-          <span className="text-[9px] text-muted">Összesen:</span>
-          <span className="text-xs font-display font-bold text-dark">17.800 Ft</span>
+      </div>
+      {/* Summary */}
+      <div className="bg-white mx-3 mb-3 mt-2 rounded-2xl p-3">
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-[9px] text-muted">Részösszeg</span>
+          <span className="text-[9px] font-semibold text-dark">17.800 Ft</span>
         </div>
-        <div className="bg-cyan rounded-xl py-2 text-center text-white text-[10px] font-display font-bold">
-          Tovább a fizetéshez →
+        <div className="flex items-center justify-between mb-3">
+          <span className="text-[9px] text-muted">Szállítás</span>
+          <span className="text-[9px] font-semibold text-orange-500">+ 990 Ft</span>
+        </div>
+        <div className="bg-gradient-to-r from-cyan to-blue-400 rounded-xl py-2 text-center text-white text-[9px] font-display font-bold">
+          Megrendelés → 18.790 Ft
         </div>
       </div>
     </div>
@@ -106,30 +189,57 @@ function CartView() {
 
 function PaymentView() {
   return (
-    <div className="w-full h-full bg-white overflow-hidden">
-      <div className="bg-white px-3 py-2 border-b border-gray-100">
-        <span className="text-[10px] font-display font-bold text-dark">Fizetés</span>
+    <div className="w-full h-full bg-gray-50 overflow-hidden flex flex-col">
+      <div className="bg-white px-3 py-2.5 border-b border-gray-100">
+        <span className="text-[11px] font-display font-bold text-dark">Fizetés</span>
       </div>
-      <div className="p-3 space-y-2">
-        <div className="bg-gray-50 rounded-xl p-2">
-          <div className="text-[8px] text-muted mb-1">Szállítási cím</div>
-          <div className="text-[9px] font-semibold text-dark">Kovács János, Kecskemét</div>
-          <div className="text-[8px] text-muted">6000 Kecskemét, Fő u. 12.</div>
-        </div>
-        <div className="bg-gray-50 rounded-xl p-2">
-          <div className="text-[8px] text-muted mb-1.5">Fizetési mód</div>
-          <div className="grid grid-cols-3 gap-1">
-            {['SimplePay', 'Barion', 'Utánvét'].map((m, i) => (
-              <div key={m} className={`text-center py-1.5 rounded-lg text-[8px] font-semibold border ${i===0 ? 'border-cyan bg-cyan-light text-cyan' : 'border-gray-200 text-muted'}`}>{m}</div>
-            ))}
+      <div className="p-3 space-y-2 flex-1">
+        {/* Credit card visual */}
+        <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-3 text-white">
+          <div className="flex items-center justify-between mb-3">
+            <span className="text-[9px] text-white/60">SimplePay</span>
+            <div className="flex gap-1">
+              <div className="w-5 h-3 bg-orange-400 rounded opacity-90"/>
+              <div className="w-5 h-3 bg-red-500 rounded -ml-2 opacity-70"/>
+            </div>
+          </div>
+          <div className="text-[9px] font-mono tracking-widest text-white/80 mb-2">•••• •••• •••• 4821</div>
+          <div className="flex justify-between">
+            <div>
+              <div className="text-[7px] text-white/50">Kártyabirtokos</div>
+              <div className="text-[8px] font-semibold">KOVÁCS JÁNOS</div>
+            </div>
+            <div>
+              <div className="text-[7px] text-white/50">Lejárat</div>
+              <div className="text-[8px] font-semibold">09/27</div>
+            </div>
           </div>
         </div>
-        <div className="flex items-center justify-between px-1">
-          <span className="text-[9px] text-muted">Fizetendő:</span>
-          <span className="text-xs font-display font-bold text-dark">17.800 Ft</span>
+        {/* Address */}
+        <div className="bg-white rounded-2xl p-2.5">
+          <div className="flex items-center justify-between">
+            <div>
+              <div className="text-[8px] text-muted">Szállítási cím</div>
+              <div className="text-[9px] font-semibold text-dark">6000 Kecskemét, Fő u. 12.</div>
+            </div>
+            <span className="text-[8px] text-cyan font-semibold">Módosít</span>
+          </div>
         </div>
-        <div className="bg-gradient-to-r from-cyan to-blue-400 rounded-xl py-2 text-center text-white text-[10px] font-display font-bold">
-          Fizetés most 🔒
+        {/* Order summary */}
+        <div className="bg-white rounded-2xl p-2.5">
+          <div className="text-[8px] text-muted mb-1.5">Rendelés összesítő</div>
+          <div className="flex items-center justify-between">
+            <span className="text-[9px] text-muted">2 termék + szállítás</span>
+            <span className="text-[9px] font-display font-bold text-dark">18.790 Ft</span>
+          </div>
+        </div>
+      </div>
+      <div className="px-3 pb-3">
+        <div className="bg-gradient-to-r from-cyan to-blue-500 rounded-2xl py-3 text-center text-white text-[10px] font-display font-bold flex items-center justify-center gap-1.5 shadow-lg">
+          <div className="w-3 h-3 rounded-full border border-white/50 flex items-center justify-center">
+            <div className="w-1.5 h-1.5 bg-white rounded-full"/>
+          </div>
+          Biztonságos fizetés · 18.790 Ft
         </div>
       </div>
     </div>
@@ -138,21 +248,46 @@ function PaymentView() {
 
 function SuccessView() {
   return (
-    <div className="w-full h-full bg-white flex flex-col items-center justify-center p-4">
-      <motion.div
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-        className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-3"
-      >
-        <Check className="w-8 h-8 text-green-600" />
-      </motion.div>
-      <div className="text-xs font-display font-bold text-dark mb-1 text-center">Rendelés leadva!</div>
-      <div className="text-[9px] text-muted text-center mb-3">Visszaigazolást küldtünk e-mailben</div>
-      <div className="bg-gray-50 rounded-xl p-3 w-full text-center">
-        <div className="text-[8px] text-muted">Rendelési szám</div>
-        <div className="text-[11px] font-display font-bold text-dark">#4822</div>
-        <div className="text-[8px] text-muted mt-1">Várható kézbesítés: 2-3 munkanap</div>
+    <div className="w-full h-full overflow-hidden flex flex-col">
+      {/* Top gradient */}
+      <div className="bg-gradient-to-br from-green-400 to-emerald-500 px-4 pt-4 pb-6 flex flex-col items-center">
+        <motion.div
+          initial={{ scale: 0, rotate: -180 }}
+          animate={{ scale: 1, rotate: 0 }}
+          transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+          className="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-2 shadow-lg"
+        >
+          <Check className="w-7 h-7 text-green-500" strokeWidth={3}/>
+        </motion.div>
+        <div className="text-white font-display font-bold text-sm mb-0.5">Siker! 🎉</div>
+        <div className="text-white/80 text-[9px]">Köszönjük a vásárlást!</div>
+      </div>
+      {/* Order info */}
+      <div className="bg-white flex-1 px-3 pt-4 space-y-2">
+        <div className="flex items-center justify-between p-2.5 bg-gray-50 rounded-xl">
+          <span className="text-[9px] text-muted">Rendelési szám</span>
+          <span className="text-[9px] font-display font-bold text-dark">#4822</span>
+        </div>
+        {/* Tracking steps */}
+        <div className="p-2.5 bg-gray-50 rounded-xl">
+          <div className="text-[8px] text-muted mb-2">Követési állapot</div>
+          <div className="space-y-2">
+            {[
+              { label: 'Rendelés elfogadva', done: true },
+              { label: 'Feldolgozás alatt', done: true },
+              { label: 'Átadva futárnak', done: false },
+              { label: 'Kézbesítve', done: false },
+            ].map((s, i) => (
+              <div key={i} className="flex items-center gap-2">
+                <div className={`w-3 h-3 rounded-full flex-shrink-0 flex items-center justify-center ${s.done ? 'bg-green-500' : 'bg-gray-200'}`}>
+                  {s.done && <Check className="w-2 h-2 text-white" strokeWidth={3}/>}
+                </div>
+                <span className={`text-[8px] ${s.done ? 'text-dark font-semibold' : 'text-muted'}`}>{s.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="text-center text-[8px] text-muted">Visszaigazolás elküldve · kovacs@email.hu</div>
       </div>
     </div>
   )
