@@ -5,8 +5,8 @@ import { FAQAccordion } from '@/components/ui/FAQAccordion'
 import { AnimatedTimeline } from '@/components/ui/AnimatedTimeline'
 import { WeboldalakFeatures } from '@/components/services/WeboldalakFeatures'
 import { SpeedMetrics } from '@/components/services/weboldalak/SpeedMetrics'
-import { DeviceSwitcher } from '@/components/services/weboldalak/DeviceSwitcher'
-import { BeforeAfterSlider } from '@/components/services/weboldalak/BeforeAfterSlider'
+import { SeoRankingAnimation } from '@/components/services/weboldalak/SeoRankingAnimation'
+import { AiReadySection } from '@/components/services/weboldalak/AiReadySection'
 import { FAQItem } from '@/types'
 import {
   Zap, Shield, Code2, ArrowRight, CheckCircle, Star
@@ -102,21 +102,15 @@ export default function WeboldalakPage() {
         </div>
       </section>
 
-      {/* ── A: DEVICE SWITCHER ── */}
-      <section className="py-20 bg-secondary clip-diagonal">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading label="Reszponzív design" title="Minden eszközön tökéletes" description="Mobil, tablet, desktop — az oldalad mindenhol gyönyörűen jelenik meg." />
-          <DeviceSwitcher />
+      {/* ── SEO RANKING ── */}
+      <section className="py-20 bg-secondary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SeoRankingAnimation />
         </div>
       </section>
 
-      {/* ── C: BEFORE/AFTER ── */}
-      <section className="py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading label="Előtte / utána" title="Látványos különbség" description="Nézd meg milyen különbség van egy régi és egy NEZOR által készített weboldal között." />
-          <BeforeAfterSlider />
-        </div>
-      </section>
+      {/* ── AI READY ── */}
+      <AiReadySection />
 
       {/* ── PROCESS ── */}
       <section className="py-20 bg-secondary">
