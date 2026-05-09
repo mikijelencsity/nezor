@@ -50,12 +50,34 @@ function FacebookAdPhone() {
             <div className="text-[9px] text-dark mb-2 leading-relaxed">
               🚀 Nincs még weboldalad? Több ezer vásárlót szerzünk neked! Ingyenes konzultáció most.
             </div>
-            {/* Ad image */}
-            <div className="bg-gradient-to-br from-cyan via-blue-400 to-indigo-500 rounded-xl h-20 flex items-center justify-center mb-2 relative overflow-hidden">
-              <div className="absolute inset-0 bg-grid-pattern opacity-20"/>
-              <div className="relative text-center">
-                <div className="text-white font-bold text-[10px] mb-0.5">NEZOR</div>
-                <div className="text-white/80 text-[8px]">Professzionális weboldalak</div>
+            {/* Ad image — realistic creative */}
+            <div className="rounded-xl h-28 mb-2 relative overflow-hidden bg-gray-900">
+              {/* Background: dark with subtle pattern */}
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-950 to-gray-900"/>
+              <div className="absolute inset-0 bg-grid-pattern opacity-10"/>
+              {/* Mini website mockup on right */}
+              <div className="absolute right-2 top-2 bottom-2 w-16 bg-white rounded-lg overflow-hidden shadow-lg opacity-90">
+                <div className="h-2.5 bg-gray-800 flex items-center px-1 gap-0.5">
+                  <span className="w-1 h-1 rounded-full bg-red-400"/><span className="w-1 h-1 rounded-full bg-yellow-400"/><span className="w-1 h-1 rounded-full bg-green-400"/>
+                </div>
+                <div className="bg-gradient-to-b from-cyan-50 to-white px-1.5 py-1.5">
+                  <div className="w-4/5 h-1.5 bg-gray-700 rounded-full mb-1"/>
+                  <div className="w-3/5 h-1 bg-gray-400 rounded-full mb-1.5"/>
+                  <div className="h-3.5 w-10 bg-cyan-400 rounded"/>
+                </div>
+                <div className="grid grid-cols-2 gap-0.5 px-1 pb-1">
+                  {['bg-blue-100','bg-cyan-100','bg-sky-100','bg-indigo-100'].map((c,i)=>(
+                    <div key={i} className={`${c} rounded h-3`}/>
+                  ))}
+                </div>
+              </div>
+              {/* Left: headline */}
+              <div className="absolute left-3 top-3 right-20">
+                <div className="text-cyan text-[8px] font-bold mb-1 uppercase tracking-wide">NEZOR</div>
+                <div className="text-white text-[10px] font-bold leading-tight mb-1.5">Profi weboldal<br/>már 48 óra alatt</div>
+                <div className="bg-cyan rounded-md px-1.5 py-0.5 inline-block">
+                  <span className="text-white text-[7px] font-bold">Ingyenes ajánlat →</span>
+                </div>
               </div>
             </div>
             <div className="flex items-center justify-between bg-gray-50 rounded-xl p-2 mb-2">
@@ -148,15 +170,27 @@ function InstagramAdPhone() {
           <MoreHorizontal className="w-3.5 h-3.5 text-dark"/>
         </div>
 
-        {/* Square image */}
-        <div className="bg-gradient-to-br from-cyan via-blue-400 to-indigo-500 w-full aspect-square relative overflow-hidden" style={{maxHeight: 130}}>
-          <div className="absolute inset-0 bg-grid-pattern opacity-20"/>
+        {/* Square image — realistic IG creative */}
+        <div className="w-full relative overflow-hidden bg-gray-900" style={{height: 150}}>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-gray-900 to-indigo-950"/>
+          <div className="absolute inset-0 bg-grid-pattern opacity-10"/>
+          {/* Stats floating cards */}
+          <div className="absolute top-3 left-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-2.5 py-1.5">
+            <div className="text-white/60 text-[7px]">Havi látogatók</div>
+            <div className="text-white font-bold text-[11px]">+2.400</div>
+          </div>
+          <div className="absolute top-3 right-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-2.5 py-1.5">
+            <div className="text-white/60 text-[7px]">Konverzió</div>
+            <div className="text-cyan font-bold text-[11px]">+38%</div>
+          </div>
+          {/* Center */}
           <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <div className="text-white font-bold text-sm mb-1">Weboldal nélkül?</div>
-            <div className="text-white/80 text-[9px] text-center px-4">Ezrek keresnek rád Googleon — de nem találnak</div>
-            <div className="mt-2 bg-white/20 border border-white/40 rounded-full px-3 py-1">
-              <span className="text-white text-[8px] font-bold">nezor.hu →</span>
-            </div>
+            <div className="text-cyan text-[8px] font-bold uppercase tracking-widest mb-1">NEZOR</div>
+            <div className="text-white font-bold text-sm text-center leading-tight px-4">Weboldal nélkül láthatatlan vagy</div>
+          </div>
+          {/* Bottom bar */}
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent px-3 py-2">
+            <div className="text-white/80 text-[8px]">nezor.hu · Ingyenes konzultáció</div>
           </div>
         </div>
 
@@ -188,16 +222,16 @@ function PhoneShell({ children, label }: { children: React.ReactNode; label: str
         <div className={`w-3 h-3 rounded-full ${label === 'Facebook' ? 'bg-blue-500' : 'bg-gradient-to-br from-pink-500 to-purple-500'}`}/>
         {label}
       </div>
-      <div className="relative w-36" style={{ filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.2))' }}>
-        <div className="bg-gray-900 rounded-[2rem] overflow-hidden border-4 border-gray-800">
-          <div className="h-5 bg-gray-900 flex items-center justify-center">
-            <div className="w-12 h-2.5 bg-black rounded-full"/>
+      <div className="relative w-52" style={{ filter: 'drop-shadow(0 24px 48px rgba(0,0,0,0.28))' }}>
+        <div className="bg-gray-900 rounded-[2.5rem] overflow-hidden border-4 border-gray-800">
+          <div className="h-6 bg-gray-900 flex items-center justify-center">
+            <div className="w-16 h-3 bg-black rounded-full"/>
           </div>
-          <div className="relative overflow-hidden" style={{ height: 320 }}>
+          <div className="relative overflow-hidden" style={{ height: 400 }}>
             {children}
           </div>
-          <div className="h-4 bg-gray-900 flex items-center justify-center">
-            <div className="w-14 h-1 bg-gray-700 rounded-full"/>
+          <div className="h-5 bg-gray-900 flex items-center justify-center">
+            <div className="w-16 h-1 bg-gray-700 rounded-full"/>
           </div>
         </div>
       </div>
@@ -250,7 +284,7 @@ export function AdPreview() {
         initial={{ opacity: 0, x: 24 }}
         animate={inView ? { opacity: 1, x: 0 } : {}}
         transition={{ type: 'spring', stiffness: 300, damping: 28, delay: 0.15 }}
-        className="flex items-end justify-center gap-6"
+        className="flex items-center justify-center gap-4 lg:gap-6"
       >
         <PhoneShell label="Facebook">
           <FacebookAdPhone />
