@@ -4,8 +4,8 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { FAQAccordion } from '@/components/ui/FAQAccordion'
 import { AnimatedTimeline } from '@/components/ui/AnimatedTimeline'
 import { FacebookFeatures } from '@/components/services/FacebookFeatures'
-import { TargetingMap } from '@/components/services/facebook/TargetingMap'
-import { ResultsTimeline } from '@/components/services/facebook/ResultsTimeline'
+import { AdPreview } from '@/components/services/facebook/AdPreview'
+import { ABTest } from '@/components/services/facebook/ABTest'
 import { FAQItem } from '@/types'
 import {
   Target, ArrowRight, CheckCircle, Zap, Star, Shield
@@ -83,35 +83,22 @@ export default function FacebookHirdetesekPage() {
         </div>
       </section>
 
-      {/* ── G: TARGETING MAP ── */}
+      {/* ── AD PREVIEW ── */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <SectionHeading label="Precíz célzás" title="Pontosan a te ügyfeleidet érjük el" description="Bács-Kiskun megyétől az egész országig — minden korosztályban, minden érdeklődési körben." centered={false} />
-              <div className="space-y-4 mt-6">
-                {[
-                  { label: '5+ millió', desc: 'Magyar Facebook felhasználó' },
-                  { label: 'Bács-Kiskun', desc: 'Elsődleges célterület' },
-                  { label: '25–55 év', desc: 'Optimális célcsoport korosztály' },
-                ].map(item => (
-                  <div key={item.label} className="flex items-center gap-4 p-4 bg-secondary rounded-xl">
-                    <div className="font-display font-bold text-cyan text-lg w-24 flex-shrink-0">{item.label}</div>
-                    <div className="text-sm text-muted">{item.desc}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <TargetingMap />
-          </div>
+          <AdPreview />
         </div>
       </section>
 
-      {/* ── F: RESULTS TIMELINE ── */}
+      {/* ── A/B TEST ── */}
       <section className="py-20 bg-secondary">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading label="Valós eredmények" title="Így növekednek a számok hétről hétre" description="Egy átlagos kampány eredményei az első hónap során." />
-          <ResultsTimeline />
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            label="A/B tesztelés"
+            title="Miért teljesítünk jobban mint mindenki más?"
+            description="Nem csak feltöltünk egy hirdetést — tesztelünk, mérünk, optimalizálunk. Nézd meg a különbséget."
+          />
+          <ABTest />
         </div>
       </section>
 
