@@ -56,11 +56,11 @@ export function ContactForm() {
     )
   }
 
-  const inputClass = 'w-full px-4 py-3 border border-gray-200 rounded-xl text-dark placeholder:text-gray-400 focus:outline-none focus:border-cyan focus:ring-1 focus:ring-cyan transition-colors'
+  const inputClass = 'w-full px-3 py-2.5 border border-gray-200 rounded-xl text-dark text-sm placeholder:text-gray-400 focus:outline-none focus:border-cyan focus:ring-1 focus:ring-cyan transition-colors'
   const errorClass = 'text-red-500 text-xs mt-1'
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
+    <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-3">
       <div>
         <label htmlFor="name" className="sr-only">Neved</label>
         <input id="name" {...register('name')} aria-invalid={errors.name ? 'true' : undefined} placeholder="Neved *" className={inputClass} />
@@ -88,7 +88,7 @@ export function ContactForm() {
       </div>
       <div>
         <label htmlFor="message" className="sr-only">Üzenet</label>
-        <textarea id="message" {...register('message')} aria-invalid={errors.message ? 'true' : undefined} placeholder="Üzenet — írj pár sort a vállalkozásodról *" rows={5} className={inputClass} />
+        <textarea id="message" {...register('message')} aria-invalid={errors.message ? 'true' : undefined} placeholder="Üzenet — írj pár sort a vállalkozásodról *" rows={4} className={inputClass} />
         {errors.message && <p className={errorClass} role="alert">{errors.message.message}</p>}
       </div>
       {error && <p className="text-red-500 text-sm bg-red-50 p-3 rounded-xl" role="alert">{error}</p>}
