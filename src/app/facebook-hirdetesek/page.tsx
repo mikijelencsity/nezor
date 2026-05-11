@@ -5,7 +5,6 @@ import { FAQAccordion } from '@/components/ui/FAQAccordion'
 import { AnimatedTimeline } from '@/components/ui/AnimatedTimeline'
 import { FacebookFeatures } from '@/components/services/FacebookFeatures'
 import { AdPreview } from '@/components/services/facebook/AdPreview'
-import { ABTest } from '@/components/services/facebook/ABTest'
 import { FAQItem } from '@/types'
 import {
   Target, ArrowRight, CheckCircle, Zap, Star, Shield
@@ -90,17 +89,6 @@ export default function FacebookHirdetesekPage() {
         </div>
       </section>
 
-      {/* ── A/B TEST ── */}
-      <section className="py-20 bg-secondary">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            label="A/B tesztelés"
-            title="Miért teljesítünk jobban mint mindenki más?"
-            description="Nem csak feltöltünk egy hirdetést — tesztelünk, mérünk, optimalizálunk. Nézd meg a különbséget."
-          />
-          <ABTest />
-        </div>
-      </section>
 
       {/* ── FEATURES ── */}
       <section className="py-20 bg-white">

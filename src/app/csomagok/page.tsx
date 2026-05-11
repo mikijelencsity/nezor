@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Zap, ArrowRight } from 'lucide-react'
-import { CsomagokBeforeAfter } from '@/components/services/CsomagokBeforeAfter'
+import { CsomagokGuarantees } from '@/components/services/CsomagokGuarantees'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Button } from '@/components/ui/Button'
 import { PackageCard } from '@/components/ui/PackageCard'
@@ -41,20 +41,17 @@ export default function CsomagokPage() {
         <div className="absolute top-0 left-1/3 w-96 h-96 bg-cyan/10 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-blue-400/10 rounded-full blur-3xl" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="text-center lg:text-left">
-              <div className="animate-fade-up inline-flex items-center gap-2 bg-white/10 text-white text-sm font-display font-semibold px-4 py-1.5 rounded-full mb-6">
-                <Zap className="w-3.5 h-3.5 text-cyan" />
-                Átlátható árazás
-              </div>
-              <h1 className="animate-fade-up-delay-1 text-4xl md:text-5xl font-display font-bold text-white mb-4">
-                Rugalmas <span className="text-shimmer">csomagok</span>
-              </h1>
-              <p className="animate-fade-up-delay-2 text-gray-400 text-lg max-w-xl">
-                Minden csomagnál választhatsz egyszeri díjas vagy havidíjas konstrukció között.
-              </p>
+          <div className="text-center">
+            <div className="animate-fade-up inline-flex items-center gap-2 bg-white/10 text-white text-sm font-display font-semibold px-4 py-1.5 rounded-full mb-6">
+              <Zap className="w-3.5 h-3.5 text-cyan" />
+              Átlátható árazás
             </div>
-            <CsomagokBeforeAfter />
+            <h1 className="animate-fade-up-delay-1 text-4xl md:text-5xl font-display font-bold text-white mb-4">
+              Rugalmas <span className="text-shimmer">csomagok</span>
+            </h1>
+            <p className="animate-fade-up-delay-2 text-gray-400 text-lg max-w-2xl mx-auto">
+              Minden csomagnál választhatsz egyszeri díjas vagy havidíjas konstrukció között — te döntöd el mi a legjobb.
+            </p>
           </div>
         </div>
       </section>
@@ -62,6 +59,16 @@ export default function CsomagokPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <PricingSection title="Weboldal csomagok" packages={websitePackages} />
         <PricingSection title="Webshop csomagok" packages={webshopPackages} />
+
+        {/* Guarantees */}
+        <section className="mb-20">
+          <div className="text-center mb-10">
+            <span className="inline-block text-cyan font-display font-semibold text-sm uppercase tracking-widest mb-3">Garanciák</span>
+            <h2 className="text-3xl font-display font-bold text-dark">Amit minden csomaggal kapsz</h2>
+            <p className="text-muted mt-3 max-w-xl mx-auto">Nem csak egy weboldalt kapsz — garanciákat is.</p>
+          </div>
+          <CsomagokGuarantees />
+        </section>
 
         {/* Custom package */}
         <div className="mb-20 rounded-3xl bg-gradient-to-r from-cyan/10 to-blue-400/10 border border-cyan/20 p-10 md:p-14 text-center">
