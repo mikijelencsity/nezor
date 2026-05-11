@@ -9,7 +9,7 @@ const partners = [
   { name: 'InShape-Diet',            logo: '/logos/inshapediet.webp',            imgClass: '' },
   { name: 'ZT Épületgépészet',       logo: '/logos/ztepuletgepeszet.png',        imgClass: '-rotate-90' },
   { name: 'Estur Kft.',              logo: '/logos/estur.webp',                  imgClass: '' },
-  { name: 'Korona Gomba',            logo: '/logos/koronagomba.webp',            imgClass: 'scale-125' },
+  { name: 'Korona Gomba',            logo: '/logos/koronagomba.webp',            imgClass: 'scale-150' },
   { name: 'DoverSolution',           logo: '/logos/doversolution.webp',          imgClass: '' },
   { name: 'Kisállatkereskedés Baja', logo: '/logos/kisallatkereskedesbaja.webp', imgClass: '' },
 ]
