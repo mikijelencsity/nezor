@@ -268,23 +268,6 @@ export function Hero() {
               </motion.div>
             </div>
 
-            {/* Bottom badge */}
-            <motion.div
-              animate={{ y: [4, -4, 4] }}
-              transition={{
-                duration: 3.8,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-              className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-white rounded-full shadow-lg border border-gray-100 px-3 py-1.5 flex items-center gap-1.5 whitespace-nowrap"
-              aria-hidden="true"
-            >
-              <CheckCircle className="w-3.5 h-3.5 text-cyan" />
-
-              <span className="text-xs font-display font-semibold text-dark">
-                SEO optimalizált
-              </span>
-            </motion.div>
           </motion.div>
 
         </div>
