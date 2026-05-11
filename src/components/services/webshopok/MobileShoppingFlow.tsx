@@ -297,36 +297,21 @@ const screens = [ProductList, ProductDetail, CartView, PaymentView, SuccessView]
 
 function MobileShoppingFlowStatic() {
   return (
-    <div className="flex flex-col items-center gap-8 text-center">
-      <div className="relative flex-shrink-0" style={{ filter: 'drop-shadow(0 24px 40px rgba(0,0,0,0.2))' }}>
-        <div className="w-48 bg-gray-900 rounded-[2.5rem] overflow-hidden border-4 border-gray-800">
-          <div className="h-7 bg-gray-900 flex items-center justify-center">
-            <div className="w-16 h-3.5 bg-black rounded-full" />
+    <div className="text-center">
+      <h3 className="text-xl font-display font-bold text-dark mb-2">
+        Zökkenőmentes mobilos{' '}
+        <span className="text-gradient">vásárlási élmény</span>
+      </h3>
+      <p className="text-muted text-sm leading-relaxed max-w-xs mx-auto mb-4">
+        Vásárlóid 70%-a telefonon böngész. Webshopjaink mobilra optimalizálva érkeznek.
+      </p>
+      <div className="flex flex-wrap justify-center gap-2">
+        {steps.map((step, i) => (
+          <div key={i} className="flex items-center gap-1.5 bg-secondary px-3 py-1.5 rounded-full">
+            <div className="w-4 h-4 rounded-full bg-cyan flex items-center justify-center text-[9px] font-bold text-white flex-shrink-0">{i + 1}</div>
+            <span className="text-xs font-display font-semibold text-dark">{step.label}</span>
           </div>
-          <div className="overflow-hidden" style={{ height: 340 }}>
-            <ProductList />
-          </div>
-          <div className="h-6 bg-gray-900 flex items-center justify-center">
-            <div className="w-20 h-1 bg-gray-700 rounded-full" />
-          </div>
-        </div>
-      </div>
-      <div>
-        <h3 className="text-xl font-display font-bold text-dark mb-2">
-          Zökkenőmentes mobilos{' '}
-          <span className="text-gradient">vásárlási élmény</span>
-        </h3>
-        <p className="text-muted text-sm leading-relaxed max-w-xs mx-auto mb-4">
-          Vásárlóid 70%-a telefonon böngész. Webshopjaink mobilra optimalizálva érkeznek.
-        </p>
-        <div className="flex flex-wrap justify-center gap-2">
-          {steps.map((step, i) => (
-            <div key={i} className="flex items-center gap-1.5 bg-secondary px-3 py-1.5 rounded-full">
-              <div className="w-4 h-4 rounded-full bg-cyan flex items-center justify-center text-[9px] font-bold text-white flex-shrink-0">{i + 1}</div>
-              <span className="text-xs font-display font-semibold text-dark">{step.label}</span>
-            </div>
-          ))}
-        </div>
+        ))}
       </div>
     </div>
   )
