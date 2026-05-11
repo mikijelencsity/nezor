@@ -3,15 +3,15 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 
 const partners = [
-  { name: 'Neked Sütöm',            logo: '/logos/nekedsutom.webp'             },
-  { name: 'Hellinger Kft.',          logo: '/logos/hellinger.webp'              },
-  { name: 'Cruiser Shop',            logo: '/logos/cruisershop.webp'            },
-  { name: 'InShape-Diet',            logo: '/logos/inshapediet.webp'            },
-  { name: 'ZT Épületgépészet',       logo: '/logos/ztepuletgepeszet.png'        },
-  { name: 'Estur Kft.',              logo: '/logos/estur.webp'                  },
-  { name: 'Korona Gomba',            logo: '/logos/koronagomba.webp'            },
-  { name: 'DoverSolution',           logo: '/logos/doversolution.webp'          },
-  { name: 'Kisállatkereskedés Baja', logo: '/logos/kisallatkereskedesbaja.webp' },
+  { name: 'Neked Sütöm',            logo: '/logos/nekedsutom.webp',             imgClass: '' },
+  { name: 'Hellinger Kft.',          logo: '/logos/hellinger.webp',              imgClass: '' },
+  { name: 'Cruiser Shop',            logo: '/logos/cruisershop.webp',            imgClass: '' },
+  { name: 'InShape-Diet',            logo: '/logos/inshapediet.webp',            imgClass: '' },
+  { name: 'ZT Épületgépészet',       logo: '/logos/ztepuletgepeszet.png',        imgClass: '-rotate-90' },
+  { name: 'Estur Kft.',              logo: '/logos/estur.webp',                  imgClass: '' },
+  { name: 'Korona Gomba',            logo: '/logos/koronagomba.webp',            imgClass: 'scale-125' },
+  { name: 'DoverSolution',           logo: '/logos/doversolution.webp',          imgClass: '' },
+  { name: 'Kisállatkereskedés Baja', logo: '/logos/kisallatkereskedesbaja.webp', imgClass: '' },
 ]
 
 export function PartnersMarquee() {
@@ -46,7 +46,7 @@ export function PartnersMarquee() {
                 width={120}
                 height={48}
                 loading="lazy"
-                className="h-12 w-auto max-w-[120px] object-contain transition-all duration-300 opacity-60 group-hover:opacity-100"
+                className={`h-12 w-auto max-w-[120px] object-contain transition-all duration-300 opacity-60 group-hover:opacity-100 ${p.imgClass}`}
               />
               <span className="hidden sm:block text-[10px] font-display font-medium text-gray-600 group-hover:text-gray-400 transition-colors text-center leading-tight line-clamp-1 px-1">
                 {p.name}
