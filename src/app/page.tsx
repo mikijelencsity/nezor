@@ -12,6 +12,7 @@ import { BlogPreview } from '@/components/home/BlogPreview'
 import { StatsSection } from '@/components/home/StatsSection'
 import { PartnersMarquee } from '@/components/home/PartnersMarquee'
 import { Testimonials } from '@/components/home/Testimonials'
+import { VideoShowcase } from '@/components/home/VideoShowcase'
 import { getLatestPosts } from '@/lib/blog'
 import { BlogPost } from '@/types'
 
@@ -44,6 +45,7 @@ export default async function HomePage() {
       <PartnersMarquee />
       <ServicesSection />
       <ProcessSection />
+      <VideoShowcase />
       <WhyNezor />
       <Testimonials />
       <ReferencesPreview />
