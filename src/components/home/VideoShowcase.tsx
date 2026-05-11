@@ -28,164 +28,155 @@ export function VideoShowcase() {
           </p>
         </motion.div>
 
-        {/* Laptop mockup */}
         <motion.div
           initial={{ opacity: 0, y: 32, scale: 0.97 }}
           animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
           transition={{ type: 'spring', stiffness: 260, damping: 28, delay: 0.15 }}
-          className="relative max-w-3xl mx-auto"
+          className="flex justify-center"
         >
-          {/* Glow */}
-          <div className="absolute -inset-6 bg-cyan/6 rounded-3xl blur-3xl" />
+          {/* Outer glow */}
+          <div className="relative w-full" style={{ maxWidth: 620 }}>
+            <div className="absolute -inset-8 rounded-3xl blur-3xl" style={{ background: 'radial-gradient(ellipse, rgba(0,207,255,0.08) 0%, transparent 70%)' }} />
 
-          <div className="relative" style={{ filter: 'drop-shadow(0 40px 60px rgba(0,0,0,0.35))' }}>
+            <div className="relative">
 
-            {/* ── LID / SCREEN ── */}
-            <div
-              className="relative rounded-t-xl overflow-hidden"
-              style={{
-                background: 'linear-gradient(145deg, #2a2a2a, #1a1a1a)',
-                padding: '10px 10px 0 10px',
-                borderTop: '1px solid #444',
-                borderLeft: '1px solid #444',
-                borderRight: '1px solid #333',
-              }}
-            >
-              {/* Thin top bezel with camera */}
-              <div className="flex items-center justify-center py-1.5 mb-0">
-                <div className="w-2 h-2 rounded-full bg-gray-600 border border-gray-500" />
-              </div>
-
-              {/* Screen glass */}
+              {/* ── SCREEN LID ── */}
               <div
-                className="rounded-t-sm overflow-hidden relative"
-                style={{ background: '#000', aspectRatio: '16/10' }}
+                style={{
+                  background: 'linear-gradient(160deg, #3a3a3c 0%, #2c2c2e 40%, #1c1c1e 100%)',
+                  borderRadius: '12px 12px 4px 4px',
+                  padding: '6px 6px 0',
+                  boxShadow: '0 0 0 0.5px rgba(255,255,255,0.08) inset, 0 -1px 0 rgba(0,0,0,0.5)',
+                  position: 'relative',
+                }}
               >
-                {/* Subtle screen reflection */}
-                <div
-                  className="absolute inset-0 pointer-events-none z-10"
-                  style={{
-                    background: 'linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 50%)',
-                  }}
-                />
+                {/* Top highlight */}
+                <div style={{ position: 'absolute', top: 0, left: '15%', right: '15%', height: 1, background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent)', borderRadius: 1 }} />
 
-                {/* Browser chrome */}
-                <div className="bg-gray-900 border-b border-gray-700/80 px-3 py-2 flex items-center gap-2.5">
-                  <div className="flex gap-1.5 flex-shrink-0">
-                    <span className="w-2.5 h-2.5 rounded-full bg-red-500/90" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/90" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-green-500/90" />
+                {/* Notch */}
+                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 4 }}>
+                  <div style={{ width: 80, height: 6, background: '#1c1c1e', borderRadius: '0 0 6px 6px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#2c2c2e', border: '1px solid #3a3a3a' }} />
                   </div>
-                  <div className="flex-1 bg-gray-800 rounded px-3 py-0.5 flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full border border-gray-600 flex-shrink-0" />
-                    <span className="text-[10px] text-gray-500">nezor.hu</span>
-                    <div className="w-2.5 h-2.5 ml-auto flex-shrink-0">
-                      <div className="w-full h-0.5 bg-gray-600 rounded mb-0.5" />
-                      <div className="w-3/4 h-0.5 bg-gray-600 rounded mb-0.5" />
-                      <div className="w-full h-0.5 bg-gray-600 rounded" />
+                </div>
+
+                {/* Screen */}
+                <div
+                  style={{
+                    borderRadius: '6px 6px 2px 2px',
+                    overflow: 'hidden',
+                    background: '#000',
+                    aspectRatio: '16/10',
+                    position: 'relative',
+                    boxShadow: 'inset 0 0 0 1px rgba(0,0,0,0.8)',
+                  }}
+                >
+                  {/* Glass reflection */}
+                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 40%)', zIndex: 10, pointerEvents: 'none' }} />
+
+                  {/* Browser bar */}
+                  <div style={{ background: '#1d1d1f', borderBottom: '1px solid rgba(255,255,255,0.07)', padding: '6px 10px', display: 'flex', alignItems: 'center', gap: 8 }}>
+                    <div style={{ display: 'flex', gap: 5 }}>
+                      <span style={{ width: 10, height: 10, borderRadius: '50%', background: '#ff5f57', display: 'block' }} />
+                      <span style={{ width: 10, height: 10, borderRadius: '50%', background: '#febc2e', display: 'block' }} />
+                      <span style={{ width: 10, height: 10, borderRadius: '50%', background: '#28c840', display: 'block' }} />
+                    </div>
+                    <div style={{ flex: 1, background: 'rgba(255,255,255,0.07)', borderRadius: 4, padding: '3px 10px', display: 'flex', alignItems: 'center', gap: 6, maxWidth: 260, margin: '0 auto' }}>
+                      <div style={{ width: 8, height: 8, borderRadius: '50%', border: '1.5px solid rgba(255,255,255,0.2)', flexShrink: 0 }} />
+                      <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.35)', letterSpacing: 0.3 }}>nezor.hu</span>
+                    </div>
+                    <div style={{ width: 40 }} />
+                  </div>
+
+                  {/*
+                   * ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                   * VIDEÓ BEILLESZTÉSE:
+                   * 1. Tedd a videót a public/video/ mappába
+                   * 2. Töröld ki a PLACEHOLDER blokkot lent
+                   * 3. Szedd ki a megjegyzésből az alábbi video taget
+                   *
+                   * <video
+                   *   className="w-full h-full object-cover"
+                   *   style={{ display: 'block' }}
+                   *   autoPlay muted loop playsInline
+                   *   preload="metadata"
+                   *   poster="/video/nezor-demo-poster.jpg"
+                   * >
+                   *   <source src="/video/nezor-demo.webm" type="video/webm" />
+                   *   <source src="/video/nezor-demo.mp4" type="video/mp4" />
+                   * </video>
+                   * ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                   */}
+
+                  {/* PLACEHOLDER */}
+                  <div style={{ position: 'absolute', inset: 0, top: 30, background: 'linear-gradient(145deg, #0a0a0f, #0d1220, #0a0a0f)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 12 }}>
+                    <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(0,207,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,207,255,0.04) 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+                    <div style={{ position: 'relative', width: 52, height: 52, borderRadius: '50%', background: 'rgba(0,207,255,0.12)', border: '1px solid rgba(0,207,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <Play style={{ width: 22, height: 22, color: '#00CFFF', marginLeft: 3 }} />
+                    </div>
+                    <div style={{ position: 'relative', textAlign: 'center' }}>
+                      <div style={{ color: 'rgba(255,255,255,0.7)', fontWeight: 700, fontSize: 13, marginBottom: 3 }}>Bemutató videó</div>
+                      <div style={{ color: 'rgba(255,255,255,0.25)', fontSize: 11 }}>Hamarosan elérhető</div>
                     </div>
                   </div>
-                  <div className="flex gap-1 flex-shrink-0">
-                    <div className="w-4 h-4 rounded bg-gray-800" />
-                    <div className="w-4 h-4 rounded bg-gray-800" />
-                  </div>
+                  {/* /PLACEHOLDER */}
+
                 </div>
-
-                {/*
-                 * ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-                 * VIDEÓ BEILLESZTÉSE:
-                 * 1. Tedd a videót a public/video/ mappába
-                 * 2. Töröld ki a PLACEHOLDER blokkot lent
-                 * 3. Szedd ki a megjegyzésből az alábbi video taget
-                 *
-                 * <video
-                 *   className="w-full h-full object-cover"
-                 *   autoPlay muted loop playsInline
-                 *   preload="metadata"
-                 *   poster="/video/nezor-demo-poster.jpg"
-                 * >
-                 *   <source src="/video/nezor-demo.webm" type="video/webm" />
-                 *   <source src="/video/nezor-demo.mp4" type="video/mp4" />
-                 * </video>
-                 * ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-                 */}
-
-                {/* PLACEHOLDER */}
-                <div className="absolute inset-0 top-8 bg-gradient-to-br from-gray-950 via-blue-950/60 to-gray-950 flex flex-col items-center justify-center gap-3">
-                  <div className="absolute inset-0 bg-grid-pattern opacity-8" />
-                  <div className="relative w-14 h-14 bg-cyan/15 rounded-full flex items-center justify-center border border-cyan/25 backdrop-blur-sm">
-                    <Play className="w-6 h-6 text-cyan ml-0.5" />
-                  </div>
-                  <div className="relative text-center">
-                    <div className="text-white/80 font-display font-semibold text-sm mb-0.5">Bemutató videó</div>
-                    <div className="text-gray-600 text-xs">Hamarosan elérhető</div>
-                  </div>
-                </div>
-                {/* /PLACEHOLDER */}
-
               </div>
-            </div>
 
-            {/* ── BASE / KEYBOARD ── */}
-            <div
-              style={{
-                background: 'linear-gradient(180deg, #282828 0%, #222 100%)',
-                borderLeft: '1px solid #3a3a3a',
-                borderRight: '1px solid #2a2a2a',
-                borderBottom: '1px solid #222',
-                padding: '10px 12px 8px',
-              }}
-              className="rounded-b-xl"
-            >
-              {/* Keyboard rows */}
-              <div className="space-y-1 mb-3">
-                {[
-                  { keys: 14, w: 'w-full' },
-                  { keys: 13, w: 'w-[96%]' },
-                  { keys: 11, w: 'w-[92%] mx-auto' },
-                ].map((row, ri) => (
-                  <div key={ri} className={`flex gap-0.5 justify-center ${row.w}`}>
-                    {Array.from({ length: row.keys }).map((_, ki) => (
-                      <div
-                        key={ki}
-                        className="flex-1 h-4 rounded-sm"
-                        style={{
-                          background: 'linear-gradient(180deg, #363636 0%, #2e2e2e 100%)',
-                          boxShadow: '0 1px 0 #1a1a1a',
-                          maxWidth: 28,
-                        }}
-                      />
+              {/* ── HINGE ── */}
+              <div style={{ height: 3, background: 'linear-gradient(90deg, #111 0%, #2a2a2c 15%, #3a3a3c 50%, #2a2a2c 85%, #111 100%)', position: 'relative' }}>
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(255,255,255,0.06) 0%, transparent 50%)' }} />
+              </div>
+
+              {/* ── BASE ── */}
+              <div
+                style={{
+                  background: 'linear-gradient(175deg, #3a3a3c 0%, #2c2c2e 30%, #252527 100%)',
+                  borderRadius: '0 0 10px 10px',
+                  padding: '10px 14px 14px',
+                  boxShadow: '0 0 0 0.5px rgba(255,255,255,0.06) inset',
+                  position: 'relative',
+                }}
+              >
+                {/* Base top highlight */}
+                <div style={{ position: 'absolute', top: 0, left: '10%', right: '10%', height: 1, background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent)' }} />
+
+                {/* Keyboard island */}
+                <div style={{ background: 'rgba(0,0,0,0.2)', borderRadius: 8, padding: '8px 10px 10px', marginBottom: 8 }}>
+                  {/* Function row */}
+                  <div style={{ display: 'flex', gap: 3, marginBottom: 4, justifyContent: 'space-between' }}>
+                    {Array.from({ length: 14 }).map((_, i) => (
+                      <div key={i} style={{ flex: 1, height: 7, borderRadius: 3, background: 'linear-gradient(180deg, #4a4a4c, #3a3a3c)', boxShadow: '0 1px 0 rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06)' }} />
                     ))}
                   </div>
-                ))}
-                {/* Space bar row */}
-                <div className="flex gap-0.5 justify-center w-full">
-                  <div className="w-6 h-3.5 rounded-sm" style={{ background: '#2e2e2e', boxShadow: '0 1px 0 #1a1a1a' }} />
-                  <div className="w-6 h-3.5 rounded-sm" style={{ background: '#2e2e2e', boxShadow: '0 1px 0 #1a1a1a' }} />
-                  <div className="flex-1 h-3.5 rounded-sm mx-2" style={{ background: 'linear-gradient(180deg, #383838 0%, #2e2e2e 100%)', boxShadow: '0 1px 0 #1a1a1a', maxWidth: 180 }} />
-                  <div className="w-6 h-3.5 rounded-sm" style={{ background: '#2e2e2e', boxShadow: '0 1px 0 #1a1a1a' }} />
-                  <div className="w-6 h-3.5 rounded-sm" style={{ background: '#2e2e2e', boxShadow: '0 1px 0 #1a1a1a' }} />
+                  {/* Key rows */}
+                  {[13, 12, 11].map((count, ri) => (
+                    <div key={ri} style={{ display: 'flex', gap: 3, marginBottom: 3, justifyContent: ri === 2 ? 'center' : 'space-between' }}>
+                      {Array.from({ length: count }).map((_, ki) => (
+                        <div key={ki} style={{ flex: 1, height: 14, borderRadius: 3, background: 'linear-gradient(180deg, #464648, #363638)', boxShadow: '0 1.5px 0 rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.07)', maxWidth: 34 }} />
+                      ))}
+                    </div>
+                  ))}
+                  {/* Space bar row */}
+                  <div style={{ display: 'flex', gap: 3, alignItems: 'center', justifyContent: 'center' }}>
+                    <div style={{ width: 22, height: 12, borderRadius: 3, background: 'linear-gradient(180deg, #464648, #363638)', boxShadow: '0 1.5px 0 rgba(0,0,0,0.6)' }} />
+                    <div style={{ width: 22, height: 12, borderRadius: 3, background: 'linear-gradient(180deg, #464648, #363638)', boxShadow: '0 1.5px 0 rgba(0,0,0,0.6)' }} />
+                    <div style={{ flex: 1, height: 12, borderRadius: 3, background: 'linear-gradient(180deg, #4a4a4c, #3a3a3c)', boxShadow: '0 1.5px 0 rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.07)', maxWidth: 200, margin: '0 6px' }} />
+                    <div style={{ width: 22, height: 12, borderRadius: 3, background: 'linear-gradient(180deg, #464648, #363638)', boxShadow: '0 1.5px 0 rgba(0,0,0,0.6)' }} />
+                    <div style={{ width: 22, height: 12, borderRadius: 3, background: 'linear-gradient(180deg, #464648, #363638)', boxShadow: '0 1.5px 0 rgba(0,0,0,0.6)' }} />
+                  </div>
+                </div>
+
+                {/* Trackpad */}
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                  <div style={{ width: 110, height: 60, borderRadius: 8, background: 'linear-gradient(145deg, #3c3c3e, #2e2e30)', border: '0.5px solid rgba(255,255,255,0.08)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.05), 0 1px 3px rgba(0,0,0,0.4)' }} />
                 </div>
               </div>
 
-              {/* Trackpad */}
-              <div className="flex justify-center">
-                <div
-                  className="w-24 h-12 rounded-lg"
-                  style={{
-                    background: 'linear-gradient(160deg, #303030, #282828)',
-                    border: '1px solid #3a3a3a',
-                    boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.04)',
-                  }}
-                />
-              </div>
+              {/* Bottom shadow */}
+              <div style={{ height: 2, background: 'linear-gradient(90deg, transparent 5%, rgba(0,0,0,0.6) 20%, rgba(0,0,0,0.6) 80%, transparent 95%)', borderRadius: '0 0 12px 12px' }} />
             </div>
-
-            {/* Bottom edge shadow */}
-            <div
-              className="h-1 rounded-b-2xl mx-4"
-              style={{ background: 'linear-gradient(90deg, transparent, #111 20%, #111 80%, transparent)' }}
-            />
           </div>
         </motion.div>
 
