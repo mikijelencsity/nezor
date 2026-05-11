@@ -44,6 +44,7 @@ export const references: Reference[] = [
     url: 'https://ztepuletgepeszet.hu',
     category: 'weboldal',
     imageUrl: '/logos/ztepuletgepeszet.png',
+    imgClass: '-rotate-90',
     gradient: 'from-blue-200 to-sky-100',
   },
   {
@@ -62,6 +63,7 @@ export const references: Reference[] = [
     url: 'https://koronagomba.hu',
     category: 'weboldal',
     imageUrl: '/logos/koronagomba.webp',
+    imgClass: 'scale-150',
     gradient: 'from-lime-200 to-green-100',
   },
   {

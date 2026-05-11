@@ -26,7 +26,7 @@ function ReferenceCard({ ref, index }: { ref: Reference; index: number }) {
           <img
             src={ref.imageUrl}
             alt={`${ref.name} logó`}
-            className="max-h-20 max-w-[60%] w-auto h-auto object-contain relative z-10 transition-transform duration-500 group-hover:scale-95"
+            className={`max-h-20 max-w-[60%] w-auto h-auto object-contain relative z-10 transition-transform duration-500 group-hover:scale-95 ${ref.imgClass ?? ''}`}
             style={{ filter: 'drop-shadow(0 2px 12px rgba(0,0,0,0.18))' }}
           />
         ) : (

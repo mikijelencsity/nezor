@@ -4,6 +4,7 @@ export interface Reference {
   description: string
   url: string
   imageUrl?: string
+  imgClass?: string
   gradient?: string
   category: 'weboldal' | 'webshop'
 }
