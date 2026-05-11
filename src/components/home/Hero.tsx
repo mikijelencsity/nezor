@@ -13,8 +13,8 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden bg-white py-10 md:py-14 lg:py-16 flex items-center min-h-0">
       {/* Background — CSS only, no JS */}
-      <div className="dot-grid-bg absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(0,207,255,0.28) 1.5px, transparent 1.5px)', backgroundSize: '28px 28px' }} aria-hidden="true" />
-      <div className="absolute inset-0 bg-gradient-to-br from-white/75 via-white/60 to-cyan-light/30 pointer-events-none" aria-hidden="true" />
+      <div className="dot-grid-bg absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(0,207,255,0.55) 1.8px, transparent 1.8px)', backgroundSize: '28px 28px' }} aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-white/40 to-cyan-light/20 pointer-events-none" aria-hidden="true" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
