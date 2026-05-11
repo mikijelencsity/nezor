@@ -295,6 +295,43 @@ function SuccessView() {
 
 const screens = [ProductList, ProductDetail, CartView, PaymentView, SuccessView]
 
+function MobileShoppingFlowStatic() {
+  return (
+    <div className="flex flex-col items-center gap-8 text-center">
+      <div className="relative flex-shrink-0" style={{ filter: 'drop-shadow(0 24px 40px rgba(0,0,0,0.2))' }}>
+        <div className="w-48 bg-gray-900 rounded-[2.5rem] overflow-hidden border-4 border-gray-800">
+          <div className="h-7 bg-gray-900 flex items-center justify-center">
+            <div className="w-16 h-3.5 bg-black rounded-full" />
+          </div>
+          <div className="overflow-hidden" style={{ height: 340 }}>
+            <ProductList />
+          </div>
+          <div className="h-6 bg-gray-900 flex items-center justify-center">
+            <div className="w-20 h-1 bg-gray-700 rounded-full" />
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 className="text-xl font-display font-bold text-dark mb-2">
+          Zökkenőmentes mobilos{' '}
+          <span className="text-gradient">vásárlási élmény</span>
+        </h3>
+        <p className="text-muted text-sm leading-relaxed max-w-xs mx-auto mb-4">
+          Vásárlóid 70%-a telefonon böngész. Webshopjaink mobilra optimalizálva érkeznek.
+        </p>
+        <div className="flex flex-wrap justify-center gap-2">
+          {steps.map((step, i) => (
+            <div key={i} className="flex items-center gap-1.5 bg-secondary px-3 py-1.5 rounded-full">
+              <div className="w-4 h-4 rounded-full bg-cyan flex items-center justify-center text-[9px] font-bold text-white flex-shrink-0">{i + 1}</div>
+              <span className="text-xs font-display font-semibold text-dark">{step.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export function MobileShoppingFlow() {
   const [current, setCurrent] = useState(0)
   const [auto, setAuto] = useState(true)
@@ -312,77 +349,72 @@ export function MobileShoppingFlow() {
   const Screen = screens[current]
 
   return (
-    <div ref={containerRef} className="flex flex-col lg:flex-row items-center gap-10">
-      {/* Phone */}
-      <div className="flex-shrink-0 relative" style={{ filter: 'drop-shadow(0 32px 48px rgba(0,0,0,0.25))' }}>
-        <div className="absolute -inset-6 bg-cyan/8 rounded-full blur-3xl" />
-        <div className="relative w-52 bg-gray-900 rounded-[2.5rem] overflow-hidden border-4 border-gray-800">
-          {/* Dynamic Island */}
-          <div className="h-7 bg-gray-900 flex items-center justify-center">
-            <div className="w-16 h-3.5 bg-black rounded-full" />
-          </div>
-          {/* Screen */}
-          <div className="relative overflow-hidden" style={{ height: 380 }}>
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={current}
-                initial={{ opacity: 0, x: 40 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -40 }}
-                transition={{ type: 'spring', stiffness: 380, damping: 35 }}
-                className="absolute inset-0"
-              >
-                <Screen />
-              </motion.div>
-            </AnimatePresence>
-          </div>
-          {/* Bottom bar */}
-          <div className="h-6 bg-gray-900 flex items-center justify-center">
-            <div className="w-20 h-1 bg-gray-700 rounded-full" />
-          </div>
-        </div>
+    <>
+      {/* Mobile: static, no JS animations */}
+      <div className="lg:hidden">
+        <MobileShoppingFlowStatic />
       </div>
 
-      {/* Right: steps + description */}
-      <div className="flex-1">
-        <h3 className="text-2xl font-display font-bold text-dark mb-2">
-          Zökkenőmentes mobilos<br />
-          <span className="text-gradient">vásárlási élmény</span>
-        </h3>
-        <p className="text-muted mb-6 text-sm leading-relaxed">
-          Vásárlóid 70%-a telefonon böngész. A mi webshopjaink mobilra optimalizálva érkeznek — gyors, intuitív, konvertáló.
-        </p>
-
-        {/* Step indicators */}
-        <div className="space-y-2">
-          {steps.map((step, i) => (
-            <button
-              key={i}
-              onClick={() => { setCurrent(i); setAuto(false) }}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left transition-all ${
-                current === i ? 'bg-cyan-light border border-cyan/30' : 'bg-secondary hover:bg-gray-100'
-              }`}
-            >
-              <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-display font-bold flex-shrink-0 ${
-                current === i ? 'bg-cyan text-white' : 'bg-gray-200 text-muted'
-              }`}>
-                {i + 1}
-              </div>
-              <div>
-                <div className={`text-sm font-display font-bold ${current === i ? 'text-cyan' : 'text-dark'}`}>{step.label}</div>
-                <div className="text-[10px] text-muted">{step.desc}</div>
-              </div>
-              {current === i && (
+      {/* Desktop: full animated */}
+      <div ref={containerRef} className="hidden lg:flex flex-row items-center gap-10">
+        <div className="flex-shrink-0 relative" style={{ filter: 'drop-shadow(0 32px 48px rgba(0,0,0,0.25))' }}>
+          <div className="absolute -inset-6 bg-cyan/8 rounded-full blur-3xl" />
+          <div className="relative w-52 bg-gray-900 rounded-[2.5rem] overflow-hidden border-4 border-gray-800">
+            <div className="h-7 bg-gray-900 flex items-center justify-center">
+              <div className="w-16 h-3.5 bg-black rounded-full" />
+            </div>
+            <div className="relative overflow-hidden" style={{ height: 380 }}>
+              <AnimatePresence mode="wait">
                 <motion.div
-                  layoutId="activeIndicator"
-                  className="ml-auto w-1.5 h-1.5 rounded-full bg-cyan"
-                />
-              )}
-            </button>
-          ))}
+                  key={current}
+                  initial={{ opacity: 0, x: 40 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -40 }}
+                  transition={{ type: 'spring', stiffness: 380, damping: 35 }}
+                  className="absolute inset-0"
+                >
+                  <Screen />
+                </motion.div>
+              </AnimatePresence>
+            </div>
+            <div className="h-6 bg-gray-900 flex items-center justify-center">
+              <div className="w-20 h-1 bg-gray-700 rounded-full" />
+            </div>
+          </div>
         </div>
-        <p className="text-[10px] text-muted mt-3">Kattints bármelyik lépésre a megtekintéshez</p>
+        <div className="flex-1">
+          <h3 className="text-2xl font-display font-bold text-dark mb-2">
+            Zökkenőmentes mobilos<br />
+            <span className="text-gradient">vásárlási élmény</span>
+          </h3>
+          <p className="text-muted mb-6 text-sm leading-relaxed">
+            Vásárlóid 70%-a telefonon böngész. A mi webshopjaink mobilra optimalizálva érkeznek — gyors, intuitív, konvertáló.
+          </p>
+          <div className="space-y-2">
+            {steps.map((step, i) => (
+              <button
+                key={i}
+                onClick={() => { setCurrent(i); setAuto(false) }}
+                className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left transition-all ${
+                  current === i ? 'bg-cyan-light border border-cyan/30' : 'bg-secondary hover:bg-gray-100'
+                }`}
+              >
+                <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-display font-bold flex-shrink-0 ${
+                  current === i ? 'bg-cyan text-white' : 'bg-gray-200 text-muted'
+                }`}>{i + 1}</div>
+                <div>
+                  <div className={`text-sm font-display font-bold ${current === i ? 'text-cyan' : 'text-dark'}`}>{step.label}</div>
+                  <div className="text-[10px] text-muted">{step.desc}</div>
+                </div>
+                {current === i && (
+                  <motion.div layoutId="activeIndicator" className="ml-auto w-1.5 h-1.5 rounded-full bg-cyan" />
+                )}
+              </button>
+            ))}
+          </div>
+          <p className="text-[10px] text-muted mt-3">Kattints bármelyik lépésre a megtekintéshez</p>
+        </div>
       </div>
-    </div>
+    </>
   )
 }

@@ -12,6 +12,10 @@ function AnimCount({ target, prefix = '', suffix = '', duration = 1600, delay = 
 
   useEffect(() => {
     if (!inView) return
+    if (window.innerWidth < 1024) {
+      setVal(target)
+      return
+    }
     const t = setTimeout(() => {
       let t0: number | null = null
       const step = (ts: number) => {
