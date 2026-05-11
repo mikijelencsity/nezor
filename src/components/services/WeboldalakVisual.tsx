@@ -16,8 +16,8 @@ export function WeboldalakVisual() {
       <div className="absolute -inset-8 bg-cyan/8 rounded-3xl blur-3xl" />
 
       <motion.div
-        initial={{ opacity: 0, y: 32 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ y: 32 }}
+        animate={{ y: 0 }}
         transition={{ duration: 0.7, delay: 0.3 }}
         className="relative"
       >

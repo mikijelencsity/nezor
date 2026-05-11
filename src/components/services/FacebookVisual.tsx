@@ -157,8 +157,8 @@ export function FacebookVisual() {
   return (
     <div className="flex justify-center lg:justify-end mt-10 lg:mt-0">
       <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ y: 24 }}
+        animate={{ y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
         className="relative w-full max-w-sm"
       >

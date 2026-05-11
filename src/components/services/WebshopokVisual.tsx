@@ -28,20 +28,20 @@ export function WebshopokVisual() {
       <div className="absolute -inset-8 bg-orange-300/10 rounded-3xl blur-3xl" />
 
       <motion.div
-        initial={{ opacity: 0, y: 32 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ y: 32 }}
+        animate={{ y: 0 }}
         transition={{ duration: 0.7, delay: 0.3 }}
         className="relative"
         style={{ filter: 'drop-shadow(0 32px 48px rgba(0,0,0,0.25))' }}
       >
         <PhoneMockup size="lg" scrollClass="phone-scroll">
-          <Image src="/screenshots/webshop.webp" alt="Webshop screenshot" width={390} height={2000} className="w-full h-auto" />
+          <Image src="/screenshots/webshop.webp" alt="Webshop screenshot" width={390} height={2000} className="w-full h-auto" priority />
         </PhoneMockup>
 
         {/* Floating: New order */}
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.9 }}
           className="absolute -right-8 top-12 bg-white rounded-2xl shadow-lg border border-gray-100 p-3 w-44 z-20"
         >
@@ -59,8 +59,8 @@ export function WebshopokVisual() {
 
         {/* Floating: Revenue chart */}
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 1.0 }}
           className="absolute -left-10 bottom-20 bg-white rounded-2xl shadow-lg border border-gray-100 p-3 w-40 z-20"
         >
