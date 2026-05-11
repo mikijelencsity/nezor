@@ -3,15 +3,15 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 
 const partners = [
-  { name: 'Neked Sütöm',            logo: '/logos/nekedsutom.png'             },
-  { name: 'Hellinger Kft.',          logo: '/logos/hellinger.png'              },
-  { name: 'Cruiser Shop',            logo: '/logos/cruisershop.png'            },
-  { name: 'InShape-Diet',            logo: '/logos/inshapediet.png'            },
-  { name: 'ZT Épületgépészet',       logo: '/logos/ztepuletgepeszet.png'       },
-  { name: 'Estur Kft.',              logo: '/logos/logo.png'                   },
-  { name: 'Korona Gomba',            logo: '/logos/koronagomba.png'            },
-  { name: 'DoverSolution',           logo: '/logos/doversolution.png'          },
-  { name: 'Kisállatkereskedés Baja', logo: '/logos/kisallatkereskedesbaja.jpg' },
+  { name: 'Neked Sütöm',            logo: '/logos/nekedsutom.webp'             },
+  { name: 'Hellinger Kft.',          logo: '/logos/hellinger.webp'              },
+  { name: 'Cruiser Shop',            logo: '/logos/cruisershop.webp'            },
+  { name: 'InShape-Diet',            logo: '/logos/inshapediet.webp'            },
+  { name: 'ZT Épületgépészet',       logo: '/logos/ztepuletgepeszet.png'        },
+  { name: 'Estur Kft.',              logo: '/logos/estur.webp'                  },
+  { name: 'Korona Gomba',            logo: '/logos/koronagomba.webp'            },
+  { name: 'DoverSolution',           logo: '/logos/doversolution.webp'          },
+  { name: 'Kisállatkereskedés Baja', logo: '/logos/kisallatkereskedesbaja.webp' },
 ]
 
 export function PartnersMarquee() {

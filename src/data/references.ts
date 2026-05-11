@@ -7,7 +7,7 @@ export const references: Reference[] = [
     description: 'Egyedi büféskocsi weboldal — ahol a lángos művészet találkozik a digitális jelenléttel',
     url: 'https://nekedsutom.hu',
     category: 'weboldal',
-    imageUrl: '/logos/nekedsutom.png',
+    imageUrl: '/logos/nekedsutom.webp',
     gradient: 'from-amber-200 to-yellow-100',
   },
   {
@@ -16,7 +16,7 @@ export const references: Reference[] = [
     description: 'Professzionális építőipari bemutatkozó oldal',
     url: 'https://hellingerkft.hu',
     category: 'weboldal',
-    imageUrl: '/logos/hellinger.png',
+    imageUrl: '/logos/hellinger.webp',
     gradient: 'from-slate-200 to-blue-100',
   },
   {
@@ -25,7 +25,7 @@ export const references: Reference[] = [
     description: 'Kerékpárszaküzlet webshop — Baja',
     url: 'https://kerekparszakuzletbaja.hu',
     category: 'webshop',
-    imageUrl: '/logos/cruisershop.png',
+    imageUrl: '/logos/cruisershop.webp',
     gradient: 'from-emerald-200 to-teal-100',
   },
   {
@@ -34,7 +34,7 @@ export const references: Reference[] = [
     description: 'Egészséges életmód és étrend-kiegészítő webshop — Bahrain',
     url: 'https://inshape-diet.com',
     category: 'webshop',
-    imageUrl: '/logos/inshapediet.png',
+    imageUrl: '/logos/inshapediet.webp',
     gradient: 'from-purple-200 to-pink-100',
   },
   {
@@ -52,7 +52,7 @@ export const references: Reference[] = [
     description: 'Bajai építőipari vállalkozás professzionális weboldala',
     url: 'https://estur.hu',
     category: 'weboldal',
-    imageUrl: '/logos/logo.png',
+    imageUrl: '/logos/estur.webp',
     gradient: 'from-orange-200 to-amber-100',
   },
   {
@@ -61,7 +61,7 @@ export const references: Reference[] = [
     description: 'Magyarország egyik vezető gombaipari vállalkozásának weboldala',
     url: 'https://koronagomba.hu',
     category: 'weboldal',
-    imageUrl: '/logos/koronagomba.png',
+    imageUrl: '/logos/koronagomba.webp',
     gradient: 'from-lime-200 to-green-100',
   },
   {
@@ -70,7 +70,7 @@ export const references: Reference[] = [
     description: 'Korhatár-ellenőrző és digitális hirdetőfelület rendszer boltokba',
     url: 'https://doversolution.hu',
     category: 'weboldal',
-    imageUrl: '/logos/doversolution.png',
+    imageUrl: '/logos/doversolution.webp',
     gradient: 'from-indigo-200 to-violet-100',
   },
   {
@@ -79,7 +79,7 @@ export const references: Reference[] = [
     description: 'Bajai kisállatkereskedés bemutatkozó weboldala',
     url: 'https://allatkereskedesbaja.hu',
     category: 'weboldal',
-    imageUrl: '/logos/kisallatkereskedesbaja.jpg',
+    imageUrl: '/logos/kisallatkereskedesbaja.webp',
     gradient: 'from-teal-200 to-cyan-100',
   },
 ]
