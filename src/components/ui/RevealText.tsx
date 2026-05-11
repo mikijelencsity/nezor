@@ -16,7 +16,7 @@ export function RevealText({ text, className, delay = 0.1, tag = 'span' }: Revea
   return (
     <Tag className={cn('inline', className)}>
       {words.map((word, i) => (
-        <span key={i} className="inline-block overflow-hidden leading-tight">
+        <span key={i} className="inline-block overflow-hidden leading-[1.25] pb-1">
           <motion.span
             className="inline-block"
             initial={{ y: '110%', opacity: 0 }}

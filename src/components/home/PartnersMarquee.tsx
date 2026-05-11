@@ -45,7 +45,7 @@ export function PartnersMarquee() {
                 alt={p.name}
                 className="h-12 w-auto max-w-[120px] object-contain transition-all duration-300 opacity-60 group-hover:opacity-100"
               />
-              <span className="text-[10px] font-display font-medium text-gray-600 group-hover:text-gray-400 transition-colors text-center leading-tight line-clamp-1 px-1">
+              <span className="hidden sm:block text-[10px] font-display font-medium text-gray-600 group-hover:text-gray-400 transition-colors text-center leading-tight line-clamp-1 px-1">
                 {p.name}
               </span>
             </motion.div>

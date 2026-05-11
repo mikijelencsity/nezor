@@ -217,21 +217,21 @@ function InstagramAdPhone() {
 
 function PhoneShell({ children, label }: { children: React.ReactNode; label: string }) {
   return (
-    <div className="flex flex-col items-center gap-3">
+    <div className="flex flex-col items-center gap-2 sm:gap-3">
       <div className="text-xs font-display font-bold text-dark flex items-center gap-2">
         <div className={`w-3 h-3 rounded-full ${label === 'Facebook' ? 'bg-blue-500' : 'bg-gradient-to-br from-pink-500 to-purple-500'}`}/>
         {label}
       </div>
-      <div className="relative w-52" style={{ filter: 'drop-shadow(0 24px 48px rgba(0,0,0,0.28))' }}>
-        <div className="bg-gray-900 rounded-[2.5rem] overflow-hidden border-4 border-gray-800">
-          <div className="h-6 bg-gray-900 flex items-center justify-center">
-            <div className="w-16 h-3 bg-black rounded-full"/>
+      <div className="relative w-36 sm:w-52" style={{ filter: 'drop-shadow(0 24px 48px rgba(0,0,0,0.28))' }}>
+        <div className="bg-gray-900 rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden border-4 border-gray-800">
+          <div className="h-5 sm:h-6 bg-gray-900 flex items-center justify-center">
+            <div className="w-12 sm:w-16 h-3 bg-black rounded-full"/>
           </div>
-          <div className="relative overflow-hidden" style={{ height: 400 }}>
+          <div className="relative overflow-hidden h-[280px] sm:h-[400px]">
             {children}
           </div>
-          <div className="h-5 bg-gray-900 flex items-center justify-center">
-            <div className="w-16 h-1 bg-gray-700 rounded-full"/>
+          <div className="h-4 sm:h-5 bg-gray-900 flex items-center justify-center">
+            <div className="w-12 sm:w-16 h-1 bg-gray-700 rounded-full"/>
           </div>
         </div>
       </div>
@@ -284,7 +284,7 @@ export function AdPreview() {
         initial={{ opacity: 0, x: 24 }}
         animate={inView ? { opacity: 1, x: 0 } : {}}
         transition={{ type: 'spring', stiffness: 300, damping: 28, delay: 0.15 }}
-        className="flex items-center justify-center gap-4 lg:gap-6"
+        className="flex flex-row items-start justify-center gap-3 sm:gap-4 lg:gap-6"
       >
         <PhoneShell label="Facebook">
           <FacebookAdPhone />

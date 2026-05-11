@@ -36,7 +36,7 @@ export function WeboldalakVisual() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4, delay }}
-            className={`absolute ${position} bg-white rounded-xl shadow-lg border px-3 py-2 flex items-center gap-2 whitespace-nowrap z-20 ${color.split(' ').slice(1).join(' ')}`}
+            className={`hidden sm:flex absolute ${position} bg-white rounded-xl shadow-lg border px-3 py-2 items-center gap-2 whitespace-nowrap z-20 ${color.split(' ').slice(1).join(' ')}`}
           >
             <Icon className={`w-3.5 h-3.5 ${color.split(' ')[0]}`} />
             <span className={`text-xs font-display font-bold ${color.split(' ')[0]}`}>{label}</span>

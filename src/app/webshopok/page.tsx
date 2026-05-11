@@ -4,7 +4,6 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { FAQAccordion } from '@/components/ui/FAQAccordion'
 import { AnimatedTimeline } from '@/components/ui/AnimatedTimeline'
 import { WebshopokFeatures } from '@/components/services/WebshopokFeatures'
-import { OrderFlow } from '@/components/services/webshopok/OrderFlow'
 import { RevenueDashboard } from '@/components/services/webshopok/RevenueDashboard'
 import { MobileShoppingFlow } from '@/components/services/webshopok/MobileShoppingFlow'
 import { FAQItem } from '@/types'
@@ -104,14 +103,6 @@ export default function WebshopokPage() {
             description="Könnyen kezelhető admin panel — termékek, rendelések, bevételek egy helyen."
           />
           <RevenueDashboard />
-        </div>
-      </section>
-
-      {/* ── ORDER FLOW ── */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading label="Vásárlói élmény" title="A teljes rendelési folyamat" description="Minden lépés automatizálva — a vásárlótól az ajtódig." />
-          <OrderFlow />
         </div>
       </section>
 
