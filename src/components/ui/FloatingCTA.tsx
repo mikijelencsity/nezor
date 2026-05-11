@@ -8,8 +8,13 @@ export function FloatingCTA() {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > 400)
+    const onScroll = () => {
+      const scrolledDown = window.scrollY > 400
+      const nearBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 120
+      setVisible(scrolledDown && !nearBottom)
+    }
     window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 

@@ -26,7 +26,7 @@ export function Footer() {
         NEZOR
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20 sm:pb-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <span className="text-gradient font-display font-bold text-2xl">NEZOR</span>

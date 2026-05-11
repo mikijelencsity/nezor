@@ -36,7 +36,7 @@ export function CookieConsent() {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 80, scale: 0.97 }}
           transition={{ type: 'spring', stiffness: 320, damping: 32 }}
-          className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-sm z-[90] bg-dark border border-white/10 rounded-2xl shadow-2xl p-5"
+          className="fixed bottom-4 left-4 sm:left-6 sm:right-auto w-[calc(100%-2rem)] sm:w-80 z-[90] bg-dark border border-white/10 rounded-2xl shadow-2xl p-5"
           role="dialog"
           aria-label="Cookie hozzájárulás"
         >
