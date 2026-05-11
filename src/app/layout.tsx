@@ -8,6 +8,7 @@ import { localBusinessSchema } from '@/lib/structured-data'
 import { ScrollProgressBar } from '@/components/ui/ScrollProgressBar'
 import { PageTransition } from '@/components/ui/PageTransition'
 import { FloatingCTA } from '@/components/ui/FloatingCTA'
+import { CookieConsent } from '@/components/ui/CookieConsent'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -56,6 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <FloatingCTA />
         <MessengerWidget />
+        <CookieConsent />
       </body>
     </html>
   )
