@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link'
-import { Mail, ArrowRight, MapPin, Clock } from 'lucide-react'
+import { Mail, MapPin, Clock, ArrowRight } from 'lucide-react'
 import { FaFacebook, FaInstagram } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 
@@ -44,26 +44,6 @@ export function Footer() {
         }}
       >
         NEZOR
-      </div>
-
-      {/* ── TOP CTA STRIP ── */}
-      <div className="relative border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-5">
-            <div className="text-center sm:text-left">
-              <div className="text-xl sm:text-2xl font-display font-bold text-white mb-1">
-                Készen állsz egy <span className="text-gradient">profi weboldalra?</span>
-              </div>
-              <p className="text-gray-400 text-sm">Az első konzultáció ingyenes és kötelezettség nélküli.</p>
-            </div>
-            <Link
-              href="/kapcsolat"
-              className="flex-shrink-0 flex items-center gap-2 bg-cyan text-white font-display font-bold text-sm px-6 py-3 rounded-xl hover:bg-cyan-dark transition-colors shadow-lg glow-pulse"
-            >
-              Ajánlatot kérek <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
       </div>
 
       {/* ── MAIN CONTENT ── */}
