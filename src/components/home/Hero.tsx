@@ -40,7 +40,7 @@ export function Hero() {
   }, [isMobile])
 
   return (
-    <section className="relative overflow-hidden bg-white py-16 md:py-24 lg:py-28 flex items-center">
+    <section className="relative overflow-hidden bg-white py-10 md:py-14 lg:py-16 flex items-center min-h-0">
       {/* Desktop parallax background */}
       {!isMobile && (
         <div
@@ -74,7 +74,7 @@ export function Hero() {
               Digitális ügynökség — Bács-Kiskun megye
             </motion.span>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-dark leading-tight mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-dark leading-tight mb-4">
               <RevealText text="Professzionális weboldal." delay={0.1} className="block" />
               <span className="block">
                 <RevealText text="Több ügyfél." delay={0.4} className="text-gradient" />
@@ -87,7 +87,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.65, duration: 0.5 }}
-              className="text-lg md:text-xl text-muted mb-8 leading-relaxed"
+              className="text-base md:text-lg text-muted mb-6 leading-relaxed"
             >
               Weboldalakat, webshopokat és Facebook hirdetéseket készítünk,
               amelyek valódi eredményeket hoznak — Bács-Kiskun megyétől az
@@ -98,7 +98,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.5 }}
-              className="flex flex-col sm:flex-row gap-4 mb-10"
+              className="flex flex-col sm:flex-row gap-3 mb-6"
             >
               <MagneticWrapper className="w-full sm:w-auto">
                 <Button
@@ -154,7 +154,7 @@ export function Hero() {
               duration: 0.7,
               ease: 'easeOut',
             }}
-            className="flex items-center justify-center relative py-8 lg:py-0"
+            className="flex items-center justify-center relative py-4 lg:py-0"
           >
             {/* Glow */}
             <div
