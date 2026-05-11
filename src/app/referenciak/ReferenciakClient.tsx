@@ -131,8 +131,8 @@ export function ReferenciakClient() {
           <div className="absolute top-0 right-1/4 w-64 h-64 bg-cyan/10 rounded-full blur-3xl" />
           <div className="relative">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-              Te lehetsz a következő{' '}
-              <span className="text-gradient">sikertörténet</span>
+              Készen állsz az{' '}
+              <span className="text-gradient">online jelenlétre?</span>
             </h2>
             <p className="text-gray-400 mb-8 max-w-xl mx-auto">
               Vedd fel velünk a kapcsolatot — az első konzultáció ingyenes és kötelezettség nélküli.
