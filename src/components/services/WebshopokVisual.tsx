@@ -1,46 +1,8 @@
 'use client'
 import { motion } from 'framer-motion'
-import { ShoppingBag, TrendingUp, Package } from 'lucide-react'
+import { TrendingUp, Package } from 'lucide-react'
+import Image from 'next/image'
 import { PhoneMockup } from '@/components/ui/PhoneMockup'
-
-function WebshopScreen() {
-  return (
-    <div className="w-full bg-white" style={{ height: '180%' }}>
-      {/* Store nav */}
-      <div className="bg-white px-3 py-2 border-b border-gray-100 flex items-center justify-between sticky top-0">
-        <div className="w-12 h-2 bg-orange-400 rounded-full" />
-        <ShoppingBag className="w-4 h-4 text-gray-400" />
-      </div>
-      {/* Banner */}
-      <div className="bg-gradient-to-r from-orange-400 to-amber-400 px-3 py-4 text-center">
-        <div className="w-2/3 h-2.5 bg-white/80 rounded-full mx-auto mb-1.5" />
-        <div className="w-1/2 h-2 bg-white/60 rounded-full mx-auto mb-3" />
-        <div className="h-6 w-20 bg-white rounded-lg mx-auto" />
-      </div>
-      {/* Products */}
-      <div className="px-3 py-3">
-        <div className="w-1/3 h-2 bg-gray-600 rounded-full mb-3" />
-        <div className="grid grid-cols-2 gap-2">
-          {[
-            { price: '12.400 Ft', color: 'bg-blue-50' },
-            { price: '8.900 Ft',  color: 'bg-pink-50' },
-            { price: '15.200 Ft', color: 'bg-green-50' },
-            { price: '6.500 Ft',  color: 'bg-yellow-50' },
-          ].map((p, i) => (
-            <div key={i} className={`${p.color} rounded-xl p-2`}>
-              <div className="h-12 flex items-center justify-center mb-1.5">
-                <div className="w-8 h-8 bg-gray-200 rounded-lg" />
-              </div>
-              <div className="h-1.5 bg-gray-200 rounded-full mb-1 w-4/5" />
-              <div className="text-[9px] font-bold text-gray-700">{p.price}</div>
-              <div className="mt-1 h-4 bg-orange-400 rounded-md" />
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  )
-}
 
 function MiniBarChart() {
   const bars = [40, 55, 45, 70, 60, 85, 95]
@@ -73,7 +35,7 @@ export function WebshopokVisual() {
         style={{ filter: 'drop-shadow(0 32px 48px rgba(0,0,0,0.25))' }}
       >
         <PhoneMockup size="lg" scrollClass="phone-scroll">
-          <WebshopScreen />
+          <Image src="/screenshots/webshop.webp" alt="Webshop screenshot" width={390} height={2000} className="w-full h-auto" />
         </PhoneMockup>
 
         {/* Floating: New order */}

@@ -34,7 +34,7 @@ export function HeroPhones() {
           style={{ filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.25))' }}
         >
           <PhoneMockup size={isMobile ? 'xs' : 'sm'} scrollClass="phone-scroll-slow">
-            <Image src="/screenshots/ugyfel1.jpg" alt="Ügyfél weboldal 1" width={320} height={700} className="w-full h-auto" />
+            <Image src="/screenshots/baloldalitelefon.webp" alt="Ügyfél weboldal 1" width={390} height={2000} className="w-full h-auto" />
           </PhoneMockup>
         </motion.div>
 
@@ -58,13 +58,13 @@ export function HeroPhones() {
 
           <div className="lg:hidden">
             <PhoneMockup size="md" scrollClass="phone-scroll">
-              <Image src="/screenshots/ugyfel1.jpg" alt="Ügyfél weboldal" width={420} height={900} className="w-full h-auto" priority />
+              <Image src="/screenshots/ugyfel1.webp" alt="Ügyfél weboldal" width={390} height={2000} className="w-full h-auto" priority />
             </PhoneMockup>
           </div>
 
           <div className="hidden lg:block">
             <PhoneMockup size="lg" scrollClass="phone-scroll">
-              <Image src="/screenshots/ugyfel1.jpg" alt="Ügyfél weboldal" width={500} height={1000} className="w-full h-auto" priority />
+              <Image src="/screenshots/ugyfel1.webp" alt="Ügyfél weboldal" width={390} height={2000} className="w-full h-auto" priority />
             </PhoneMockup>
           </div>
         </motion.div>
@@ -78,7 +78,7 @@ export function HeroPhones() {
           style={{ filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.25))' }}
         >
           <PhoneMockup size={isMobile ? 'xs' : 'sm'} scrollClass="phone-scroll-fast">
-            <Image src="/screenshots/ugyfel1.jpg" alt="Ügyfél weboldal 2" width={320} height={700} className="w-full h-auto" />
+            <Image src="/screenshots/ugyfel1.webp" alt="Ügyfél weboldal 2" width={390} height={2000} className="w-full h-auto" />
           </PhoneMockup>
         </motion.div>
 
