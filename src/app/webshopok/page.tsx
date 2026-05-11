@@ -1,24 +1,16 @@
 import type { Metadata } from 'next'
-import dynamic from 'next/dynamic'
 import { Button } from '@/components/ui/Button'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { FAQAccordion } from '@/components/ui/FAQAccordion'
 import { AnimatedTimeline } from '@/components/ui/AnimatedTimeline'
 import { WebshopokFeatures } from '@/components/services/WebshopokFeatures'
+import { RevenueDashboard } from '@/components/services/webshopok/RevenueDashboard'
+import { MobileShoppingFlow } from '@/components/services/webshopok/MobileShoppingFlow'
 import { FAQItem } from '@/types'
 import {
   ShoppingCart, ArrowRight, CheckCircle, Zap, Star, Shield
 } from 'lucide-react'
 import { WebshopokVisual } from '@/components/services/WebshopokVisual'
-
-const RevenueDashboard = dynamic(
-  () => import('@/components/services/webshopok/RevenueDashboard').then(m => ({ default: m.RevenueDashboard })),
-  { loading: () => <div className="h-64 animate-pulse bg-gray-100 rounded-3xl" /> }
-)
-const MobileShoppingFlow = dynamic(
-  () => import('@/components/services/webshopok/MobileShoppingFlow').then(m => ({ default: m.MobileShoppingFlow })),
-  { loading: () => <div className="h-64 animate-pulse bg-gray-100 rounded-3xl" /> }
-)
 
 export const metadata: Metadata = {
   title: 'Webshop fejlesztés Magyarország — NEZOR',
