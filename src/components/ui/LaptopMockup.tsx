@@ -1,6 +1,6 @@
 export function LaptopMockup({ children }: { children?: React.ReactNode }) {
   return (
-    <div className="relative w-full max-w-lg mx-auto">
+    <div className="relative w-full max-w-md lg:max-w-lg mx-auto">
       {/* Screen */}
       <div className="relative bg-gray-900 rounded-t-2xl rounded-b-lg overflow-hidden shadow-2xl border border-gray-700" style={{ paddingBottom: '62%' }}>
         {/* Chrome bar */}

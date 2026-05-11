@@ -53,26 +53,26 @@ export default function WeboldalakPage() {
   return (
     <div>
       {/* ── HERO ── */}
-      <section className="relative overflow-hidden bg-white pt-20 pb-32">
+      <section className="relative overflow-hidden bg-white py-10 lg:py-14">
         <div className="bg-grid-pattern absolute inset-0" />
         <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-transparent to-cyan-light/40" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
             {/* Left: text */}
             <div>
-              <div className="animate-fade-up inline-flex items-center gap-2 bg-cyan-light text-cyan text-sm font-display font-semibold px-4 py-1.5 rounded-full mb-6">
+              <div className="animate-fade-up inline-flex items-center gap-2 bg-cyan-light text-cyan text-sm font-display font-semibold px-4 py-1.5 rounded-full mb-4">
                 <Code2 className="w-3.5 h-3.5" />
                 Weboldal készítés
               </div>
-              <h1 className="animate-fade-up-delay-1 text-4xl md:text-5xl lg:text-6xl font-display font-bold text-dark leading-tight mb-6">
+              <h1 className="animate-fade-up-delay-1 text-3xl md:text-4xl lg:text-5xl font-display font-bold text-dark leading-tight mb-4">
                 Modern weboldalak,<br />
                 amelyek <span className="text-gradient">ügyfeleket hoznak</span>
               </h1>
-              <p className="animate-fade-up-delay-2 text-lg md:text-xl text-muted mb-8 leading-relaxed max-w-2xl">
+              <p className="animate-fade-up-delay-2 text-lg text-muted mb-5 leading-relaxed max-w-2xl">
                 Gyors, mobilra optimalizált, SEO-barát weboldalak — Bács-Kiskun megyétől az egész országig.
               </p>
-              <div className="animate-fade-up-delay-3 flex flex-col sm:flex-row gap-4 mb-10">
+              <div className="animate-fade-up-delay-3 flex flex-col sm:flex-row gap-4 mb-6">
                 <Button href="/kapcsolat" size="lg" className="glow-pulse">
                   Ingyenes ajánlat kérése <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
