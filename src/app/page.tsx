@@ -4,7 +4,6 @@ import { homeFAQ } from '@/data/faq'
 import { Hero } from '@/components/home/Hero'
 import { ServicesSection } from '@/components/home/ServicesSection'
 import { WhyNezor } from '@/components/home/WhyNezor'
-import { ReferencesPreview } from '@/components/home/ReferencesPreview'
 import { PackagesTeaser } from '@/components/home/PackagesTeaser'
 import { FAQSection } from '@/components/home/FAQSection'
 import { BlogPreview } from '@/components/home/BlogPreview'
@@ -46,7 +45,6 @@ export default async function HomePage() {
       <VideoShowcase />
       <WhyNezor />
       <Testimonials />
-      <ReferencesPreview />
       <PackagesTeaser />
       <FAQSection />
       <BlogPreview posts={latestPosts} />

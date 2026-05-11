@@ -1,6 +1,8 @@
 'use client'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
+import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
 
 const partners = [
   { name: 'Neked Sütöm',            logo: '/logos/nekedsutom.webp',             imgClass: '' },
@@ -53,6 +55,15 @@ export function PartnersMarquee() {
               </span>
             </motion.div>
           ))}
+        </div>
+
+        <div className="flex justify-center mt-8">
+          <Link
+            href="/referenciak"
+            className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 text-white text-sm font-display font-semibold px-5 py-2.5 rounded-full border border-white/10 hover:border-white/20 transition-all"
+          >
+            Referenciák megtekintése <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </div>
     </section>
