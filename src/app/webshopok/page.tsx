@@ -13,11 +13,11 @@ import { WebshopokVisual } from '@/components/services/WebshopokVisual'
 
 const RevenueDashboard = dynamic(
   () => import('@/components/services/webshopok/RevenueDashboard').then(m => ({ default: m.RevenueDashboard })),
-  { loading: () => <div className="h-64 animate-pulse bg-gray-100 rounded-3xl" /> }
+  { loading: () => <div className="h-64 animate-pulse bg-gray-100 rounded-3xl" />, ssr: false }
 )
 const MobileShoppingFlow = dynamic(
   () => import('@/components/services/webshopok/MobileShoppingFlow').then(m => ({ default: m.MobileShoppingFlow })),
-  { loading: () => <div className="h-64 animate-pulse bg-gray-100 rounded-3xl" /> }
+  { loading: () => <div className="h-64 animate-pulse bg-gray-100 rounded-3xl" />, ssr: false }
 )
 
 export const metadata: Metadata = {

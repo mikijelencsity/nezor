@@ -77,7 +77,14 @@ export function Hero() {
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-dark leading-tight mb-4">
               <RevealText text="Professzionális weboldal." delay={0.1} className="block" />
               <span className="block">
-                <RevealText text="Több ügyfél." delay={0.4} className="text-gradient" />
+                <motion.span
+                  className="text-gradient"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.4, duration: 0.5 }}
+                >
+                  Több ügyfél.
+                </motion.span>
                 {' '}
                 <RevealText text="Gyorsabb növekedés." delay={0.62} />
               </span>
@@ -163,14 +170,14 @@ export function Hero() {
             />
 
             {/* Phones */}
-            <div className="relative flex items-end justify-center gap-3 lg:gap-4">
+            <div className="relative flex items-end justify-center gap-0 lg:gap-4">
 
               {/* LEFT PHONE */}
               <motion.div
                 initial={{ opacity: 0, x: -20, rotate: -14 }}
                 animate={{ opacity: 1, x: 0, rotate: -14 }}
                 transition={{ delay: 0.6, duration: 0.6 }}
-                className="mb-4 lg:mb-8 opacity-70 -mr-3 lg:mr-0"
+                className="mb-4 lg:mb-8 opacity-70 -mr-14 lg:mr-4"
                 style={{ filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.25))' }}
               >
                 <PhoneMockup size={isMobile ? 'xs' : 'sm'} scrollClass="phone-scroll-slow">
@@ -246,7 +253,7 @@ export function Hero() {
                 initial={{ opacity: 0, x: 20, rotate: 14 }}
                 animate={{ opacity: 1, x: 0, rotate: 14 }}
                 transition={{ delay: 0.6, duration: 0.6 }}
-                className="mb-4 lg:mb-8 opacity-70 -ml-3 lg:ml-0"
+                className="mb-4 lg:mb-8 opacity-70 -ml-14 lg:ml-4"
                 style={{ filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.25))' }}
               >
                 <PhoneMockup size={isMobile ? 'xs' : 'sm'} scrollClass="phone-scroll-fast">

@@ -1,6 +1,6 @@
 'use client'
-import { useEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
+import { motion, AnimatePresence, useInView } from 'framer-motion'
 import { ShoppingCart, Heart, Star, ChevronLeft, Check } from 'lucide-react'
 
 const steps = [
@@ -298,19 +298,21 @@ const screens = [ProductList, ProductDetail, CartView, PaymentView, SuccessView]
 export function MobileShoppingFlow() {
   const [current, setCurrent] = useState(0)
   const [auto, setAuto] = useState(true)
+  const containerRef = useRef(null)
+  const isInView = useInView(containerRef, { once: false, margin: '-10%' })
 
   useEffect(() => {
-    if (!auto) return
+    if (!auto || !isInView) return
     const t = setInterval(() => {
       setCurrent(c => (c + 1) % screens.length)
     }, 2800)
     return () => clearInterval(t)
-  }, [auto])
+  }, [auto, isInView])
 
   const Screen = screens[current]
 
   return (
-    <div className="flex flex-col lg:flex-row items-center gap-10">
+    <div ref={containerRef} className="flex flex-col lg:flex-row items-center gap-10">
       {/* Phone */}
       <div className="flex-shrink-0 relative" style={{ filter: 'drop-shadow(0 32px 48px rgba(0,0,0,0.25))' }}>
         <div className="absolute -inset-6 bg-cyan/8 rounded-full blur-3xl" />
