@@ -3,7 +3,6 @@ import { faqSchema } from '@/lib/structured-data'
 import { homeFAQ } from '@/data/faq'
 import { Hero } from '@/components/home/Hero'
 import { ServicesSection } from '@/components/home/ServicesSection'
-import { ProcessSection } from '@/components/home/ProcessSection'
 import { WhyNezor } from '@/components/home/WhyNezor'
 import { ReferencesPreview } from '@/components/home/ReferencesPreview'
 import { PackagesTeaser } from '@/components/home/PackagesTeaser'
@@ -44,7 +43,6 @@ export default async function HomePage() {
       <StatsSection />
       <PartnersMarquee />
       <ServicesSection />
-      <ProcessSection />
       <VideoShowcase />
       <WhyNezor />
       <Testimonials />
