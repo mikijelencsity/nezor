@@ -15,7 +15,12 @@ export function WeboldalakVisual() {
       {/* Glow */}
       <div className="absolute -inset-8 bg-cyan/8 rounded-3xl blur-3xl" />
 
-      <div className="animate-fade-up-delay-1 relative">
+      <motion.div
+        initial={{ opacity: 0, y: 32 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.3 }}
+        className="relative"
+      >
         <LaptopMockup>
           <img
             src="/screenshots/weboldalak.png"
@@ -37,7 +42,7 @@ export function WeboldalakVisual() {
             <span className={`text-xs font-display font-bold ${color.split(' ')[0]}`}>{label}</span>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   )
 }
