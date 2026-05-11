@@ -218,8 +218,8 @@ export function Hero() {
                 <div className="lg:hidden">
                   <PhoneMockup size="md" scrollClass="phone-scroll">
                     <Image
-                      src="/screenshots/neked-sutom.jpg"
-                      alt="Neked Sütöm weboldal"
+                      src="/screenshots/ugyfel1.jpg"
+                      alt="Ügyfél weboldal"
                       width={420}
                       height={900}
                       className="w-full h-auto"

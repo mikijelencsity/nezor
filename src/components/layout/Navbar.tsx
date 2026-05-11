@@ -100,7 +100,7 @@ export function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 z-[60] bg-black/40 backdrop-blur-sm lg:hidden"
+              className="fixed inset-0 z-[60] bg-black/50 lg:hidden"
               onClick={() => setMobileOpen(false)}
             />
 
@@ -110,8 +110,9 @@ export function Navbar() {
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
-              transition={{ type: 'spring', stiffness: 280, damping: 32 }}
+              transition={{ type: 'tween', duration: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
               className="fixed top-0 right-0 bottom-0 z-[70] w-[85vw] max-w-sm bg-dark flex flex-col overflow-hidden lg:hidden"
+              style={{ willChange: 'transform' }}
             >
               {/* Top row */}
               <div className="flex items-center justify-between px-6 pt-6 pb-4">

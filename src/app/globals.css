@@ -184,3 +184,11 @@
   .animate-fade-up, .animate-fade-up-delay-1, .animate-fade-up-delay-2,
   .animate-fade-up-delay-3, .animate-fade-up-delay-4 { animation: none; }
 }
+
+/* Mobile performance: disable heavy animations on small screens */
+@media (max-width: 768px) {
+  .glow-pulse { animation: none; box-shadow: 0 0 18px rgba(0,207,255,0.35); }
+  .ring-pulse { animation: none; }
+  .dot-grid-bg { animation: none; }
+  .text-shimmer { animation: none; }
+}
