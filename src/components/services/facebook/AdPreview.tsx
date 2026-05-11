@@ -281,8 +281,8 @@ export function AdPreview() {
 
       {/* Right: phone mockups */}
       <motion.div
-        initial={{ opacity: 0, x: 24 }}
-        animate={inView ? { opacity: 1, x: 0 } : {}}
+        initial={{ opacity: 0, y: 16 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ type: 'spring', stiffness: 300, damping: 28, delay: 0.15 }}
         className="flex items-center justify-center gap-3 sm:gap-6"
       >

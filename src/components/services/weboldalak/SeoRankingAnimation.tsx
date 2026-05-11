@@ -75,8 +75,8 @@ export function SeoRankingAnimation() {
 
       {/* Left: explanation */}
       <motion.div
-        initial={{ opacity: 0, x: -24 }}
-        animate={inView ? { opacity: 1, x: 0 } : {}}
+        initial={{ opacity: 0, y: 16 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ type: 'spring', stiffness: 300, damping: 28 }}
       >
         <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 text-xs font-display font-bold px-3 py-1.5 rounded-full mb-4">
@@ -110,8 +110,8 @@ export function SeoRankingAnimation() {
 
       {/* Right: animated SERP */}
       <motion.div
-        initial={{ opacity: 0, x: 24 }}
-        animate={inView ? { opacity: 1, x: 0 } : {}}
+        initial={{ opacity: 0, y: 16 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ type: 'spring', stiffness: 300, damping: 28, delay: 0.2 }}
         className="relative"
       >
