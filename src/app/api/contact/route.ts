@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
       // TODO: Replace with your verified Resend domain email before deploying
       // e.g., 'NEZOR Kapcsolat <noreply@nezor.hu>' after setting up the domain in Resend
       from: 'NEZOR Kapcsolat <onboarding@resend.dev>',
-      to: 'nezorweb@gmail.com',
+      to: 'miklosjelencsity@gmail.com',
       subject: `Új érdeklődő: ${escHtml(data.name)} — ${serviceLabels[data.service]}`,
       html: `
         <h2>Új kapcsolatfelvétel a nezor.hu-ról</h2>
