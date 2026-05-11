@@ -177,7 +177,7 @@ export function Hero() {
                 initial={{ opacity: 0, x: -20, rotate: -14 }}
                 animate={{ opacity: 1, x: 0, rotate: -14 }}
                 transition={{ delay: 0.6, duration: 0.6 }}
-                className="mb-4 lg:mb-8 opacity-70 -mr-14 lg:mr-4"
+                className="mb-4 lg:mb-8 opacity-70 -mr-10 lg:mr-4"
                 style={{ filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.25))' }}
               >
                 <PhoneMockup size={isMobile ? 'xs' : 'sm'} scrollClass="phone-scroll-slow">
@@ -253,7 +253,7 @@ export function Hero() {
                 initial={{ opacity: 0, x: 20, rotate: 14 }}
                 animate={{ opacity: 1, x: 0, rotate: 14 }}
                 transition={{ delay: 0.6, duration: 0.6 }}
-                className="mb-4 lg:mb-8 opacity-70 -ml-14 lg:ml-4"
+                className="mb-4 lg:mb-8 opacity-70 -ml-10 lg:ml-4"
                 style={{ filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.25))' }}
               >
                 <PhoneMockup size={isMobile ? 'xs' : 'sm'} scrollClass="phone-scroll-fast">
