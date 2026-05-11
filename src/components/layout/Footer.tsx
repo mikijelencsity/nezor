@@ -6,7 +6,20 @@ import { motion } from 'framer-motion'
 
 export function Footer() {
   return (
-    <footer className="bg-dark text-white relative overflow-hidden">
+    <footer className="text-white relative overflow-hidden" style={{ background: 'linear-gradient(160deg, #1a1a2e 0%, #12121e 50%, #0e0e18 100%)' }}>
+
+      {/* Gradient top border */}
+      <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(0,207,255,0.5) 30%, rgba(0,207,255,0.5) 70%, transparent)' }} />
+
+      {/* Background grid */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-[0.07] pointer-events-none" />
+
+      {/* Cyan glow — top left */}
+      <div className="absolute -top-20 -left-20 w-72 h-72 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(0,207,255,0.08) 0%, transparent 70%)' }} />
+
+      {/* Blue glow — bottom right */}
+      <div className="absolute -bottom-10 -right-10 w-56 h-56 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(80,120,255,0.07) 0%, transparent 70%)' }} />
+
       {/* Big NEZOR watermark */}
       <div
         className="absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none select-none"
@@ -16,7 +29,7 @@ export function Footer() {
           fontWeight: 900,
           fontFamily: 'var(--font-display), sans-serif',
           color: 'transparent',
-          WebkitTextStroke: '1px rgba(255,255,255,0.04)',
+          WebkitTextStroke: '1px rgba(0,207,255,0.08)',
           letterSpacing: '-0.02em',
           lineHeight: 1,
           userSelect: 'none',
