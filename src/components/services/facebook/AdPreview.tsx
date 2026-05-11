@@ -284,7 +284,7 @@ export function AdPreview() {
         initial={{ opacity: 0, x: 24 }}
         animate={inView ? { opacity: 1, x: 0 } : {}}
         transition={{ type: 'spring', stiffness: 300, damping: 28, delay: 0.15 }}
-        className="flex flex-row items-start justify-center gap-3 sm:gap-4 lg:gap-6"
+        className="flex items-center justify-center gap-3 sm:gap-6"
       >
         <PhoneShell label="Facebook">
           <FacebookAdPhone />

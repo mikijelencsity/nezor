@@ -170,12 +170,10 @@ export function Hero() {
                 initial={{ opacity: 0, x: -20, rotate: -14 }}
                 animate={{ opacity: 1, x: 0, rotate: -14 }}
                 transition={{ delay: 0.6, duration: 0.6 }}
-                className="mb-4 lg:mb-8 opacity-70 -mr-6 lg:mr-0 scale-75 lg:scale-100 origin-bottom"
-                style={{
-                  filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.25))',
-                }}
+                className="mb-4 lg:mb-8 opacity-70 -mr-3 lg:mr-0"
+                style={{ filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.25))' }}
               >
-                <PhoneMockup size="sm" scrollClass="phone-scroll-slow">
+                <PhoneMockup size={isMobile ? 'xs' : 'sm'} scrollClass="phone-scroll-slow">
                   <Image
                     src="/screenshots/ugyfel1.jpg"
                     alt="Ügyfél weboldal 1"
@@ -216,7 +214,7 @@ export function Hero() {
 
                 {/* MOBILE */}
                 <div className="lg:hidden">
-                  <PhoneMockup size="sm" scrollClass="phone-scroll">
+                  <PhoneMockup size="md" scrollClass="phone-scroll">
                     <Image
                       src="/screenshots/ugyfel1.jpg"
                       alt="Ügyfél weboldal"
@@ -248,12 +246,10 @@ export function Hero() {
                 initial={{ opacity: 0, x: 20, rotate: 14 }}
                 animate={{ opacity: 1, x: 0, rotate: 14 }}
                 transition={{ delay: 0.6, duration: 0.6 }}
-                className="mb-4 lg:mb-8 opacity-70 -ml-6 lg:ml-0 scale-75 lg:scale-100 origin-bottom"
-                style={{
-                  filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.25))',
-                }}
+                className="mb-4 lg:mb-8 opacity-70 -ml-3 lg:ml-0"
+                style={{ filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.25))' }}
               >
-                <PhoneMockup size="sm" scrollClass="phone-scroll-fast">
+                <PhoneMockup size={isMobile ? 'xs' : 'sm'} scrollClass="phone-scroll-fast">
                   <Image
                     src="/screenshots/ugyfel1.jpg"
                     alt="Ügyfél weboldal 2"

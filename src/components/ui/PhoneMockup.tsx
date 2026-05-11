@@ -8,13 +8,14 @@ interface PhoneMockupProps {
   children?: React.ReactNode
   scrollClass?: string
   className?: string
-  size?: 'sm' | 'md' | 'lg'
+  size?: 'xs' | 'sm' | 'md' | 'lg'
 }
 
 const sizes = {
+  xs: { outer: 'w-[100px] h-[204px]', inner: 'rounded-[20px]', island: 'w-10 h-3 top-2',   screen: 'rounded-[17px]' },
   sm: { outer: 'w-[140px] h-[284px]', inner: 'rounded-[28px]', island: 'w-14 h-3.5 top-3', screen: 'rounded-[24px]' },
   md: { outer: 'w-[180px] h-[365px]', inner: 'rounded-[36px]', island: 'w-16 h-4 top-3.5', screen: 'rounded-[30px]' },
-  lg: { outer: 'w-[220px] h-[448px]', inner: 'rounded-[44px]', island: 'w-20 h-5 top-4', screen: 'rounded-[38px]' },
+  lg: { outer: 'w-[220px] h-[448px]', inner: 'rounded-[44px]', island: 'w-20 h-5 top-4',   screen: 'rounded-[38px]' },
 }
 
 export function PhoneMockup({ children, scrollClass = 'phone-scroll', className, size = 'md' }: PhoneMockupProps) {
