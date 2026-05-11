@@ -13,7 +13,7 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden bg-white py-10 md:py-14 lg:py-16 flex items-center min-h-0">
       {/* Background — CSS only, no JS */}
-      <div className="bg-grid-pattern absolute inset-0 pointer-events-none opacity-[0.35]" aria-hidden="true" />
+      <div className="bg-grid-pattern absolute inset-0 pointer-events-none opacity-[0.6]" aria-hidden="true" />
       <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-white/70 to-cyan-light/40 pointer-events-none" aria-hidden="true" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
