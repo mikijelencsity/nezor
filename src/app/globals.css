@@ -23,7 +23,6 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
   }
   body {
     @apply font-body text-dark bg-white;
