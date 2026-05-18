@@ -43,6 +43,15 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="hu" className={`${spaceGrotesk.variable} ${inter.variable}`}>
+      <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-X79GL5MKMH" />
+        <script dangerouslySetInnerHTML={{ __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-X79GL5MKMH');
+        `}} />
+      </head>
       <body>
         <ScrollProgressBar />
         <script
