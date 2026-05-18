@@ -10,7 +10,6 @@ const navLinks = [
   { label: 'Facebook hirdetések', href: '/facebook-hirdetesek' },
   { label: 'Csomagok és árak',    href: '/csomagok' },
   { label: 'Referenciák',         href: '/referenciak' },
-  { label: 'Rólunk',              href: '/rolunk' },
   { label: 'Blog',                href: '/blog' },
 ]
 

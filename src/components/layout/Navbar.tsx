@@ -13,8 +13,7 @@ const navLinks = [
   { label: 'Facebook hirdetések', href: '/facebook-hirdetesek',   number: '03' },
   { label: 'Csomagok',            href: '/csomagok',              number: '04' },
   { label: 'Referenciák',         href: '/referenciak',           number: '05' },
-  { label: 'Rólunk',              href: '/rolunk',                number: '06' },
-  { label: 'Blog',                href: '/blog',                  number: '07' },
+  { label: 'Blog',                href: '/blog',                  number: '06' },
 ]
 
 export function Navbar() {
