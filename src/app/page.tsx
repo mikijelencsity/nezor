@@ -42,9 +42,9 @@ export default async function HomePage() {
       <StatsSection />
       <PartnersMarquee />
       <ServicesSection />
-      <VideoShowcase />
+      {/* <VideoShowcase /> */}
       <WhyNezor />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <PackagesTeaser />
       <FAQSection />
       <BlogPreview posts={latestPosts} />
