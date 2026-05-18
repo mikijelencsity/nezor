@@ -7,7 +7,7 @@ const guarantees = [
   {
     icon: RefreshCw,
     title: 'Ingyenes újratervezés',
-    desc: 'Ha nem tetszik az első designterv, ingyen újracsináljuk. Addig nem adjuk fel, amíg nem vagy 100% elégedett.',
+    desc: 'Ha nem tetszik az első designterv, ingyen újracsináljuk. Addig nem adjuk fel, amíg nem vagy 100%-ban elégedett.',
     badge: 'Design garancia',
     color: 'from-cyan/20 to-blue-400/20',
     iconColor: 'text-cyan',

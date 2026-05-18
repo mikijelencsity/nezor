@@ -25,16 +25,16 @@ export const metadata: Metadata = {
 
 const steps = [
   { number: '01', title: 'Ingyenes konzultáció', description: 'Megismerjük az igényeidet, célközönségedet és elképzeléseidet. Semmi kötelezettség.' },
-  { number: '02', title: 'Design tervezés', description: 'Elkészítjük az oldal vizuális tervét. Te jóváhagyod mielőtt nekiállunk.' },
-  { number: '03', title: 'Fejlesztés & tesztelés', description: 'Megépítjük az oldalt, teszteljük minden eszközön és böngészőben.' },
-  { number: '04', title: 'Átadás & support', description: 'Átadjuk az oldalt, betanítunk és folyamatos supportot biztosítunk.' },
+  { number: '02', title: 'Design tervezés', description: 'Elkészítjük az oldal vizuális tervét. Te jóváhagyod, mielőtt nekiállunk.' },
+  { number: '03', title: 'Fejlesztés és tesztelés', description: 'Megépítjük az oldalt, teszteljük minden eszközön és böngészőben.' },
+  { number: '04', title: 'Átadás és support', description: 'Átadjuk az oldalt, betanítunk és folyamatos supportot biztosítunk.' },
 ]
 
 const faq: FAQItem[] = [
   { question: 'Mennyi idő alatt készül el a weboldal?', answer: 'Alap weboldalak 1-2 héten belül elkészülnek. Egyedi, összetettebb oldalak 3-4 hetet vehetnek igénybe.' },
   { question: 'Mi kell ahhoz, hogy elkezdjük?', answer: 'Szükségünk van a cég adataira, logóra, és egy vázlatos elképzelésre. Ezeket az ingyenes konzultáción egyeztetjük.' },
   { question: 'Segítetek a szövegek megírásában?', answer: 'Igen, kérés esetén segítünk a szövegek megírásában is, SEO-barát formában.' },
-  { question: 'Mi történik, ha módosítani szeretném az oldalt?', answer: 'Havidíjas csomagban a megállapodott számú frissítés beleértve. Egyszeri díjas csomagnál egyedi árazású módosítás.' },
+  { question: 'Mi történik, ha módosítani szeretném az oldalt?', answer: 'Havidíjas csomagban a megállapodott számú módosítás benne van. Egyszeri díjas csomagnál egyedi árazással.' },
 ]
 
 const highlights = [

@@ -50,7 +50,7 @@ export default function CsomagokPage() {
               Rugalmas <span className="text-shimmer">csomagok</span>
             </h1>
             <p className="animate-fade-up-delay-2 text-gray-400 text-lg max-w-2xl mx-auto">
-              Minden csomagnál választhatsz egyszeri díjas vagy havidíjas konstrukció között — te döntöd el mi a legjobb.
+              Minden csomagnál választhatsz egyszeri díjas vagy havidíjas konstrukció között — te döntöd el, mi a legjobb.
             </p>
           </div>
         </div>
@@ -73,7 +73,7 @@ export default function CsomagokPage() {
         {/* Custom package */}
         <div className="mb-20 rounded-3xl bg-gradient-to-r from-cyan/10 to-blue-400/10 border border-cyan/20 p-10 md:p-14 text-center">
           <h3 className="text-2xl font-display font-bold text-dark mb-3">Egyedi igény?</h3>
-          <p className="text-muted mb-6 max-w-lg mx-auto">Nem találtad meg amit keresel? Minden projekthez egyedi ajánlatot készítünk — ingyenesen.</p>
+          <p className="text-muted mb-6 max-w-lg mx-auto">Nem találtad meg, amit keresel? Minden projekthez egyedi ajánlatot készítünk — ingyenesen.</p>
           <Button href="/kapcsolat" size="lg">
             Egyedi ajánlat kérése <ArrowRight className="ml-2 w-5 h-5" />
           </Button>

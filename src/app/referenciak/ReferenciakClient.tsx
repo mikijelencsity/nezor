@@ -81,7 +81,7 @@ export function ReferenciakClient() {
         >
           <SectionHeading
             label="Referenciák"
-            title="Büszke vagyunk az ügyfeleinkre"
+            title="Büszkék vagyunk elkészült munkáinkra"
             description="Ezeknek a vállalkozásoknak segítettünk erősebb online jelenlétet felépíteni."
           />
         </motion.div>

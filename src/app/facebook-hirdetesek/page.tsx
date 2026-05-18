@@ -22,9 +22,9 @@ export const metadata: Metadata = {
 }
 
 const steps = [
-  { number: '01', title: 'Célcsoport meghatározás', description: 'Közösen meghatározzuk ki a legjobb célközönséged — életkor, helyszín, érdeklődés szerint.' },
+  { number: '01', title: 'Célcsoport meghatározás', description: 'Közösen meghatározzuk, ki a legjobb célközönséged — életkor, helyszín, érdeklődés szerint.' },
   { number: '02', title: 'Kampány tervezés',         description: 'Elkészítjük a hirdetési stratégiát, szövegeket és vizuálokat.' },
-  { number: '03', title: 'Indítás & optimalizálás', description: 'Futtatjuk a kampányt, naponta monitorozzuk és finomítjuk az eredmények alapján.' },
+  { number: '03', title: 'Indítás és optimalizálás', description: 'Futtatjuk a kampányt, naponta monitorozzuk és finomítjuk az eredmények alapján.' },
   { number: '04', title: 'Havi riport',              description: 'Részletes összefoglalót küldünk az elért eredményekről.' },
 ]
 
@@ -135,7 +135,7 @@ export default function FacebookHirdetesekPage() {
         <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-cyan/10 rounded-full blur-3xl" />
         <div className="relative max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">Kezdjük el a hirdetést!</h2>
-          <p className="text-gray-400 mb-8">Ingyenes konzultáció — megmutatjuk milyen eredmény érhető el a te iparágadban.</p>
+          <p className="text-gray-400 mb-8">Ingyenes konzultáció — megmutatjuk, milyen eredmény érhető el a te iparágadban.</p>
           <Button href="/kapcsolat" size="lg">Ajánlatot kérek <ArrowRight className="ml-2 w-5 h-5" /></Button>
         </div>
       </section>

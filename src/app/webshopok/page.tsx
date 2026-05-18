@@ -26,7 +26,7 @@ const steps = [
   { number: '01', title: 'Konzultáció',          description: 'Felmérjük az igényeket: termékek, fizetési mód, szállítás, funkcionalitás.' },
   { number: '02', title: 'Tervezés',             description: 'Design és funkcionális terv, amit te jóváhagysz.' },
   { number: '03', title: 'Fejlesztés',           description: 'Webshop felépítése, fizetési rendszer integráció, tesztelés.' },
-  { number: '04', title: 'Átadás & betanítás',  description: 'Átadás, termékfeltöltési betanítás, folyamatos support.' },
+  { number: '04', title: 'Átadás és betanítás',  description: 'Átadjuk a webshopot, betanítunk a kezelésére, és folyamatos supportot biztosítunk.' },
 ]
 
 const faq: FAQItem[] = [
