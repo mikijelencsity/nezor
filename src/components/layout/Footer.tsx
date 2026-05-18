@@ -11,6 +11,7 @@ const navLinks = [
   { label: 'Csomagok és árak',    href: '/csomagok' },
   { label: 'Referenciák',         href: '/referenciak' },
   { label: 'Blog',                href: '/blog' },
+  { label: 'Városok',             href: '/varosok' },
 ]
 
 export function Footer() {

@@ -1,0 +1,28 @@
+import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+import { cities, getCityBySlug } from '@/data/cities'
+import { CityServicePage } from '@/components/city/CityServicePage'
+
+export async function generateStaticParams() {
+  return cities.map(city => ({ varos: city.slug }))
+}
+
+export async function generateMetadata({ params }: { params: { varos: string } }): Promise<Metadata> {
+  const city = getCityBySlug(params.varos)
+  if (!city) return {}
+  return {
+    title: `Facebook hirdetés kezelés ${city.name} — NEZOR`,
+    description: `Professzionális Facebook és Instagram hirdetés kezelés ${city.inCity}. Célzott Meta kampányok, napi optimalizálás. Ingyenes ajánlat!`,
+    openGraph: {
+      title: `Facebook hirdetés kezelés ${city.name} — NEZOR`,
+      description: `Célzott Meta kampányok ${city.inCity}. Ingyenes ajánlat!`,
+      url: `https://nezor.hu/facebook-hirdetes/${city.slug}`,
+    },
+  }
+}
+
+export default function Page({ params }: { params: { varos: string } }) {
+  const city = getCityBySlug(params.varos)
+  if (!city) notFound()
+  return <CityServicePage city={city} service="facebook" />
+}
