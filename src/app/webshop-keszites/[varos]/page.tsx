@@ -7,8 +7,9 @@ export async function generateStaticParams() {
   return cities.map(city => ({ varos: city.slug }))
 }
 
-export async function generateMetadata({ params }: { params: { varos: string } }): Promise<Metadata> {
-  const city = getCityBySlug(params.varos)
+export async function generateMetadata({ params }: { params: Promise<{ varos: string }> }): Promise<Metadata> {
+  const { varos } = await params
+  const city = getCityBySlug(varos)
   if (!city) return {}
   return {
     title: `Webshop készítés ${city.name} — NEZOR`,
@@ -21,8 +22,9 @@ export async function generateMetadata({ params }: { params: { varos: string } }
   }
 }
 
-export default function Page({ params }: { params: { varos: string } }) {
-  const city = getCityBySlug(params.varos)
+export default async function Page({ params }: { params: Promise<{ varos: string }> }) {
+  const { varos } = await params
+  const city = getCityBySlug(varos)
   if (!city) notFound()
   return <CityServicePage city={city} service="webshop" />
 }
