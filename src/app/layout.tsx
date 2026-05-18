@@ -8,6 +8,7 @@ import { localBusinessSchema } from '@/lib/structured-data'
 import { ScrollProgressBar } from '@/components/ui/ScrollProgressBar'
 import { FloatingCTA } from '@/components/ui/FloatingCTA'
 import { CookieConsent } from '@/components/ui/CookieConsent'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -64,6 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <FloatingCTA />
         <MessengerWidget />
         <CookieConsent />
+        <SpeedInsights />
       </body>
     </html>
   )
