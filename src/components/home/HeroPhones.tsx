@@ -98,8 +98,8 @@ export function HeroPhones() {
         >
           <PhoneMockup size={isMobile ? 'xs' : 'sm'} scrollClass="phone-scroll-fast">
             <Image
-              src="/screenshots/ugyfel1.webp"
-              alt="Ügyfél weboldal 2"
+              src="/screenshots/cruisershop-mockup.webp"
+              alt="Cruiser Shop weboldal"
               width={390}
               height={2000}
               className="w-full h-auto"
