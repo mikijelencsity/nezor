@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { faqSchema } from '@/lib/structured-data'
 import { Button } from '@/components/ui/Button'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { FAQAccordion } from '@/components/ui/FAQAccordion'
@@ -52,6 +53,10 @@ const guarantees = [
 export default function WeboldalakPage() {
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faq)) }}
+      />
       {/* ── HERO ── */}
       <section className="relative overflow-hidden bg-white py-10 lg:py-14">
         <div className="bg-grid-pattern absolute inset-0" />

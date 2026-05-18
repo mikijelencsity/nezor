@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { faqSchema } from '@/lib/structured-data'
 import { Button } from '@/components/ui/Button'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { FAQAccordion } from '@/components/ui/FAQAccordion'
@@ -44,6 +45,10 @@ const guarantees = [
 export default function FacebookHirdetesekPage() {
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faq)) }}
+      />
       {/* ── HERO ── */}
       <section className="relative overflow-hidden bg-white pt-20 pb-32">
         <div className="bg-grid-pattern absolute inset-0" />
