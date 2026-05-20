@@ -10,35 +10,20 @@ export default function Icon() {
         style={{
           width: 32,
           height: 32,
-          background: '#1A1A2E',
-          borderRadius: 7,
+          background: '#00CFFF',
+          borderRadius: 6,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          position: 'relative',
         }}
       >
-        {/* Subtle glow */}
-        <div
-          style={{
-            position: 'absolute',
-            width: 20,
-            height: 20,
-            background: 'rgba(0,207,255,0.18)',
-            borderRadius: '50%',
-            filter: 'blur(6px)',
-          }}
-        />
-        {/* Gradient N */}
         <span
           style={{
-            fontSize: 21,
+            color: '#1A1A2E',
+            fontSize: 22,
             fontWeight: 900,
             fontFamily: 'sans-serif',
             letterSpacing: '-1px',
-            background: 'linear-gradient(135deg, #00CFFF 0%, #0090FF 100%)',
-            backgroundClip: 'text',
-            color: 'transparent',
             lineHeight: 1,
           }}
         >
