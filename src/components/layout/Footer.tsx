@@ -5,13 +5,13 @@ import { FaFacebook, FaInstagram } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 
 const navLinks = [
-  { label: 'Weboldal készítés',   href: '/weboldalak' },
-  { label: 'Webshop fejlesztés',  href: '/webshopok' },
-  { label: 'Facebook hirdetések', href: '/facebook-hirdetesek' },
-  { label: 'Csomagok és árak',    href: '/csomagok' },
-  { label: 'Referenciák',         href: '/referenciak' },
-  { label: 'Blog',                href: '/blog' },
-  { label: 'Városok',             href: '/varosok' },
+  { label: 'Weboldal készítés',        href: '/weboldalak' },
+  { label: 'Webshop fejlesztés',       href: '/webshopok' },
+  { label: 'Facebook hirdetés kezelés', href: '/facebook-hirdetesek' },
+  { label: 'Csomagok és árak',         href: '/csomagok' },
+  { label: 'Munkáink',                 href: '/referenciak' },
+  { label: 'Szakmai blog',             href: '/blog' },
+  { label: 'Városok',                  href: '/varosok' },
 ]
 
 export function Footer() {
