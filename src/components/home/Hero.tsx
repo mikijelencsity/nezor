@@ -33,9 +33,9 @@ export function Hero() {
             </h1>
 
             <p className="animate-fade-up-delay-2 text-base md:text-lg text-muted mb-6 leading-relaxed">
-              Weboldalakat, webshopokat és Facebook hirdetéseket készítünk,
-              amelyek valódi eredményeket hoznak — Bács-Kiskun megyétől az
-              egész országig.
+              Professzionális weboldal és webshop készítés, Facebook hirdetés
+              kezelés — hogy több ügyfelet szerezz és gyorsabb növekedést érj
+              el. Bács-Kiskun megyétől az egész országig.
             </p>
 
             <div className="animate-fade-up-delay-3 flex flex-col sm:flex-row gap-3 mb-6">
