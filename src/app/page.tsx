@@ -15,7 +15,7 @@ import { getLatestPosts } from '@/lib/blog'
 import { BlogPost } from '@/types'
 
 export const metadata: Metadata = {
-  title: 'NEZOR — Weboldal, Webshop és Facebook Hirdetések Magyarországon',
+  title: 'Weboldal, Webshop és Facebook Hirdetés | NEZOR',
   description: 'Professzionális weboldal és webshop készítés, Facebook hirdetés kezelés Bács-Kiskun megyében és egész Magyarországon. Ingyenes konzultáció!',
   openGraph: {
     title: 'NEZOR — Weboldal, Webshop és Facebook Hirdetések',
