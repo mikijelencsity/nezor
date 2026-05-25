@@ -24,7 +24,7 @@ export default function AdatvedelemPage() {
           <h2>1. Az adatkezelő</h2>
           <p>
             <strong>Neve:</strong> NEZOR Digitális Ügynökség<br />
-            <strong>Email:</strong> nezorweb@gmail.com<br />
+            <strong>Email:</strong> info@nezor.hu<br />
             <strong>Székhely:</strong> Bács-Kiskun megye, Magyarország
           </p>
 
@@ -62,7 +62,7 @@ export default function AdatvedelemPage() {
             <li><strong>Adathordozhatósághoz</strong> — kérheti adatai géppel olvasható formátumban</li>
             <li><strong>Tiltakozáshoz</strong> — tiltakozhat az adatkezelés ellen</li>
           </ul>
-          <p>Jogai gyakorlásához írjon a <a href="mailto:nezorweb@gmail.com">nezorweb@gmail.com</a> címre. Panasszal fordulhat a Nemzeti Adatvédelmi és Információszabadság Hatósághoz (naih.hu).</p>
+          <p>Jogai gyakorlásához írjon a <a href="mailto:info@nezor.hu">info@nezor.hu</a> címre. Panasszal fordulhat a Nemzeti Adatvédelmi és Információszabadság Hatósághoz (naih.hu).</p>
 
           <h2 id="sutik">7. Sütik (Cookie-k)</h2>
           <p>A weboldal az alábbi sütiket használja:</p>
@@ -95,7 +95,7 @@ export default function AdatvedelemPage() {
           <p>Fenntartjuk a jogot az adatvédelmi tájékoztató módosítására. Lényeges változás esetén a weboldalon értesítünk.</p>
 
           <h2>10. Kapcsolat</h2>
-          <p>Adatvédelmi kérdéseivel forduljon hozzánk: <a href="mailto:nezorweb@gmail.com">nezorweb@gmail.com</a></p>
+          <p>Adatvédelmi kérdéseivel forduljon hozzánk: <a href="mailto:info@nezor.hu">info@nezor.hu</a></p>
 
         </div>
       </div>

@@ -181,11 +181,11 @@ export function Navbar() {
                   Ajánlatot kérek <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a
-                  href="mailto:nezorweb@gmail.com"
+                  href="mailto:info@nezor.hu"
                   className="flex items-center justify-center gap-2 text-sm text-gray-500 hover:text-white transition-colors"
                 >
                   <Mail className="w-3.5 h-3.5" />
-                  nezorweb@gmail.com
+                  info@nezor.hu
                 </a>
               </motion.div>
 

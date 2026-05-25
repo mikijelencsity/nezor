@@ -5,7 +5,7 @@ export function localBusinessSchema() {
     name: 'NEZOR',
     description: 'Professzionális weboldal és webshop készítés, Facebook hirdetés kezelés.',
     url: 'https://nezor.hu',
-    email: 'nezorweb@gmail.com',
+    email: 'info@nezor.hu',
     address: {
       '@type': 'PostalAddress',
       addressRegion: 'Bács-Kiskun',

@@ -107,7 +107,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:nezorweb@gmail.com"
+                  href="mailto:info@nezor.hu"
                   className="group flex items-center gap-3 p-3 bg-white/5 border border-white/8 rounded-xl hover:border-cyan/30 hover:bg-white/8 transition-all"
                 >
                   <div className="w-8 h-8 bg-cyan/15 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -115,7 +115,7 @@ export function Footer() {
                   </div>
                   <div>
                     <div className="text-[10px] text-gray-500 mb-0.5">Email</div>
-                    <div className="text-xs text-gray-300 group-hover:text-white transition-colors font-medium">nezorweb@gmail.com</div>
+                    <div className="text-xs text-gray-300 group-hover:text-white transition-colors font-medium">info@nezor.hu</div>
                   </div>
                 </a>
               </li>

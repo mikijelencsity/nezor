@@ -46,11 +46,11 @@ export default function KapcsolatPage() {
 
             {/* Contact info */}
             <div className="space-y-3 animate-fade-up-delay-2">
-              <a href="mailto:nezorweb@gmail.com" className="flex items-center gap-3 group">
+              <a href="mailto:info@nezor.hu" className="flex items-center gap-3 group">
                 <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center group-hover:bg-cyan/20 transition-colors">
                   <Mail className="w-3.5 h-3.5 text-cyan" />
                 </div>
-                <span className="text-gray-300 group-hover:text-white transition-colors text-sm">nezorweb@gmail.com</span>
+                <span className="text-gray-300 group-hover:text-white transition-colors text-sm">info@nezor.hu</span>
               </a>
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">

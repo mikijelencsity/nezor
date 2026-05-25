@@ -42,7 +42,7 @@ export function ContactForm() {
       if (!res.ok) throw new Error('Hiba történt')
       setSubmitted(true)
     } catch {
-      setError('Hiba történt az üzenet küldésekor. Próbálkozz újra, vagy írj emailt a nezorweb@gmail.com címre.')
+      setError('Hiba történt az üzenet küldésekor. Próbálkozz újra, vagy írj emailt a info@nezor.hu címre.')
     }
   }
 
