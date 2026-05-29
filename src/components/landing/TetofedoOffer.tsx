@@ -18,13 +18,13 @@ export function TetofedoOffer() {
             Korlátozott ideig
           </span>
           <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
-            Mit kapsz 100.000 Ft-ért?
+            Mit kapsz az ajánlatban?
           </h2>
           <div className="flex items-center justify-center gap-4 mb-2">
             <span className="text-gray-500 line-through text-2xl">250.000 Ft</span>
-            <span className="text-cyan font-display font-bold text-4xl">100.000 Ft</span>
+            <span className="text-cyan font-display font-bold text-4xl">Már 100.000 Ft-tól</span>
           </div>
-          <p className="text-gray-400 text-sm">Egyszeri díj, nincs rejtett költség</p>
+          <p className="text-gray-400 text-sm">Ingyenes helyszíni felmérés után pontos ajánlat</p>
         </div>
 
         <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
@@ -44,7 +44,7 @@ export function TetofedoOffer() {
               href="#kapcsolat"
               className="inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-display font-bold px-10 py-4 rounded-xl text-lg transition-colors shadow-lg"
             >
-              Igen, kérem ezt az ajánlatot!
+              Ingyenes felmérést kérek
             </a>
             <p className="text-gray-500 text-xs mt-3">Csak 3 hely maradt ebben a hónapban</p>
           </div>

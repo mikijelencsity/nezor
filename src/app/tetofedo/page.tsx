@@ -7,6 +7,7 @@ import { TetofedoHowItWorks } from '@/components/landing/TetofedoHowItWorks'
 import { TetofedoReferences } from '@/components/landing/TetofedoReferences'
 import { TetofedoObjections } from '@/components/landing/TetofedoObjections'
 import { TetofedoCTA } from '@/components/landing/TetofedoCTA'
+import { StickyMobileCTA } from '@/components/landing/StickyMobileCTA'
 
 export const metadata: Metadata = {
   title: 'Tetőfedő weboldal + 2 Facebook hirdetés — 100.000 Ft | NEZOR',
@@ -26,7 +27,9 @@ export default function TetofedoPage() {
         <TetofedoReferences />
         <TetofedoObjections />
         <TetofedoCTA />
+        <div className="pb-20 lg:pb-0" />
       </div>
+      <StickyMobileCTA />
     </>
   )
 }

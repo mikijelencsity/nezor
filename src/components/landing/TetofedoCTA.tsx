@@ -81,7 +81,7 @@ export function TetofedoCTA() {
                   disabled={isSubmitting}
                   className="w-full bg-orange-500 hover:bg-orange-600 disabled:opacity-50 text-white font-display font-bold px-8 py-4 rounded-xl text-lg transition-colors"
                 >
-                  {isSubmitting ? 'Küldés...' : 'Igen, kérem az ajánlatot!'}
+                  {isSubmitting ? 'Küldés...' : 'Kérek visszahívást'}
                 </button>
                 <p className="text-gray-400 text-xs text-center">Ingyenes, kötelezettségmentes. Csak visszahívunk.</p>
               </form>
