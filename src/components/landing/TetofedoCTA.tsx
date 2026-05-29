@@ -14,8 +14,14 @@ const schema = z.object({
 
 type FormData = z.infer<typeof schema>
 
-const inputClass = 'w-full px-4 py-3 border border-gray-200 rounded-xl text-dark text-sm placeholder:text-gray-400 focus:outline-none focus:border-cyan focus:ring-1 focus:ring-cyan transition-colors'
-const errorClass = 'text-red-500 text-xs mt-1'
+const inputClass = [
+  'w-full px-4 py-3.5 text-sm transition-colors',
+  'bg-transparent border-b border-white/20',
+  'text-white placeholder:text-white/30',
+  'focus:outline-none focus:border-white/60',
+].join(' ')
+
+const errorClass = 'text-red-400 text-xs mt-1'
 
 export function TetofedoCTA() {
   const [submitted, setSubmitted] = useState(false)
@@ -41,69 +47,132 @@ export function TetofedoCTA() {
   }
 
   return (
-    <section id="kapcsolat" className="py-20 bg-dark">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <span className="inline-block bg-orange-500/20 text-orange-400 font-semibold text-sm px-4 py-1.5 rounded-full mb-4">
-            Csak 3 hely maradt!
-          </span>
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-3">
-            Kérj ajánlatot most!
-          </h2>
-          <p className="text-gray-400">Visszahívunk 24 órán belül.</p>
-        </div>
+    <section id="kapcsolat" style={{ background: '#111111' }} className="py-24">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          <div className="bg-white rounded-2xl p-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+
+          {/* LEFT — messaging */}
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] mb-6" style={{ color: '#C4531A' }}>
+              Kapcsolat
+            </p>
+            <h2
+              className="font-bold leading-[1.05] mb-6"
+              style={{
+                fontFamily: 'var(--font-serif), Georgia, serif',
+                fontSize: 'clamp(2.2rem, 4vw, 3.5rem)',
+                color: '#F5F3EF',
+                letterSpacing: '-0.02em',
+              }}
+            >
+              Tedd meg az első lépést.
+            </h2>
+            <p className="text-base leading-relaxed mb-12" style={{ color: '#9CA3AF' }}>
+              Visszahívunk 24 órán belül. Megbeszéljük, mire van szükséged, és pontos ajánlatot adunk — ingyen, kötelezettség nélkül.
+            </p>
+
+            {/* Big phone */}
+            <a
+              href="tel:+36704554703"
+              className="inline-flex items-center gap-4 group"
+            >
+              <div
+                className="w-12 h-12 flex items-center justify-center flex-shrink-0 transition-colors"
+                style={{ background: 'rgba(196,83,26,0.15)', borderRadius: '2px' }}
+              >
+                <Phone className="w-5 h-5" style={{ color: '#C4531A' }} />
+              </div>
+              <div>
+                <div
+                  className="font-bold text-2xl transition-colors"
+                  style={{ color: '#F5F3EF', fontFamily: 'var(--font-serif), Georgia, serif', letterSpacing: '-0.01em' }}
+                >
+                  +36 70 455 4703
+                </div>
+                <div className="text-xs uppercase tracking-widest mt-0.5" style={{ color: '#6B7280' }}>
+                  Hétköznap 8:00–18:00
+                </div>
+              </div>
+            </a>
+
+            <div className="mt-8 pt-8 border-t" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
+              <p className="text-xs leading-relaxed" style={{ color: '#4B5563' }}>
+                "Egy tetőcsere ára 300.000–1.500.000 Ft. Ha egyetlen új ügyfelet hoz a weboldal — és fog —, a befektetés már az első munkánál megtérül."
+              </p>
+            </div>
+          </div>
+
+          {/* RIGHT — form */}
+          <div>
             {submitted ? (
-              <div className="text-center py-8">
-                <CheckCircle className="w-16 h-16 text-cyan mx-auto mb-4" />
-                <h3 className="text-2xl font-display font-bold text-dark mb-2">Köszönjük!</h3>
-                <p className="text-muted">Hamarosan felhívunk. Addig is elérsz minket: <strong>+36 70 455 4703</strong></p>
+              <div className="py-16 text-center">
+                <CheckCircle className="w-12 h-12 mx-auto mb-6" style={{ color: '#C4531A' }} />
+                <h3
+                  className="font-bold text-2xl mb-3"
+                  style={{ fontFamily: 'var(--font-serif), Georgia, serif', color: '#F5F3EF' }}
+                >
+                  Köszönjük!
+                </h3>
+                <p style={{ color: '#9CA3AF' }}>
+                  Hamarosan felhívunk.<br />
+                  Addig is: <strong style={{ color: '#F5F3EF' }}>+36 70 455 4703</strong>
+                </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-4">
+              <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-8">
                 <div>
-                  <input {...register('name')} placeholder="Neved *" className={inputClass} />
+                  <input
+                    {...register('name')}
+                    placeholder="Neved *"
+                    className={inputClass}
+                  />
                   {errors.name && <p className={errorClass}>{errors.name.message}</p>}
                 </div>
                 <div>
-                  <input {...register('phone')} placeholder="Telefonszámod *" className={inputClass} />
+                  <input
+                    {...register('phone')}
+                    placeholder="Telefonszámod *"
+                    className={inputClass}
+                  />
                   {errors.phone && <p className={errorClass}>{errors.phone.message}</p>}
                 </div>
                 <div>
-                  <input {...register('email')} type="email" placeholder="Email cím *" className={inputClass} />
+                  <input
+                    {...register('email')}
+                    type="email"
+                    placeholder="Email cím *"
+                    className={inputClass}
+                  />
                   {errors.email && <p className={errorClass}>{errors.email.message}</p>}
                 </div>
-                {error && <p className="text-red-500 text-sm bg-red-50 p-3 rounded-xl">{error}</p>}
+
+                {error && (
+                  <p className="text-red-400 text-sm py-3 px-4" style={{ background: 'rgba(239,68,68,0.1)', borderRadius: '2px' }}>
+                    {error}
+                  </p>
+                )}
+
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-orange-500 hover:bg-orange-600 disabled:opacity-50 text-white font-display font-bold px-8 py-4 rounded-xl text-lg transition-colors"
+                  className="w-full font-semibold text-base py-4 transition-all"
+                  style={{
+                    background: isSubmitting ? 'rgba(196,83,26,0.5)' : '#C4531A',
+                    color: '#F5F3EF',
+                    borderRadius: '4px',
+                    cursor: isSubmitting ? 'not-allowed' : 'pointer',
+                  }}
                 >
                   {isSubmitting ? 'Küldés...' : 'Kérek visszahívást'}
                 </button>
-                <p className="text-gray-400 text-xs text-center">Ingyenes, kötelezettségmentes. Csak visszahívunk.</p>
+                <p className="text-xs text-center" style={{ color: '#4B5563' }}>
+                  Ingyenes, kötelezettségmentes.
+                </p>
               </form>
             )}
           </div>
 
-          <div className="flex flex-col items-center justify-center text-center p-8">
-            <p className="text-gray-400 text-lg mb-4">Vagy hívj fel közvetlenül:</p>
-            <a
-              href="tel:+36704554703"
-              className="inline-flex items-center gap-3 text-white font-display font-bold text-3xl md:text-4xl hover:text-cyan transition-colors"
-            >
-              <Phone className="w-8 h-8 text-cyan" />
-              +36 70 455 4703
-            </a>
-            <p className="text-gray-500 text-sm mt-4">Hétköznap 8:00–18:00 között</p>
-            <div className="mt-8 p-4 bg-white/5 border border-white/10 rounded-xl text-left">
-              <p className="text-gray-300 text-sm leading-relaxed">
-                "Egy tetőcsere ára 300.000–1.500.000 Ft. Ha egyetlen új ügyfelet hoz a weboldal, már megtérült a befektetés."
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </section>

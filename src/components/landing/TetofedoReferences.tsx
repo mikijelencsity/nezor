@@ -6,28 +6,54 @@ const refs = [
 
 export function TetofedoReferences() {
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
-          <h2 className="text-2xl md:text-3xl font-display font-bold text-dark mb-3">
-            Magyar vállalkozások bíztak bennünk
-          </h2>
-          <p className="text-muted">Ezeknek a cégeknek készítettük el a weboldalát.</p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {refs.map(({ name, url, desc }) => (
-            <div key={name} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center">
-              <div className="w-12 h-12 bg-cyan/10 rounded-xl flex items-center justify-center mx-auto mb-3">
-                <span className="text-cyan font-display font-bold text-lg">
-                  {name.charAt(0)}
-                </span>
+    <section style={{ background: '#1A1A1A' }} className="py-20">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+
+        <div className="flex flex-col lg:flex-row lg:items-center gap-12 lg:gap-20">
+          <div className="lg:w-72 flex-shrink-0">
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] mb-4" style={{ color: '#C4531A' }}>
+              Referenciák
+            </p>
+            <h2
+              className="font-bold leading-tight"
+              style={{
+                fontFamily: 'var(--font-serif), Georgia, serif',
+                fontSize: '1.6rem',
+                color: '#F5F3EF',
+              }}
+            >
+              Magyar vállalkozások bíztak bennünk.
+            </h2>
+          </div>
+
+          <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-0">
+            {refs.map(({ name, url, desc }, i) => (
+              <div
+                key={name}
+                className="py-8 px-6 border-t lg:border-t-0 lg:border-l first:border-l-0"
+                style={{ borderColor: 'rgba(255,255,255,0.08)' }}
+              >
+                <p
+                  className="font-bold text-base mb-1"
+                  style={{ color: '#F5F3EF', fontFamily: 'var(--font-serif), Georgia, serif' }}
+                >
+                  {name}
+                </p>
+                <p className="text-xs mb-3" style={{ color: '#6B7280' }}>{desc}</p>
+                <a
+                  href={`https://${url}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-mono transition-colors hover:underline"
+                  style={{ color: '#C4531A' }}
+                >
+                  {url} →
+                </a>
               </div>
-              <h3 className="font-display font-bold text-dark mb-1">{name}</h3>
-              <p className="text-muted text-xs mb-2">{desc}</p>
-              <span className="text-cyan text-xs font-mono">{url}</span>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
+
       </div>
     </section>
   )

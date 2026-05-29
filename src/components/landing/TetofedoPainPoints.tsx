@@ -1,44 +1,70 @@
-import { WifiOff, TrendingDown, PhoneMissed } from 'lucide-react'
-
 const pains = [
   {
-    icon: WifiOff,
-    title: 'Nincs weboldalad',
-    desc: 'Az ügyfelek keresnek, de nem találnak meg online. A Google-ben a konkurensed jelenik meg — nem te.',
+    number: '01',
+    headline: 'Nincs weboldalad — a Google-ben a konkurensed jelenik meg.',
+    body: 'Ma már az ügyfelek 70%-a online keres tetőfedőt. Ha nem vagy fent, egyszerűen nem létezel számukra.',
   },
   {
-    icon: TrendingDown,
-    title: 'A konkurensed már Facebookon van',
-    desc: 'Miközben te szájhagyomány útján szerzed az ügyfeleket, a versenytársad hirdetésekkel éri el az újakat.',
+    number: '02',
+    headline: 'A konkurensed hirdet Facebookon. Te nem.',
+    body: 'Miközben te szájhagyomány útján vársz az ügyfelekre, a versenytársad célzott hirdetésekkel éri el pontosan azokat, akiknek beázik a teteje.',
   },
   {
-    icon: PhoneMissed,
-    title: 'Szezonon kívül alig csörög a telefon',
-    desc: 'Télen, tavasszal alig van munka. Egy jó weboldal és hirdetés egész évben hozza az ügyfeleket.',
+    number: '03',
+    headline: 'Szezonon kívül leáll a telefon.',
+    body: 'Télen és tavasszal drasztikusan visszaesik a munka. Egy profi weboldal és rendszeres hirdetés egész évben stabilan hozza az ügyfeleket.',
   },
 ]
 
 export function TetofedoPainPoints() {
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-display font-bold text-dark mb-3">
-            Ismerős valamelyik?
+    <section style={{ background: '#F5F3EF' }} className="py-24">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+
+        <div className="mb-20 max-w-3xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] mb-6" style={{ color: '#C4531A' }}>
+            A valóság
+          </p>
+          <h2
+            className="font-bold leading-[1.1]"
+            style={{
+              fontFamily: 'var(--font-serif), Georgia, serif',
+              fontSize: 'clamp(2rem, 4vw, 3.2rem)',
+              color: '#111111',
+              letterSpacing: '-0.02em',
+            }}
+          >
+            A legtöbb tetőfedő vállalkozás rengeteg ügyfelet veszít el — egy rossz weboldal vagy a weboldal hiánya miatt.
           </h2>
-          <p className="text-muted text-lg">Ha igen, itt az idő változtatni.</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {pains.map(({ icon: Icon, title, desc }) => (
-            <div key={title} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mb-4">
-                <Icon className="w-6 h-6 text-red-500" />
+
+        <div>
+          {pains.map(({ number, headline, body }) => (
+            <div
+              key={number}
+              className="grid grid-cols-1 lg:grid-cols-[80px_1fr_1fr] gap-6 lg:gap-16 py-10 border-t"
+              style={{ borderColor: 'rgba(17,17,17,0.12)' }}
+            >
+              <div
+                className="font-bold text-5xl leading-none"
+                style={{ fontFamily: 'var(--font-serif), Georgia, serif', color: '#111111', opacity: 0.15 }}
+              >
+                {number}
               </div>
-              <h3 className="font-display font-bold text-dark text-lg mb-2">{title}</h3>
-              <p className="text-muted text-sm leading-relaxed">{desc}</p>
+              <h3
+                className="font-bold text-xl leading-snug"
+                style={{ color: '#111111', fontFamily: 'var(--font-serif), Georgia, serif' }}
+              >
+                {headline}
+              </h3>
+              <p className="text-base leading-relaxed" style={{ color: '#4B5563' }}>
+                {body}
+              </p>
             </div>
           ))}
+          <div className="border-t" style={{ borderColor: 'rgba(17,17,17,0.12)' }} />
         </div>
+
       </div>
     </section>
   )
