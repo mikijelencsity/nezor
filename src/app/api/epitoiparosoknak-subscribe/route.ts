@@ -17,18 +17,32 @@ export async function POST(req: NextRequest) {
 
   const resend = new Resend(process.env.RESEND_API_KEY)
 
+  let email: string
   try {
     const body = await req.json()
-    const { email } = schema.parse(body)
+    email = schema.parse(body).email
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      return NextResponse.json({ error: 'Érvénytelen email cím' }, { status: 400 })
+    }
+    return NextResponse.json({ error: 'Hiba történt' }, { status: 500 })
+  }
 
+  // 1. Audience mentés — nem fatális ha hibázik
+  try {
     await resend.contacts.create({
       audienceId: process.env.RESEND_AUDIENCE_ID,
       email,
       unsubscribed: false,
     })
+  } catch {
+    // Pl. már létezik a contact — folytatjuk
+  }
 
+  // 2. Welcome email a feliratkozónak
+  try {
     await resend.emails.send({
-      from: 'NEZOR <onboarding@resend.dev>',
+      from: 'NEZOR <info@nezor.hu>',
       to: email,
       subject: 'Megkaptuk! Az útmutatód itt van →',
       html: `
@@ -52,19 +66,21 @@ export async function POST(req: NextRequest) {
         </div>
       `,
     })
+  } catch {
+    // Welcome email nem ment ki — folytatjuk, a redirect működik
+  }
 
+  // 3. Értesítő email nekünk
+  try {
     await resend.emails.send({
-      from: 'NEZOR Rendszer <onboarding@resend.dev>',
+      from: 'NEZOR Rendszer <info@nezor.hu>',
       to: 'miklosjelencsity@gmail.com',
       subject: `Új feliratkozó: ${escHtml(email)}`,
       html: `<p>Új feliratkozó az építőiparos lead magnetre:</p><p><strong>${escHtml(email)}</strong></p>`,
     })
-
-    return NextResponse.json({ success: true, token: process.env.GUIDE_TOKEN })
-  } catch (error) {
-    if (error instanceof z.ZodError) {
-      return NextResponse.json({ error: 'Érvénytelen email cím' }, { status: 400 })
-    }
-    return NextResponse.json({ error: 'Hiba történt' }, { status: 500 })
+  } catch {
+    // Nem fatális
   }
+
+  return NextResponse.json({ success: true, token: process.env.GUIDE_TOKEN })
 }
