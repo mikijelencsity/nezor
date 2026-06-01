@@ -3,6 +3,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import NextLink from 'next/link'
 import { ArrowRight, TrendingDown, TrendingUp, X, Check, Monitor, ShoppingCart, AlertCircle, Zap } from 'lucide-react'
+import { SectionHeading } from '@/components/ui/SectionHeading'
 
 const services = [
   {
@@ -286,9 +287,11 @@ export function ServicesSection() {
           transition={{ type: 'spring', stiffness: 300, damping: 28 }}
           className="text-center mb-10"
         >
-          <span className="inline-block text-cyan font-display font-semibold text-sm uppercase tracking-widest mb-3">Szolgáltatások</span>
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-dark">Probléma → Megoldás</h2>
-          <p className="text-muted mt-3 max-w-xl mx-auto">Nézd meg mi a különbség NEZOR nélkül és NEZOR-ral.</p>
+          <SectionHeading
+            label="Szolgáltatások"
+            title="Így hozunk neked több ügyfelet."
+            description="Válassz szolgáltatást és nézd meg pontosan mit jelent a vállalkozásodnak."
+          />
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
