@@ -43,8 +43,8 @@ export function PackagesTeaser() {
           className="text-center mb-12"
         >
           <span className="inline-block text-cyan font-display font-semibold text-sm uppercase tracking-widest mb-3">Csomagok</span>
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-dark">Válaszd a neked megfelelőt</h2>
-          <p className="text-muted mt-3 max-w-xl mx-auto">Minden csomagnál egyszeri díjas vagy havidíjas konstrukció közül választhatsz.</p>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-dark">Befektetés, nem kiadás.</h2>
+          <p className="text-muted mt-3 max-w-xl mx-auto">Egy új ügyfél általában megtéríti a weboldal árát. A többi tiszta profit.</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
