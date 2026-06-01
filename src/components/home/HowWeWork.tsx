@@ -1,68 +1,54 @@
-'use client'
-import { motion } from 'framer-motion'
-import { Button } from '@/components/ui/Button'
 import { ArrowRight } from 'lucide-react'
+import { Button } from '@/components/ui/Button'
 
 const steps = [
   {
-    number: '01',
+    num: '01',
     title: 'Megértjük a vállalkozásod',
-    description: 'Nem sablont rakunk össze. Megnézzük ki a célügyféled, mi a versenytársad, és mi az az egy dolog ami téged megkülönböztet. Erre épül minden.',
+    desc: 'Ki a célügyfeled, ki a konkurensed, és mi az, ami téged megkülönböztet. Erre épül minden.',
   },
   {
-    number: '02',
-    title: 'Weboldalad ügyfélszerzőre tervezzük',
-    description: 'Nem szép oldalakat csinálunk. Olyan oldalakat, ahol a látogató azonnal megérti mit kínálsz és miért bízzon benned. Minden elem az érdeklődő → ügyfél útvonalon van.',
+    num: '02',
+    title: 'Felépítjük az ügyfélszerző rendszert',
+    desc: 'Weboldal + Google megjelenés + Facebook hirdetés — egy célra hangolva: ajánlatkérések.',
   },
   {
-    number: '03',
-    title: 'Hirdetéssel forgalmat hozunk rá',
-    description: 'Egy jó weboldal önmagában kevés. Facebook hirdetéssel célzottan hozzuk azokat, akiknek most van szükségük rád — nem mindenkinek, hanem a tiednek.',
+    num: '03',
+    title: 'Több hívás, több ajánlatkérés',
+    desc: 'A rendszer a háttérben dolgozik — te arra koncentrálsz, amihez igazán értesz.',
   },
 ]
 
 export function HowWeWork() {
   return (
-    <section className="py-20 bg-dark">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <span className="inline-block text-cyan font-display font-semibold text-sm uppercase tracking-widest mb-3">
-            A folyamat
-          </span>
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
-            Így hozunk ügyfeleket a vállalkozásodnak.
-          </h2>
-          <p className="text-gray-400 text-lg max-w-xl mx-auto">
-            Nem sablont adunk el. Egy rendszert, ami működik.
-          </p>
-        </div>
+    <section className="py-16 md:py-20" style={{ background: '#f4f7fb' }}>
+      <div className="max-w-4xl mx-auto px-6 sm:px-8">
+        <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan mb-3">
+          Hogyan csináljuk
+        </p>
+        <h2 className="text-3xl md:text-4xl font-display font-black text-dark leading-tight mb-10">
+          3 lépés, és több ügyfelet kapsz.
+        </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          {steps.map((step, i) => (
-            <motion.div
-              key={step.number}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ type: 'spring', stiffness: 300, damping: 28, delay: i * 0.1 }}
-              className="relative"
-            >
-              <div className="text-5xl font-display font-bold text-white/10 mb-4 leading-none">
-                {step.number}
+        <div className="flex flex-col divide-y divide-blue-100">
+          {steps.map((step) => (
+            <div key={step.num} className="flex items-start gap-5 py-6">
+              <span
+                className="text-5xl font-black leading-none flex-shrink-0"
+                style={{ color: '#AAFF00', textShadow: '0 0 20px rgba(170,255,0,0.4)' }}
+              >
+                {step.num}
+              </span>
+              <div>
+                <h3 className="text-lg font-black text-dark mb-1">{step.title}</h3>
+                <p className="text-sm text-muted leading-relaxed">{step.desc}</p>
               </div>
-              <div className="w-8 h-0.5 bg-cyan mb-4" />
-              <h3 className="font-display font-bold text-white text-lg mb-3">
-                {step.title}
-              </h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                {step.description}
-              </p>
-            </motion.div>
+            </div>
           ))}
         </div>
 
-        <div className="text-center">
-          <Button href="/kapcsolat" size="lg">
+        <div className="mt-8">
+          <Button href="/kapcsolat" size="lg" className="bg-lime text-dark font-black hover:bg-lime/90 border-0 shadow-none">
             Ingyenes weboldal audit
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
