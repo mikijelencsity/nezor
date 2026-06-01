@@ -1,13 +1,8 @@
 import type { Metadata } from 'next'
-import { faqSchema } from '@/lib/structured-data'
-import { homeFAQ } from '@/data/faq'
 import { Hero } from '@/components/home/Hero'
-import { SocialProof } from '@/components/home/SocialProof'
-import { ServicesSection } from '@/components/home/ServicesSection'
-import { HowWeWork } from '@/components/home/HowWeWork'
-import { PackagesTeaser } from '@/components/home/PackagesTeaser'
-import { FAQSection } from '@/components/home/FAQSection'
-import { ResultsCTA } from '@/components/home/ResultsCTA'
+import { PainSection } from '@/components/home/PainSection'
+import { ReferencesSection } from '@/components/home/ReferencesSection'
+import { FinalCTA } from '@/components/home/FinalCTA'
 
 export const metadata: Metadata = {
   title: 'Weboldal, Webshop és Facebook Hirdetés | NEZOR',
@@ -22,17 +17,10 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(homeFAQ)) }}
-      />
       <Hero />
-      <SocialProof />
-      <ServicesSection />
-      <HowWeWork />
-      <PackagesTeaser />
-      <FAQSection />
-      <ResultsCTA />
+      <PainSection />
+      <ReferencesSection />
+      <FinalCTA />
     </>
   )
 }
