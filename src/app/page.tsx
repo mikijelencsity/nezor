@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { localBusinessSchema } from '@/lib/structured-data'
 import { Hero } from '@/components/home/Hero'
 import { PainSection } from '@/components/home/PainSection'
 import { ReferencesSection } from '@/components/home/ReferencesSection'
@@ -17,6 +18,10 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema()) }}
+      />
       <Hero />
       <PainSection />
       <ReferencesSection />
