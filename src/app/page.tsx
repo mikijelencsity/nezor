@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { localBusinessSchema } from '@/lib/structured-data'
 import { Hero } from '@/components/home/Hero'
 import { PainSection } from '@/components/home/PainSection'
+import { HowWeWork } from '@/components/home/HowWeWork'
 import { ReferencesSection } from '@/components/home/ReferencesSection'
 import { FinalCTA } from '@/components/home/FinalCTA'
 
@@ -24,6 +25,7 @@ export default function HomePage() {
       />
       <Hero />
       <PainSection />
+      <HowWeWork />
       <ReferencesSection />
       <FinalCTA />
     </>
