@@ -10,6 +10,7 @@
   --color-muted: #6B7280;
   --color-secondary: #F5F7FA;
   --color-accent: #0D0D0D;
+  --color-lime: #AAFF00;
 
   /* Fonts */
   --font-display: var(--font-space-grotesk), sans-serif;
