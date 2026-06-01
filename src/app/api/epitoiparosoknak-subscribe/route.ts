@@ -11,7 +11,7 @@ function escHtml(s: string) {
 }
 
 export async function POST(req: NextRequest) {
-  if (!process.env.RESEND_API_KEY || !process.env.RESEND_AUDIENCE_ID) {
+  if (!process.env.RESEND_API_KEY || !process.env.RESEND_AUDIENCE_ID || !process.env.GUIDE_TOKEN) {
     return NextResponse.json({ error: 'Konfiguráció hiányzik' }, { status: 500 })
   }
 
@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
             Az útmutatód azonnal elérhető — kattints az alábbi gombra, és olvasd el,
             hogyan hozz több ügyfelet a vállalkozásodnak online.
           </p>
-          <a href="${process.env.NEXT_PUBLIC_SITE_URL || 'https://nezor.hu'}/epitoiparosoknak/utmutato"
+          <a href="${process.env.NEXT_PUBLIC_SITE_URL || 'https://nezor.hu'}/epitoiparosoknak/utmutato?token=${process.env.GUIDE_TOKEN}"
              style="display:inline-block;background:#1e4fd8;color:#fff;padding:16px 32px;border-radius:4px;text-decoration:none;font-size:17px;font-weight:600;">
             Olvasom az útmutatót →
           </a>
@@ -60,7 +60,7 @@ export async function POST(req: NextRequest) {
       html: `<p>Új feliratkozó az építőiparos lead magnetre:</p><p><strong>${escHtml(email)}</strong></p>`,
     })
 
-    return NextResponse.json({ success: true })
+    return NextResponse.json({ success: true, token: process.env.GUIDE_TOKEN })
   } catch (error) {
     if (error instanceof z.ZodError) {
       return NextResponse.json({ error: 'Érvénytelen email cím' }, { status: 400 })

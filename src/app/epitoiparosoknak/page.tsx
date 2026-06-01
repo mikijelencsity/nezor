@@ -21,12 +21,12 @@ export default function EpitoiparosLandingPage() {
         body: JSON.stringify({ email }),
       })
 
+      const data = await res.json()
       if (!res.ok) {
-        const data = await res.json()
         throw new Error(data.error || 'Hiba történt')
       }
 
-      router.push('/epitoiparosoknak/utmutato')
+      router.push(`/epitoiparosoknak/utmutato?token=${data.token}`)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Hiba történt. Próbáld újra.')
       setLoading(false)
