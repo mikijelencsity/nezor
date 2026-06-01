@@ -2,36 +2,24 @@ import type { Metadata } from 'next'
 import { faqSchema } from '@/lib/structured-data'
 import { homeFAQ } from '@/data/faq'
 import { Hero } from '@/components/home/Hero'
+import { SocialProof } from '@/components/home/SocialProof'
 import { ServicesSection } from '@/components/home/ServicesSection'
-import { WhyNezor } from '@/components/home/WhyNezor'
+import { HowWeWork } from '@/components/home/HowWeWork'
 import { PackagesTeaser } from '@/components/home/PackagesTeaser'
 import { FAQSection } from '@/components/home/FAQSection'
-import { BlogPreview } from '@/components/home/BlogPreview'
-import { StatsSection } from '@/components/home/StatsSection'
-import { PartnersMarquee } from '@/components/home/PartnersMarquee'
-import { Testimonials } from '@/components/home/Testimonials'
-import { VideoShowcase } from '@/components/home/VideoShowcase'
-import { getLatestPosts } from '@/lib/blog'
-import { BlogPost } from '@/types'
+import { ResultsCTA } from '@/components/home/ResultsCTA'
 
 export const metadata: Metadata = {
   title: 'Weboldal, Webshop és Facebook Hirdetés | NEZOR',
-  description: 'Professzionális weboldal és webshop készítés, Facebook hirdetés kezelés Bács-Kiskun megyében és egész Magyarországon. Ingyenes konzultáció!',
+  description: 'Több ügyfelet hozunk a vállalkozásodnak — weboldal, webshop és Facebook hirdetés kezelés Bács-Kiskun megyében és egész Magyarországon.',
   openGraph: {
-    title: 'NEZOR — Weboldal, Webshop és Facebook Hirdetések',
-    description: 'Professzionális digitális ügynökség — Bács-Kiskun megye és egész Magyarország.',
+    title: 'NEZOR — Több ügyfelet hozunk a vállalkozásodnak',
+    description: 'Weboldal, webshop és Facebook hirdetés — egy céllal: több ügyfél.',
     url: 'https://nezor.hu',
   },
 }
 
-export default async function HomePage() {
-  let latestPosts: BlogPost[] = []
-  try {
-    latestPosts = await getLatestPosts(3)
-  } catch {
-    // blog posts unavailable, render without them
-  }
-
+export default function HomePage() {
   return (
     <>
       <script
@@ -39,15 +27,12 @@ export default async function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(homeFAQ)) }}
       />
       <Hero />
-      <StatsSection />
-      <PartnersMarquee />
+      <SocialProof />
       <ServicesSection />
-      {/* <VideoShowcase /> */}
-      <WhyNezor />
-      {/* <Testimonials /> */}
+      <HowWeWork />
       <PackagesTeaser />
       <FAQSection />
-      <BlogPreview posts={latestPosts} />
+      <ResultsCTA />
     </>
   )
 }
