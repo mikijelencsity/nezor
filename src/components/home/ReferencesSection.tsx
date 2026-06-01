@@ -1,5 +1,4 @@
-import { ArrowUpRight, ArrowRight } from 'lucide-react'
-import { Button } from '@/components/ui/Button'
+import { ArrowUpRight } from 'lucide-react'
 
 const refs = [
   {
@@ -8,13 +7,17 @@ const refs = [
     quote: 'Végre az interneten is megtalálnak. A NEZOR mindent megcsinált, mi csak a sütésre koncentráltunk.',
     url: 'nekedsutom.hu',
     href: 'https://nekedsutom.hu',
+    imgBg: 'linear-gradient(135deg, #e8f4e8, #d0ecd0)',
+    imgEmoji: '🍩',
   },
   {
     name: 'Estur Épker Kft.',
     category: 'Generálkivitelező · Baja',
-    quote: 'Végre van egy oldalunk, ami tényleg képvisel minket. Már online is megtalálnak az ügyfelek.',
+    quote: 'Már online is megtalálnak az ügyfelek. Ár-érték arányban nem találtunk jobbat a környéken.',
     url: 'estur.hu',
     href: 'https://estur.hu',
+    imgBg: 'linear-gradient(135deg, #e3ecff, #cddaff)',
+    imgEmoji: '🏗️',
   },
   {
     name: 'Hellinger Kft.',
@@ -22,55 +25,57 @@ const refs = [
     quote: '25 éve dolgozunk, de az online jelenlétünk nem mutatta ezt. Most már igen.',
     url: 'hellingerkft.hu',
     href: 'https://hellingerkft.hu',
+    imgBg: 'linear-gradient(135deg, #f0ece4, #e4ddd0)',
+    imgEmoji: '🔨',
   },
 ]
 
 export function ReferencesSection() {
   return (
-    <section className="py-20 md:py-28 bg-secondary">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted mb-6">
-          Akiknek már segítettünk
+    <section className="py-16 md:py-20 bg-white">
+      <div className="max-w-4xl mx-auto px-6 sm:px-8">
+        <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan mb-3">
+          Akiknek már megcsináltuk
         </p>
-
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-dark leading-[1.0] mb-14">
-          Magyar vállalkozások,
-          <br />
-          akik már előrébb járnak.
+        <h2 className="text-3xl md:text-4xl font-display font-black text-dark leading-tight mb-10">
+          Magyar vállalkozók, akik már előrébb járnak.
         </h2>
 
-        <div className="space-y-5 mb-14">
+        <div className="flex flex-col gap-5">
           {refs.map((ref) => (
-            <div
-              key={ref.name}
-              className="bg-white border-2 border-gray-200 rounded-2xl p-8"
-            >
-              <p className="text-2xl md:text-3xl font-display font-bold text-dark mb-1">
-                {ref.name}
-              </p>
-              <p className="text-sm font-semibold uppercase tracking-widest text-muted mb-6">
-                {ref.category}
-              </p>
-              <blockquote className="text-xl md:text-2xl text-dark italic leading-relaxed border-l-4 border-cyan pl-6 mb-6">
-                "{ref.quote}"
-              </blockquote>
-              <a
-                href={ref.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-base font-semibold text-cyan hover:underline"
+            <div key={ref.name} className="border border-gray-200 rounded-xl overflow-hidden">
+              {/* Big image area */}
+              <div
+                className="w-full flex flex-col items-center justify-center gap-2 relative"
+                style={{ height: '200px', background: ref.imgBg }}
               >
-                {ref.url}
-                <ArrowUpRight className="w-4 h-4" />
-              </a>
+                <span style={{ fontSize: '40px', opacity: 0.2 }}>{ref.imgEmoji}</span>
+                <span className="text-[11px] font-bold uppercase tracking-widest opacity-30">
+                  {ref.url} screenshot
+                </span>
+                {/* URL badge */}
+                <a
+                  href={ref.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute bottom-3 right-3 flex items-center gap-1 text-lime text-xs font-bold px-2.5 py-1 rounded"
+                  style={{ background: '#0a1f44' }}
+                >
+                  {ref.url} <ArrowUpRight className="w-3 h-3" />
+                </a>
+              </div>
+
+              {/* Card body */}
+              <div className="px-5 py-4">
+                <p className="text-lg font-black text-dark">{ref.name}</p>
+                <p className="text-xs uppercase tracking-widest text-muted mb-3">{ref.category}</p>
+                <blockquote className="text-sm italic text-dark/80 border-l-[3px] border-cyan pl-3 leading-relaxed">
+                  "{ref.quote}"
+                </blockquote>
+              </div>
             </div>
           ))}
         </div>
-
-        <Button href="/kapcsolat" size="lg" className="glow-pulse px-10 py-5 text-xl">
-          Kérek ingyenes auditot
-          <ArrowRight className="ml-3 w-6 h-6" />
-        </Button>
       </div>
     </section>
   )
