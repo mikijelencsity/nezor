@@ -5,7 +5,7 @@ import { BrowserMockup } from '@/components/home/BrowserMockup'
 const trustItems = [
   '24h visszahívás garantálva',
   'Addig változtatunk, amíg nem tetszik',
-  'Neked Sütöm · Estur Épker · Hellinger Kft.',
+  '20+ elégedett ügyfél',
 ]
 
 export function Hero() {
