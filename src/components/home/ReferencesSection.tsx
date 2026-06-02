@@ -32,32 +32,32 @@ const refs = [
 
 export function ReferencesSection() {
   return (
-    <section className="py-10 md:py-14 bg-white">
-      <div className="max-w-4xl mx-auto px-6 sm:px-8">
+    <section className="py-12 md:py-16 bg-white">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan mb-3">
           Akiknek már megcsináltuk
         </p>
-        <h2 className="text-3xl md:text-4xl font-display font-black text-dark leading-tight mb-6">
+        <h2 className="text-3xl md:text-4xl font-display font-black text-dark leading-tight mb-8">
           Magyar vállalkozók, akik már előrébb járnak.
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {refs.map((ref) => (
-            <div key={ref.name} className="border border-gray-200 rounded-xl overflow-hidden flex flex-col">
+            <div key={ref.name} className="border border-gray-200 rounded-2xl overflow-hidden flex flex-col">
               {/* Image area */}
               <div
-                className="w-full flex flex-col items-center justify-center gap-1.5 relative"
-                style={{ height: '140px', background: ref.imgBg }}
+                className="w-full flex flex-col items-center justify-center gap-2 relative"
+                style={{ height: '260px', background: ref.imgBg }}
               >
-                <span style={{ fontSize: '32px', opacity: 0.2 }}>{ref.imgEmoji}</span>
-                <span className="text-[10px] font-bold uppercase tracking-widest opacity-30">
+                <span style={{ fontSize: '48px', opacity: 0.18 }}>{ref.imgEmoji}</span>
+                <span className="text-[11px] font-bold uppercase tracking-widest opacity-25">
                   {ref.url} screenshot
                 </span>
                 <a
                   href={ref.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute bottom-2.5 right-2.5 flex items-center gap-1 text-lime text-[11px] font-bold px-2 py-1 rounded"
+                  className="absolute bottom-3 right-3 flex items-center gap-1 text-lime text-xs font-bold px-3 py-1.5 rounded-lg"
                   style={{ background: '#0a1f44' }}
                 >
                   {ref.url} <ArrowUpRight className="w-3 h-3" />
@@ -65,10 +65,10 @@ export function ReferencesSection() {
               </div>
 
               {/* Card body */}
-              <div className="px-4 py-3 flex flex-col flex-1">
-                <p className="text-base font-black text-dark">{ref.name}</p>
-                <p className="text-[11px] uppercase tracking-widest text-muted mb-2">{ref.category}</p>
-                <blockquote className="text-xs italic text-dark/75 border-l-[3px] border-cyan pl-3 leading-relaxed">
+              <div className="px-6 py-5 flex flex-col flex-1">
+                <p className="text-lg font-black text-dark">{ref.name}</p>
+                <p className="text-xs uppercase tracking-widest text-muted mb-3">{ref.category}</p>
+                <blockquote className="text-sm italic text-dark/75 border-l-[3px] border-cyan pl-4 leading-relaxed">
                   "{ref.quote}"
                 </blockquote>
               </div>
