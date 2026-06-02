@@ -5,17 +5,17 @@ const steps = [
   {
     num: '01',
     title: 'Megértjük a vállalkozásod',
-    desc: 'Ki a célügyfeled, ki a konkurensed, és mi az, ami téged megkülönböztet. Erre épül minden.',
+    desc: 'Kik a vevőid, ki a konkurensed, és mi az ami miatt téged kellene választani. Erre épül az egész.',
   },
   {
     num: '02',
-    title: 'Felépítjük az ügyfélszerző rendszert',
-    desc: 'Weboldal + Google megjelenés + Facebook hirdetés — egy célra hangolva: ajánlatkérések.',
+    title: 'Megcsináljuk a weboldalad és a hirdetéseket',
+    desc: 'Profi weboldal + Google megjelenés + Facebook hirdetés — minden arra van kihegyezve, hogy az emberek felhívjanak vagy ajánlatot kérjenek.',
   },
   {
     num: '03',
-    title: 'Több hívás, több ajánlatkérés',
-    desc: 'A rendszer a háttérben dolgozik — te arra koncentrálsz, amihez igazán értesz.',
+    title: 'Több hívás, több megrendelés',
+    desc: 'Miközben te dolgozol, az oldal és a hirdetések folyamatosan hozzák az új ügyfeleket.',
   },
 ]
 

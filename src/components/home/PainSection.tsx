@@ -2,10 +2,10 @@ import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 
 const pains = [
-  'Nem találnak meg Google-ben — a konkurensed igen',
-  'Weboldalad van, de senki nem kér ajánlatot',
-  'Hirdetsz Facebookon, de nincs mérhető eredmény',
-  'Minden ügyfeled ajánlásból jön — kiszámíthatatlan',
+  'Ha valaki rád keres Google-ben, a konkurensed jelenik meg — nem te',
+  'Van weboldalad, de hónapok óta nem jött be rajta egyetlen megkeresés sem',
+  'Fizetsz Facebook hirdetésért, de fogalmad sincs hoz-e bármit',
+  'Minden ügyfeled ismerőstől jön — ha az elapad, nincs más',
 ]
 
 export function PainSection() {

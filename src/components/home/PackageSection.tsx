@@ -2,14 +2,14 @@ import { ArrowRight, Check } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 
 const features = [
-  '6–15 aloldal',
-  'Teljes SEO optimalizálás',
-  'Google Analytics integráció',
-  'Blog modul',
-  'Gyors betöltési idő',
-  'Egyedi design',
-  'AI keresők optimalizálása (ChatGPT, Perplexity is megtalál)',
-  '2 Facebook hirdetés beállítása és elindítása',
+  '6–15 aloldal — minden fontos információ megvan',
+  'Google keresőben megtalálható leszel',
+  'Látod hány látogató jár az oldalon és honnan jöttek',
+  'Blog oldal — Google jobban ajánl, több látogató',
+  'Az oldal azonnal betölt — senki nem kattint el',
+  'Egyedi megjelenés — nem sablonos, nem sablon',
+  'ChatGPT és más AI asszisztensek is ajánlanak téged',
+  '2 Facebook hirdetés — beállítjuk, te csak fogadod a hívásokat',
 ]
 
 export function PackageSection() {

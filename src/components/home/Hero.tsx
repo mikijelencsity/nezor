@@ -29,11 +29,11 @@ export function Hero() {
           </h1>
 
           <p className="text-base md:text-lg mb-8 leading-relaxed max-w-md" style={{ color: 'rgba(255,255,255,0.65)' }}>
-            Weboldalat és Facebook hirdetést készítünk — hogy a legjobb ügyfelek téged hívjanak, ne a konkurensedet.
+            Megcsináljuk a weboldalad és a Facebook hirdetéseket — hogy az ügyfelek téged találjanak meg, ne a konkurensedet.
           </p>
 
           <Button href="/kapcsolat" size="lg" className="w-fit bg-lime text-dark font-black hover:bg-lime/90 border-0 shadow-none text-base px-7 py-4">
-            Ingyenes weboldal audit →
+            Kérek ingyenes átvizsgálást →
           </Button>
 
           <p className="mt-3 text-xs" style={{ color: 'rgba(255,255,255,0.35)' }}>

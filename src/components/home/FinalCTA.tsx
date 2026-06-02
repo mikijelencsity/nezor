@@ -11,12 +11,11 @@ export function FinalCTA() {
         </h2>
 
         <p className="text-lg mb-10 leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>
-          30 perces ingyenes átvizsgálás. Megmutatjuk mi megy rosszul
-          és hogyan lehetne több ügyfeled. Kötelezettség nélkül.
+          Megnézzük az online jelenléted és megmondjuk pontosan mi hiányzik, miért nem jönnek az ügyfelek — és mit lehet tenni. Ingyen, kötelezettség nélkül.
         </p>
 
         <Button href="/kapcsolat" size="lg" className="bg-lime text-dark font-black hover:bg-lime/90 border-0 shadow-none text-xl px-12 py-5 mb-4">
-          Ingyenes weboldal audit kérése
+          Kérek ingyenes átvizsgálást
           <ArrowRight className="ml-3 w-6 h-6" />
         </Button>
 
