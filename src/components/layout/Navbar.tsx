@@ -13,7 +13,6 @@ const navLinks = [
   { label: 'Facebook hirdetések', href: '/facebook-hirdetesek',   number: '03' },
   { label: 'Csomagok',            href: '/csomagok',              number: '04' },
   { label: 'Referenciák',         href: '/referenciak',           number: '05' },
-  { label: 'Blog',                href: '/blog',                  number: '06' },
 ]
 
 export function Navbar() {
@@ -48,19 +47,19 @@ export function Navbar() {
             : 'bg-white border-b border-transparent'
         )}
       >
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <Link href="/" className="font-display font-bold text-xl">
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[72px] flex items-center justify-between">
+          <Link href="/" className="font-display font-bold text-2xl">
             <span className="text-gradient">NEZOR</span>
           </Link>
 
           {/* Desktop links */}
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-7">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  'text-sm font-display font-medium transition-colors relative group',
+                  'text-base font-display font-semibold transition-colors relative group',
                   pathname === link.href ? 'text-cyan' : 'text-dark hover:text-cyan'
                 )}
               >
