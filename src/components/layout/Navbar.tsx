@@ -74,7 +74,7 @@ export function Navbar() {
           </div>
 
           <div className="hidden lg:flex">
-            <Button href="/kapcsolat" size="sm">Ajánlatot kérek</Button>
+            <Button href="/kapcsolat" size="sm" className="bg-lime text-dark font-black hover:bg-lime/90 border-0 shadow-none">Ajánlatot kérek</Button>
           </div>
 
           {/* Hamburger */}
@@ -175,7 +175,7 @@ export function Navbar() {
               >
                 <Link
                   href="/kapcsolat"
-                  className="flex items-center justify-center gap-2 w-full bg-cyan text-white font-display font-bold py-3.5 rounded-2xl mb-4 hover:bg-cyan-dark transition-colors glow-pulse"
+                  className="flex items-center justify-center gap-2 w-full bg-lime text-dark font-display font-bold py-3.5 rounded-2xl mb-4 hover:bg-lime/90 transition-colors"
                   onClick={() => setMobileOpen(false)}
                 >
                   Ajánlatot kérek <ArrowRight className="w-4 h-4" />

@@ -26,7 +26,7 @@ export function Button({
   const base = 'inline-flex items-center justify-center font-display font-semibold rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan focus:ring-offset-2'
 
   const variants = {
-    primary: 'bg-cyan text-white hover:bg-cyan-dark shadow-md hover:shadow-card-hover',
+    primary: 'bg-lime text-dark hover:bg-lime/90 shadow-md hover:shadow-card-hover font-black',
     outline: 'border-2 border-cyan text-cyan hover:bg-cyan hover:text-white',
     ghost: 'text-cyan hover:bg-cyan-light',
   }

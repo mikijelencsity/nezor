@@ -62,8 +62,8 @@
   animation: glowPulse 2.5s ease-in-out infinite;
 }
 @keyframes glowPulse {
-  0%, 100% { box-shadow: 0 0 18px rgba(0,207,255,0.35); }
-  50% { box-shadow: 0 0 36px rgba(0,207,255,0.65), 0 0 60px rgba(0,207,255,0.2); }
+  0%, 100% { box-shadow: 0 0 18px rgba(170,255,0,0.35); }
+  50% { box-shadow: 0 0 36px rgba(170,255,0,0.65), 0 0 60px rgba(170,255,0,0.2); }
 }
 
 /* Glassmorphism card */
@@ -77,7 +77,7 @@
 /* Reduce motion overrides */
 @media (prefers-reduced-motion: reduce) {
   .dot-grid-bg { animation: none; }
-  .glow-pulse { animation: none; box-shadow: 0 0 18px rgba(0,207,255,0.35); }
+  .glow-pulse { animation: none; box-shadow: 0 0 18px rgba(170,255,0,0.35); }
 }
 
 /* Phone screen scroll animation */
@@ -189,7 +189,7 @@
 
 /* Mobile performance: disable heavy animations on small screens */
 @media (max-width: 768px) {
-  .glow-pulse { animation: none; box-shadow: 0 0 18px rgba(0,207,255,0.35); }
+  .glow-pulse { animation: none; box-shadow: 0 0 18px rgba(170,255,0,0.35); }
   .ring-pulse { animation: none; }
   .dot-grid-bg { animation: none; }
   .text-shimmer { animation: none; }
