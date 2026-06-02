@@ -17,7 +17,7 @@ export default function AdatvedelemPage() {
         </Link>
 
         <h1 className="text-3xl font-display font-bold text-dark mb-2">Adatvédelmi tájékoztató</h1>
-        <p className="text-muted text-sm mb-10">Utolsó frissítés: 2025. január 1.</p>
+        <p className="text-muted text-sm mb-10">Utolsó frissítés: 2026. június 2.</p>
 
         <div className="prose prose-sm max-w-none prose-headings:font-display prose-headings:text-dark prose-a:text-cyan">
 
@@ -32,12 +32,14 @@ export default function AdatvedelemPage() {
           <p>A <strong>nezor.hu</strong> weboldalon az alábbi személyes adatokat kezeljük:</p>
           <ul>
             <li><strong>Kapcsolatfelvételi form:</strong> Név, e-mail cím, telefonszám (opcionális), üzenet szövege, kiválasztott szolgáltatás</li>
+            <li><strong>Hírlevél / lead magnet feliratkozás:</strong> E-mail cím — az építőiparosoknak szóló ingyenes útmutatóhoz való hozzáféréssel együtt</li>
             <li><strong>Sütik (cookie-k):</strong> Technikai sütik a weboldal működéséhez, analitikai sütik a látogatottság méréséhez</li>
           </ul>
 
           <h2>3. Az adatkezelés célja és jogalapja</h2>
           <ul>
             <li><strong>Kapcsolatfelvétel feldolgozása:</strong> Az Ön megkeresésének megválaszolása és ajánlatadás. Jogalap: az Ön hozzájárulása (GDPR 6. cikk (1) a) pont)</li>
+            <li><strong>Hírlevél küldése:</strong> Az ingyenes útmutatóhoz való hozzáférés biztosítása és kapcsolódó tájékoztatók küldése. Jogalap: hozzájárulás. Bármikor leiratkozhat az emailek alján található linkre kattintva.</li>
             <li><strong>Weboldalunk működtetése:</strong> Technikai sütik. Jogalap: jogos érdek</li>
             <li><strong>Látogatottsági statisztika:</strong> Google Analytics. Jogalap: hozzájárulás</li>
           </ul>

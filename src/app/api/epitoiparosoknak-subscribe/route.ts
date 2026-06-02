@@ -63,6 +63,12 @@ export async function POST(req: NextRequest) {
             <a href="mailto:info@nezor.hu" style="color:#1e4fd8;">info@nezor.hu</a><br>
             NEZOR Webfejlesztés — Müller Dániel &amp; Jelencsity Miklós
           </p>
+          <hr style="border:none;border-top:1px solid #e0e0e0;margin:24px 0;">
+          <p style="font-size:12px;color:#aaa;line-height:1.6;">
+            Azért kapod ezt a levelet, mert feliratkoztál a nezor.hu oldalon.<br>
+            Ha nem szeretnél több levelet kapni:
+            <a href="${process.env.NEXT_PUBLIC_SITE_URL || 'https://nezor.hu'}/api/leiratkozas?email=${encodeURIComponent(email)}" style="color:#aaa;">leiratkozás</a>
+          </p>
         </div>
       `,
     })

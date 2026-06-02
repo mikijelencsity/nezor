@@ -148,6 +148,7 @@ export function Footer() {
         <div className="border-t border-white/8 pt-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-600">
           <span>© {new Date().getFullYear()} NEZOR. Minden jog fenntartva.</span>
           <div className="flex items-center gap-4">
+            <Link href="/aszf" className="hover:text-gray-400 transition-colors">ÁSZF</Link>
             <Link href="/adatvedelem" className="hover:text-gray-400 transition-colors">Adatvédelmi tájékoztató</Link>
             <Link href="/adatvedelem#sutik" className="hover:text-gray-400 transition-colors">Sütik</Link>
           </div>
