@@ -3,6 +3,7 @@ import { localBusinessSchema } from '@/lib/structured-data'
 import { Hero } from '@/components/home/Hero'
 import { PainSection } from '@/components/home/PainSection'
 import { HowWeWork } from '@/components/home/HowWeWork'
+import { PackageSection } from '@/components/home/PackageSection'
 import { ReferencesSection } from '@/components/home/ReferencesSection'
 import { FinalCTA } from '@/components/home/FinalCTA'
 
@@ -26,6 +27,7 @@ export default function HomePage() {
       <Hero />
       <PainSection />
       <HowWeWork />
+      <PackageSection />
       <ReferencesSection />
       <FinalCTA />
     </>
