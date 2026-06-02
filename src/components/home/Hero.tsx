@@ -1,6 +1,6 @@
 import { CheckCircle } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
-import { BrowserMockup } from '@/components/home/BrowserMockup'
+import Image from 'next/image'
 
 const trustItems = [
   '24h visszahívás garantálva',
@@ -12,7 +12,7 @@ export function Hero() {
   return (
     <section style={{ background: '#0a1f44' }}>
       {/* 2-column grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[480px]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[520px]">
 
         {/* LEFT — text */}
         <div className="flex flex-col justify-center px-6 sm:px-10 lg:px-14 py-14 lg:py-20">
@@ -41,33 +41,15 @@ export function Hero() {
           </p>
         </div>
 
-        {/* RIGHT — browser mockup */}
-        <div className="flex items-center justify-center px-6 py-10 lg:py-14 relative" style={{ background: 'rgba(255,255,255,0.03)' }}>
-          <div className="w-full max-w-sm relative">
-            <BrowserMockup url="estur.hu">
-              <div
-                className="w-full flex items-center justify-center flex-col gap-2"
-                style={{ height: '240px', background: 'linear-gradient(160deg, #dce8ff 0%, #eef4ff 100%)' }}
-              >
-                <span style={{ fontSize: '40px', opacity: 0.18 }}>🏗️</span>
-                <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: '#1e4fd8', opacity: 0.4 }}>
-                  Kliens weboldal screenshot
-                </span>
-              </div>
-            </BrowserMockup>
-
-            {/* Notification badge 1 */}
-            <div className="absolute -right-4 top-10 bg-white rounded-xl px-3 py-2 shadow-xl flex items-center gap-2 text-xs font-bold text-dark whitespace-nowrap">
-              <span className="w-2 h-2 rounded-full bg-lime flex-shrink-0" />
-              Új ajánlatkérés érkezett
-            </div>
-
-            {/* Notification badge 2 */}
-            <div className="absolute -right-4 bottom-12 bg-white rounded-xl px-3 py-2 shadow-xl flex items-center gap-2 text-xs font-bold text-dark whitespace-nowrap">
-              <span className="w-2 h-2 rounded-full bg-cyan flex-shrink-0" />
-              Új telefonhívás
-            </div>
-          </div>
+        {/* RIGHT — full image */}
+        <div className="relative hidden lg:block min-h-[520px]">
+          <Image
+            src="/hero-image.jpg"
+            alt="Több ügyfél weboldalon keresztül"
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
       </div>
 
