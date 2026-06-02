@@ -1,10 +1,10 @@
-import { ArrowRight, CheckCircle } from 'lucide-react'
+import { CheckCircle } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { BrowserMockup } from '@/components/home/BrowserMockup'
 
 const trustItems = [
   '24h visszahívás garantálva',
-  'Pénzvisszatérítési garancia',
+  'Addig változtatunk, amíg nem tetszik',
   'Neked Sütöm · Estur Épker · Hellinger Kft.',
 ]
 

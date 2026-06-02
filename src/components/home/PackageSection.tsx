@@ -57,7 +57,7 @@ export function PackageSection() {
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             <p className="text-xs text-muted text-center mt-3">
-              Visszahívunk 24 órán belül · Kötelezettség nélkül · Pénzvisszatérítési garancia
+              Visszahívunk 24 órán belül · Kötelezettség nélkül · Addig változtatunk, amíg nem tetszik
             </p>
           </div>
         </div>
