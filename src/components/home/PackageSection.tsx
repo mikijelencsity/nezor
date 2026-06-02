@@ -8,7 +8,7 @@ const features = [
   'Blog modul',
   'Gyors betöltési idő',
   'Egyedi design',
-  'AI-alapú szöveg és tartalom — megírjuk, te jóváhagyod',
+  'AI keresők optimalizálása (ChatGPT, Perplexity is megtalál)',
   '2 Facebook hirdetés beállítása és elindítása',
 ]
 
@@ -32,7 +32,7 @@ export function PackageSection() {
               <p className="text-muted text-sm">Egyszeri díj · Mindent mi csinálunk, te csak jóváhagyod</p>
             </div>
             <div className="flex-shrink-0 text-right">
-              <div className="text-4xl font-black text-dark leading-none">100.000 Ft</div>
+              <div className="text-4xl font-black text-dark leading-none">120.000 Ft</div>
               <div className="text-xs text-muted mt-1">egyszeri befektetés</div>
             </div>
           </div>
