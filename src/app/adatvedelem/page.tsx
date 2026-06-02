@@ -87,9 +87,6 @@ export default function AdatvedelemPage() {
             </tbody>
           </table>
 
-          <h3>Marketing sütik (hozzájárulás szükséges)</h3>
-          <p>Facebook Pixel — csak az Ön hozzájárulásával, hirdetések hatékonyságának méréséhez.</p>
-
           <h2>8. Adatbiztonság</h2>
           <p>Az adatokat SSL/HTTPS titkosítással védjük. A weboldalon beküldött adatok titkosított csatornán kerülnek továbbításra.</p>
 

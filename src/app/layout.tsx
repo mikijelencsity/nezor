@@ -8,6 +8,7 @@ import { localBusinessSchema } from '@/lib/structured-data'
 import { ScrollProgressBar } from '@/components/ui/ScrollProgressBar'
 import { FloatingCTA } from '@/components/ui/FloatingCTA'
 import { CookieConsent } from '@/components/ui/CookieConsent'
+import { GoogleAnalytics } from '@/components/ui/GoogleAnalytics'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const spaceGrotesk = Space_Grotesk({
@@ -46,15 +47,6 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="hu" className={`${spaceGrotesk.variable} ${inter.variable}`}>
-      <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-X79GL5MKMH" />
-        <script dangerouslySetInnerHTML={{ __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-X79GL5MKMH');
-        `}} />
-      </head>
       <body>
         <ScrollProgressBar />
         <script
@@ -67,6 +59,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <FloatingCTA />
         <MessengerWidget />
         <CookieConsent />
+        <GoogleAnalytics />
         <SpeedInsights />
       </body>
     </html>
